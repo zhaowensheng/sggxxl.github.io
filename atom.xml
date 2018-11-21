@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-21T08:42:30.307Z</updated>
+  <updated>2018-11-21T09:11:23.659Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>css基本知识</title>
+    <link href="https://www.sggxxl.club/2018/11/21/css-ji-ben-zhi-shi/"/>
+    <id>https://www.sggxxl.club/2018/11/21/css-ji-ben-zhi-shi/</id>
+    <published>2018-11-21T08:46:28.000Z</published>
+    <updated>2018-11-21T09:11:23.659Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;css基本知识&quot;&gt;&lt;a href=&quot;#css基本知识&quot; class=&quot;headerlink&quot; title=&quot;css基本知识&quot;&gt;&lt;/a&gt;css基本知识&lt;/h2&gt;&lt;p&gt;我们先看一个小例子：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML基础知识总结</title>
     <link href="https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/"/>
     <id>https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/</id>
     <published>2018-11-21T07:30:53.000Z</published>
-    <updated>2018-11-21T08:42:30.307Z</updated>
+    <updated>2018-11-21T09:11:28.195Z</updated>
     
     <summary type="html">
     
@@ -74,7 +101,7 @@
     <link href="https://www.sggxxl.club/2018/11/21/qin-se-zai-yu-mo-bu-jing-hao/"/>
     <id>https://www.sggxxl.club/2018/11/21/qin-se-zai-yu-mo-bu-jing-hao/</id>
     <published>2018-11-21T02:42:56.000Z</published>
-    <updated>2018-11-21T03:11:29.646Z</updated>
+    <updated>2018-11-21T09:11:25.309Z</updated>
     
     <summary type="html">
     
