@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-21T03:18:32.662Z</updated>
+  <updated>2018-11-21T08:11:11.835Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML基础知识总结</title>
+    <link href="https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/"/>
+    <id>https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/</id>
+    <published>2018-11-21T07:30:53.000Z</published>
+    <updated>2018-11-21T08:11:11.835Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。&lt;/p&gt;
+&lt;h2 id=&quot;一、HTML的定义&quot;&gt;&lt;a href=&quot;#一、HTML的定义&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/categories/HTML/"/>
+    
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>嵌入式学习 准备篇</title>
     <link href="https://www.sggxxl.club/2018/11/21/qian-ru-shi-xue-xi-zhun-bei-pian/"/>
     <id>https://www.sggxxl.club/2018/11/21/qian-ru-shi-xue-xi-zhun-bei-pian/</id>
     <published>2018-11-21T02:57:48.000Z</published>
-    <updated>2018-11-21T03:18:32.662Z</updated>
+    <updated>2018-11-21T03:18:40.787Z</updated>
     
     <summary type="html">
     
@@ -75,7 +102,7 @@
     <link href="https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/"/>
     <id>https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/</id>
     <published>2018-11-21T02:17:14.000Z</published>
-    <updated>2018-11-21T03:11:32.735Z</updated>
+    <updated>2018-11-21T05:53:31.158Z</updated>
     
     <summary type="html">
     
