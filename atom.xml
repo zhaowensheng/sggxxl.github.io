@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>盛哥修行录</title>
   
-  <subtitle>Dread of awe</subtitle>
+  <subtitle>Reverence of dreams</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://zhaowensheng.github.io/"/>
-  <updated>2018-11-20T09:13:07.397Z</updated>
-  <id>http://zhaowensheng.github.io/</id>
+  <link href="https://www.sggxxl.club/"/>
+  <updated>2018-11-21T02:29:06.929Z</updated>
+  <id>https://www.sggxxl.club/</id>
   
   <author>
     <name>ZhaoWensheng</name>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo中添加本地图片和使用网络图片</title>
+    <link href="https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/"/>
+    <id>https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/</id>
+    <published>2018-11-21T02:17:14.000Z</published>
+    <updated>2018-11-21T02:29:06.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;First-相对引用&quot;&gt;&lt;a href=&quot;#First-相对引用&quot; class=&quot;headerlink&quot; title=&quot;First 相对引用&quot;&gt;&lt;/a&gt;First
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://www.sggxxl.club/categories/Hexo/"/>
+    
+    
+      <category term="博客" scheme="https://www.sggxxl.club/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="https://www.sggxxl.club/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://zhaowensheng.github.io/2018/11/20/hello-world/"/>
-    <id>http://zhaowensheng.github.io/2018/11/20/hello-world/</id>
+    <link href="https://www.sggxxl.club/2018/11/20/hello-world/"/>
+    <id>https://www.sggxxl.club/2018/11/20/hello-world/</id>
     <published>2018-11-20T08:25:00.000Z</published>
-    <updated>2018-11-20T09:13:07.397Z</updated>
+    <updated>2018-11-21T01:49:27.198Z</updated>
     
     <summary type="html">
     
@@ -35,12 +63,12 @@
     
     </summary>
     
-      <category term="Markdown" scheme="http://zhaowensheng.github.io/categories/Markdown/"/>
+      <category term="Hexo" scheme="https://www.sggxxl.club/categories/Hexo/"/>
     
     
-      <category term="Typora" scheme="http://zhaowensheng.github.io/tags/Typora/"/>
+      <category term="博客" scheme="https://www.sggxxl.club/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Markdown" scheme="http://zhaowensheng.github.io/tags/Markdown/"/>
+      <category term="Hexo" scheme="https://www.sggxxl.club/tags/Hexo/"/>
     
   </entry>
   

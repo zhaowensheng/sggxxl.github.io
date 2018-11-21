@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Hexo中添加本地图片和使用网络图片</title>
+      <link href="/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/"/>
+      <url>/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="First-相对引用"><a href="#First-相对引用" class="headerlink" title="First 相对引用"></a>First 相对引用</h2><p>由于首页和主页相对图片位置不一致，网站首页和内页很可能仅有一处能正常加载。</p><p>1 调整程序配置文件_config.yml 里的post_asset_folder:这个选项设置为True</p><p>2 在source下创建/images文件夹，先把图片xx.jpg/png复制到这个文件夹</p><p>3 最后在xxxx.md中想引入图片时，只需要在xxxx.md中按照markdown的格式引入图片：</p><pre class=" language-bash"><code class="language-bash">1<span class="token operator">!</span><span class="token punctuation">[</span>想输入的提示名字，可不输入<span class="token punctuation">]</span><span class="token punctuation">(</span>/images/xx.jpg<span class="token punctuation">)</span></code></pre><p>##Second 图床</p><p>如SMMS图床无需注册<br>以下是测试：<br><img src="https://i.loli.net/2018/02/09/5a7d6a402e15e.jpg" class="[class names]" title="[50%] [500] [title text [alt text]]"><br>请备份Delete Link,必要时访问此链接删除图片。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2018/11/20/hello-world/"/>
       <url>/2018/11/20/hello-world/</url>
@@ -12,16 +37,16 @@
       
       <categories>
           
-          <category> Markdown </category>
+          <category> Hexo </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Typora </tag>
+            <tag> 博客 </tag>
             
-            <tag> Markdown </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
