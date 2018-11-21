@@ -398,7 +398,7 @@
             <div id="articleContent">
                 <p>经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。</p>
 <h2 id="一、HTML的定义"><a href="#一、HTML的定义" class="headerlink" title="一、HTML的定义"></a>一、HTML的定义</h2><p>   HTML，超文本标记语言，写给浏览器的语言，目前网络上应用最广泛的语言。HTML也在不断的更新，最新版本已经出现了HTML5。在HTML5中出现了许多新特性，也遗弃了一些旧元素。我们写好html文件后，在浏览器中打开。主流的浏览器包括IE、Firefox、Chrome、Goole等。</p>
-<h2 id="二、HTML标签元素"><a href="#二、HTML标签元素" class="headerlink" title="二、HTML标签元素"></a>二、HTML标签元素</h2><p>HTML元素由开始标签和结束标签组成。如</p><p>/</p><p>,</p><h1><h1>。虽然现在我们还不知道具体标签代表的意思，但标签一定是这样的格式：有一对开始&lt;&gt;和结束&lt;/&gt;。一般标签名推荐用小写。标签具有属性，属性用来表示标签的特征。比如，我们用大小这个属性，来衡量一个苹果。所以，大小可以用来表示苹果的特征。属性时写在标签里面的，而且是开始标签内。<p></p>
+<h2 id="二、HTML标签元素"><a href="#二、HTML标签元素" class="headerlink" title="二、HTML标签元素"></a>二、HTML标签元素</h2><p>HTML元素由开始标签和结束标签组成。虽然现在我们还不知道具体标签代表的意思，但标签一定是这样的格式：有一对开始&lt;&gt;和结束&lt;/&gt;。一般标签名推荐用小写。标签具有属性，属性用来表示标签的特征。比如，我们用大小这个属性，来衡量一个苹果。所以，大小可以用来表示苹果的特征。属性时写在标签里面的，而且是开始标签内。</p>
 <h2 id="三、HTML-的基本结构"><a href="#三、HTML-的基本结构" class="headerlink" title="三、HTML 的基本结构"></a>三、HTML 的基本结构</h2><p>结构由网页的头部和网页的身体组成。如下例子：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>html<span class="token operator">></span>
     <span class="token operator">&lt;</span>head<span class="token operator">></span>
@@ -414,9 +414,11 @@
 <h3 id="2、标题"><a href="#2、标题" class="headerlink" title="2、标题"></a>2、标题</h3><p>一般情况下，我们都会设定html文档的标题。这样的作用是使用户看起来感觉友好。标签为<title></title>,标签内放标题名称。</p>
 <h3 id="3、页面编码"><a href="#3、页面编码" class="headerlink" title="3、页面编码"></a>3、页面编码</h3><p>编码的种类有多种，但常用的是utf-8和gb2312。utf-8为多国语言编码，gb2312为中文简体编码。对于编码的详细问题，可以浏览博客。设置网页编码的语句为<meta charset="utf-8">，是在<head><meta name="generator" content="Hexo 3.8.0"></head>标签内定义的。</p>
 <h3 id="4、页面关键字，内容"><a href="#4、页面关键字，内容" class="headerlink" title="4、页面关键字，内容"></a>4、页面关键字，内容</h3><p>我们可以在文档中设置一些关键词，内容介绍。这样的好处是，当我们的网页发布在网上，用户可以通过在搜索框中输入关键字，找出一些比较符合的网页。这样一来，我们的网页便可以更容易地被别人访问。</p>
-<h2 id="五、常用元素"><a href="#五、常用元素" class="headerlink" title="五、常用元素"></a>五、常用元素</h2><h3 id="1、-换行符-。"><a href="#1、-换行符-。" class="headerlink" title="1、 换行符 。"></a>1、 换行符 <br>。</h3><p>换行对于文本编辑来说是最正常不过的了。当文字写满一行，需要换行。或者根据需要，在文本中换行，这都是可以的。如下例子：</p>
-  <body><br>     我要换行<br>换行后<br> </body>
-
+<h2 id="五、常用元素"><a href="#五、常用元素" class="headerlink" title="五、常用元素"></a>五、常用元素</h2><h3 id="1、-换行符。"><a href="#1、-换行符。" class="headerlink" title="1、 换行符。"></a>1、 换行符。</h3><p>换行对于文本编辑来说是最正常不过的了。当文字写满一行，需要换行。或者根据需要，在文本中换行，这都是可以的。如下例子：</p>
+<pre class=" language-bash"><code class="language-bash">  <span class="token operator">&lt;</span>body<span class="token operator">></span>
+     我要换行<span class="token operator">&lt;</span>br /<span class="token operator">></span>换行后
+ <span class="token operator">&lt;</span>/body<span class="token operator">></span>
+</code></pre>
 <h3 id="2、段落"><a href="#2、段落" class="headerlink" title="2、段落 "></a>2、段落 <p></p></h3><p>在写文章时，我们可以用p标签来定义一个段落。如下定义了两个段落：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>p<span class="token operator">></span>
 
@@ -430,7 +432,6 @@ GBK编码，包括了GB2312中的编码，同时扩充了许多，通行于大�
 
 <span class="token operator">&lt;</span>/p<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805113524622-959290558.png" class="[class names]">
 <p>在定义了段落后，可以利用属性align来对段落进行设置。属性align的值包括left（左对齐）、center（居中对齐）、right（右对齐）三种。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>p align<span class="token operator">=</span>“center”<span class="token operator">></span>
 
@@ -451,7 +452,6 @@ UTF-8。UTF-8就是在互联网上使用最广的一种unicode的实现方式。
 
 <span class="token operator">&lt;</span>h6<span class="token operator">></span>标题6<span class="token operator">&lt;</span>/h6<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805113918278-1734831501.png" class="[class names]">
 <h3 id="4、文本格式化，一些常用于设置文本字体的元素："><a href="#4、文本格式化，一些常用于设置文本字体的元素：" class="headerlink" title="4、文本格式化，一些常用于设置文本字体的元素："></a>4、文本格式化，一些常用于设置文本字体的元素：</h3><pre class=" language-bash"><code class="language-bash">         <span class="token operator">&lt;</span>b<span class="token operator">></span>定义粗体文本<span class="token operator">&lt;</span>/b<span class="token operator">></span><span class="token operator">&lt;</span>br /<span class="token operator">></span>
 
          <span class="token operator">&lt;</span>i<span class="token operator">></span> 定义斜体文本 <span class="token operator">&lt;</span>/i<span class="token operator">></span><span class="token operator">&lt;</span>br /<span class="token operator">></span>
@@ -462,8 +462,6 @@ UTF-8。UTF-8就是在互联网上使用最广的一种unicode的实现方式。
 
          <span class="token operator">&lt;</span>sub<span class="token operator">></span>定义下标字<span class="token operator">&lt;</span>/sub<span class="token operator">></span><span class="token operator">&lt;</span>br /<span class="token operator">></span>
 </code></pre>
-<p>效果图如下：</p>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805113955450-1575857002.png" class="[class names]">
 <h3 id="5、定义超链接"><a href="#5、定义超链接" class="headerlink" title="5、定义超链接"></a>5、定义超链接<a href="“URL”"></a></h3><p>a标签用来定义一条超链接，其中要有的是href属性，href的作用是指明超链接要链接到的网址。除了href属性，还有title属性表示链接的提示信息。target属性表示链接的打开方式，即当点击了链接，选择是在另一个页面打开还是本页面打开。其属性值包括_blank(新的空白页)self(当前页),top（当前页）。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>百度一下<span class="token operator">&lt;</span>/a<span class="token operator">></span> 
 </code></pre>
@@ -481,25 +479,28 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"sms:139xxxxxxx"</span><span class="token operator">></span>发送短信<span class="token operator">&lt;</span>/a<span class="token operator">></span>
 </code></pre>
 <img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114041231-316044158.png" class="[class names]">
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114104840-2091373197.png" class="[class names]">
 <h3 id="6-锚点"><a href="#6-锚点" class="headerlink" title="6.锚点"></a>6.锚点</h3><p>有时我们在浏览网页时会发现，有些网页比较人性化，会有点击返回顶部的按键。这样的效果其实用锚点标签就能做到。锚点就是点击使用户跳到文档的某个部分。</p>
-<p><a href="#位置名"> </a></p>
-<p><a name="位置名"> </a> </p>
-<p>如代码例子：</p>
-<p><a href="#map">跳转</a></p>
- <p id="map">代码代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#位置名"</span><span class="token operator">></span> <span class="token operator">&lt;</span>/a<span class="token operator">></span>
 
-<h3 id="7、图像"><a href="#7、图像" class="headerlink" title="7、图像"></a>7、图像<img></h3><p>如下：</p>
+<span class="token operator">&lt;</span>a name<span class="token operator">=</span><span class="token string">"位置名"</span><span class="token operator">></span> <span class="token operator">&lt;</span>/a<span class="token operator">></span> 
+
+如代码例子：
+
+<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#map"</span><span class="token operator">></span>跳转<span class="token operator">&lt;</span>/a<span class="token operator">></span>
+
+ <span class="token operator">&lt;</span>p id<span class="token operator">=</span><span class="token string">"map"</span><span class="token operator">></span>代码代码<span class="token operator">&lt;</span>/p<span class="token operator">></span>
+</code></pre>
+<h3 id="7、图像img"><a href="#7、图像img" class="headerlink" title="7、图像img"></a>7、图像img</h3><p>如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"img/fenfjing.jpg"</span> width<span class="token operator">=</span><span class="token string">"100"</span> height<span class="token operator">=</span><span class="token string">"100"</span> alt<span class="token operator">=</span><span class="token string">"风景"</span> /<span class="token operator">></span>
 </code></pre>
 <h3 id="8、列表"><a href="#8、列表" class="headerlink" title="8、列表"></a>8、列表</h3><p>（1）、无序列表。</p>
-<p>Html中列表也是常用的元素。无序列表用<ul><li></li></ul>表示。</p>
+<p>Html中列表也是常用的元素。无序列表用(ul)(li)(/li)(/ul)表示。</p>
 <p>说明：</p>
-<p>属性：type</p>
-<p>属性值：         列表前的符号</p>
-<p> disc        　　   实心原点   </p>
-<p> circle　　　　   符号为空心圆</p>
-<p> square　　　　 符号为方形</p>
+<p>属性：    type</p>
+<p>属性值：   列表前的符号</p>
+<p> disc     实心原点   </p>
+<p> circle　  符号为空心圆</p>
+<p> square　　符号为方形</p>
 <p>例子如下：</p>
 <pre class=" language-bash"><code class="language-bash"> <span class="token operator">&lt;</span>ul type<span class="token operator">=</span><span class="token string">"disc"</span><span class="token operator">></span>
 
@@ -511,7 +512,6 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 
  <span class="token operator">&lt;</span>/ul<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114202184-2131691848.png" class="[class names]">
 <pre class=" language-bash"><code class="language-bash"> <span class="token operator">&lt;</span>ul type<span class="token operator">=</span><span class="token string">"circle"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>li<span class="token operator">></span>苹果<span class="token operator">&lt;</span>/li<span class="token operator">></span>
     <span class="token operator">&lt;</span>li<span class="token operator">></span>香蕉<span class="token operator">&lt;</span>/li<span class="token operator">></span>
@@ -526,11 +526,10 @@ href也可以链接到别的地址，如邮箱、电话、sms。
     <span class="token operator">&lt;</span>/ul<span class="token operator">></span>
 
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114223731-1027049220.png" class="[class names]"> 
 <p>（2）、有序列表</p>
 <p>有序列表使用数字或字母系统来组织列表里包含的信息。有序列表可以使用数字(默认)、大写字母、小写字母、大写罗马数字和小写罗马数字排列项目。</p>
 <p>说明：</p>
-<p>属性            属性值                          说明</p>
+<p>属性               属性值                             说明</p>
 <p>type     1、 a 、 A、i、I       用来设置项目前面的标记</p>
 <p>start         数值                         排序的起点数值</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ol type<span class="token operator">=</span><span class="token string">"1"</span> start<span class="token operator">=</span><span class="token string">"2"</span><span class="token operator">></span>
@@ -584,7 +583,6 @@ href也可以链接到别的地址，如邮箱、电话、sms。
          <span class="token operator">&lt;</span>/ol<span class="token operator">></span>
 
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114401137-1898193633.png" class="[class names]"> 
 <p>（3）、定义列表</p>
 <p>定义列表用来组织术语和它们的定义。任何信息如果包含多个术语和相对应的解释，都可以使用定义列表进行组织。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>dl<span class="token operator">></span>
@@ -603,34 +601,34 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 
 </code></pre>
 <img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114413747-31081520.png" class="[class names]"> 
-<h3 id="9、-HTML-实体字符。"><a href="#9、-HTML-实体字符。" class="headerlink" title="9、 HTML 实体字符。"></a>9、 HTML 实体字符。</h3><p>在html中，有些特殊字符是需要用html语言表示出来的。一个字符实体包含三个部分：一个&amp;符，一个实体名或者一个实体号，最后一个分号（；）。如下表格所示：</p>
+<h3 id="9、-HTML-实体字符。"><a href="#9、-HTML-实体字符。" class="headerlink" title="9、 HTML 实体字符。"></a>9、 HTML 实体字符。</h3><p>在html中，有些特殊字符是需要用html语言表示出来的。一个字符实体包含三个部分：一个&amp;符，一个实体名或者一个实体号，最后一个分号（；）。如下所示：</p>
 <ul>
 <li>实体名是大小写敏感的。</li>
 </ul>
 <p>实体字符         字符实体</p>
-<p>大于号 (&gt;)         &gt;</p>
-<p>小于号 (&lt;)         &lt;</p>
-<p>引号 (“)           &quot;</p>
-<p>注册商标(®)        &reg;</p>
-<p>版权(© )          &copy;</p>
-<p>&copy;            &amp;     </p>
+<p>大于号 (&gt;)        &lsaquo; &amp;gt&rsaquo; ;</p>
+<p>小于号 (&lt;)      &lsaquo;&amp;lt&rsaquo; ;</p>
+<p>引号 (“)          &lsaquo;&amp;quot&rsaquo; ;</p>
+<p>注册商标(®)       &lsaquo;&amp;reg&rsaquo; ;</p>
+<p>版权(© )          &lsaquo;&amp;copy&rsaquo; ;</p>
+<p>&lsaquo;&amp;copy&rsaquo;    ;     &lsaquo;&amp;amp&rsaquo;   ;</p>
 <h3 id="10、-图像热区"><a href="#10、-图像热区" class="headerlink" title="10、 图像热区"></a>10、 图像热区</h3><p>平时我们在浏览网页时，当鼠标经过一张图片中的某个位置时，发现是可点击的。也就是说，我们点击这个部分，就会链接到别的地方。创建图像热区想要用<img>b标签把图片插入进来，然后使用<area>标签在刚才插入的图片里划分热区。</p>
-<pre class=" language-hash"><code class="language-hash"><img src="URL"  usemap="# map 名称" />
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"URL"</span>  usemap<span class="token operator">=</span><span class="token string">"# map 名称"</span> /<span class="token operator">></span>
 
-<map name="map 名称">
+<span class="token operator">&lt;</span>map name<span class="token operator">=</span><span class="token string">"map 名称"</span><span class="token operator">></span>
 
-         <area shape="形状" coords="坐标值" href="URL" />
+         <span class="token operator">&lt;</span>area shape<span class="token operator">=</span><span class="token string">"形状"</span> coords<span class="token operator">=</span><span class="token string">"坐标值"</span> href<span class="token operator">=</span><span class="token string">"URL"</span> /<span class="token operator">></span>
 
-</map>
+<span class="token operator">&lt;</span>/map<span class="token operator">></span>
 </code></pre>
 <p>Rect:矩形   左上角坐标与右下角坐标（x，y，x，y）</p>
 <p>Circle:圆形  圆心坐标，半径  （x，y ，r）</p>
 <p>Poly:多边形  各顶点的坐标   （x，y，x，y，x，y。。。）</p>
 <p>说明：</p>
-<p>URL                 图像的地址</p>
-<p>usermap          表示要使用#后面的那个名字的<map>标签来为图片划分热区</map></p>
-<p>shape               热区形状(rect矩形、circle圆形、poly多边形 )</p>
-<p>coords              形状的坐标值</p>
+<p>URL :                图像的地址</p>
+<p>usermap   :       表示要使用#后面的那个名字的&lsaquo;map&rsaquo; 标签来为图片划分热区</p>
+<p>shape  :             热区形状(rect矩形、circle圆形、poly多边形 )</p>
+<p>coords  :            形状的坐标值</p>
 <p>注：usemap的值要与map的name值保持一致。坐标可以通过PS软件–菜单栏导航器—-信息—坐标值。</p>
 <p>例子如下：热区范围为一个矩形</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"img/map.jpg"</span> usemap<span class="token operator">=</span><span class="token string">"#p1"</span>/<span class="token operator">></span>
@@ -641,10 +639,8 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 
 <span class="token operator">&lt;</span>/map<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114424465-891558954.png" class="[class names]">
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114443825-971949484.png" class="[class names]">
 <p>在这里我设置了新疆为图像热区，热区范围为一个矩形。点击地图中的新疆，就会跳转到一张图片中。要注意的是要准确的写出热区的坐标，也就是热区的范围。其坐标值可以利用工具ps工具选取。</p>
-<h3 id="11、-表格"><a href="#11、-表格" class="headerlink" title="11、 表格"></a>11、 表格</h3><p>表格由 <table> 标签以及一个或多个 tr、th或td 元素组成。</table></p>
+<h3 id="11、-表格"><a href="#11、-表格" class="headerlink" title="11、 表格"></a>11、 表格</h3><p>表格由 &lsaquo;table&rsaquo;  标签以及一个或多个 tr、th或td 元素组成。</p>
 <p>单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。</p>
 <p>基本结构：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>table border<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span>
@@ -670,18 +666,18 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 </code></pre>
 <p>row 1, cell 1    row 1, cell 2<br>row 2, cell 1    row 2, cell 2<br>说明：</p>
 <p>html有10个表格相关的标签。</p>
-<p><caption>        定义表格标题</caption></p>
-<p><col>　　　　　 定义列</p>
-<p><colgroup>　　 定义表格列的分组</colgroup></p>
-<p><table>　　　   定义表格</table></p>
-<p><tbody>　　  　定义表格主体</tbody></p>
-<p><td>　　　　　 定义一个单元格</td></p>
-<p><tfoot>　　　　定义表格的表注（底部）</tfoot></p>
-<p><th>　　　　 　定义表格表头</th></p>
-<p><thead>　　 　定义表格的表头</thead></p>
-<p><tr>　　　　　 定义行</tr></p>
+<p>&lsaquo;caption&rsaquo;         定义表格标题</p>
+<p>&lsaquo;col&rsaquo; 　　　　　 定义列</p>
+<p>&lsaquo;colgroup&rsaquo; 　　 定义表格列的分组</p>
+<p>&lsaquo;table&rsaquo; 　　　   定义表格</p>
+<p>&lsaquo;tbody&rsaquo; 　　  　定义表格主体</p>
+<p>&lsaquo;td&rsaquo; 　　　　　 定义一个单元格</p>
+<p>&lsaquo;tfoot&rsaquo; 　　　　定义表格的表注（底部）</p>
+<p>&lsaquo;th&rsaquo; 　　　　 　定义表格表头</p>
+<p>&lsaquo;thead&rsaquo; 　　 　定义表格的表头</p>
+<p>&lsaquo;tr&rsaquo; 　　　　　 定义行</p>
 <ul>
-<li>通常很少使用<tbody>、<thead>、<tfoot>标签，因为浏览器对它们的支持不好。</tfoot></thead></tbody></li>
+<li>通常很少使用&lsaquo;tbody&rsaquo; 、&lsaquo;thead&rsaquo; 、&lsaquo;tfoot&rsaquo; 标签，因为浏览器对它们的支持不好。</li>
 </ul>
 <p>属性说明：</p>
 <p>属性                   值                                  说明</p>
@@ -695,7 +691,7 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 <p>colspan                列数                            合并列单元格</p>
 <p>rowspan               行数                             合并行单元格</p>
 <p>bgcolor               颜色值                            表格背景色</p>
-<p>background             图片　　　　　　　　　          　 表格背景图</p>
+<p>background             图片                                表格背景图</p>
 <p>bordercolor  　      　颜色值　                        表格边框颜色　　　　　</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>table align<span class="token operator">=</span><span class="token string">"center"</span> cellpadding<span class="token operator">=</span><span class="token string">"2"</span> cellspacing<span class="token operator">=</span><span class="token string">"3"</span> width<span class="token operator">=</span><span class="token string">"300"</span> height<span class="token operator">=</span><span class="token string">"300"</span> border<span class="token operator">=</span><span class="token string">"1"</span> <span class="token operator">></span>
        <span class="token operator">&lt;</span>tr <span class="token operator">></span>
@@ -707,21 +703,18 @@ href也可以链接到别的地址，如邮箱、电话、sms。
        <span class="token operator">&lt;</span>/tr<span class="token operator">></span>       
  <span class="token operator">&lt;</span>/table<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114502231-1486331063.png" class="[class names]">
-<h3 id="12、-内嵌框架"><a href="#12、-内嵌框架" class="headerlink" title="12、  内嵌框架"></a>12、 <iframe> 内嵌框架</iframe></h3><p>属性                            属性值              说明</p>
+<h3 id="12、-lsaquo-iframe-rsaquo-内嵌框架"><a href="#12、-lsaquo-iframe-rsaquo-内嵌框架" class="headerlink" title="12、 &lsaquo;iframe&rsaquo; 内嵌框架"></a>12、 &lsaquo;iframe&rsaquo; 内嵌框架</h3><p>属性                            属性值              说明</p>
 <p>width                           px , %                 指定框架的宽度</p>
 <p>height                         px , %                  指定框架的高度</p>
 <p>scrolling                     yes,no,auto           是否显示滚动条</p>
 <p>frameborder                  1, 0                   是否显示边框</p>
-<p>语法：<iframe src="URL" name="框架名"> </iframe></p>
-<p>如下： </p>
+<p>语法：<br>&lsaquo;iframe src=”URL” name=”框架名”&rsaquo;  &lsaquo;/iframe&rsaquo;<br>如下： </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> name<span class="token operator">=</span><span class="token string">"baidu"</span> height<span class="token operator">=</span><span class="token string">"600"</span>width<span class="token operator">=</span><span class="token string">"600"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
 </code></pre>
-<img src="https://images2015.cnblogs.com/blog/808020/201608/808020-20160805114557497-644135645.png" class="[class names]">
 <p>scrolling属性在没写明的情况下，是根据设定的框架高度来确定是否需要滚动条的。</p>
 <h3 id="13、-form-表单"><a href="#13、-form-表单" class="headerlink" title="13、 form 表单"></a>13、 form 表单</h3><p>html中表单的作用是很强大的。我们生活中经常要用到表单，如一些基本信息的填写。在网页中也是如此，我们免不了注册一些账号，此时用到的表单就比较多了。</p>
 <p>表单主要负责获取用户填写的数据，并通过浏览器向服务器传送数据。</p>
-<p>表单使用标签（<form>）定义。</form></p>
+<p>表单使用标签&lsaquo;form&rsaquo; 定义。</p>
 <p>表单的基本结构：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>form name<span class="token operator">=</span><span class="token string">"form1"</span> action<span class="token operator">=</span><span class="token string">"URL"</span> method<span class="token operator">=</span><span class="token string">"get|post"</span> target<span class="token operator">=</span><span class="token string">"文档显示方式"</span><span class="token operator">></span>
 
@@ -737,7 +730,7 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 <p>action                   表单提交地址</p>
 <p>method                表单数据提交的方式 （get:在url地址上面传送参数到服务器,post：在后台传送参数到服务器）</p>
 <p>enctype                MIME类型              </p>
-<p>target                   打开方式（blank:在一个新的窗口打开 self:在相同的框架中调入文档 top:把文档调入原来的最顶部的浏览器窗口中）<br>文本域：文本域通过<input type="text"> 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。</p>
+<p>target                   打开方式&lsaquo;blank:在一个新的窗口打开 self:在相同的框架中调入文档 top:把文档调入原来的最顶部的浏览器窗口中&rsaquo;<br>文本域：文本域通过&lsaquo;input type=”text”&rsaquo; 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>form<span class="token operator">></span>
    First name: <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> name<span class="token operator">=</span><span class="token string">"firstname"</span><span class="token operator">></span><span class="token operator">&lt;</span>br<span class="token operator">></span>
    Last name: <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> name<span class="token operator">=</span><span class="token string">"lastname"</span><span class="token operator">></span>
@@ -749,7 +742,6 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 <p>Last name: </p>
 <p>注意:表单本身并不可见。同时，在大多数浏览器中，文本域的缺省宽度是20个字符。</p>
 <p>说明：</p>
-<p>说明：</p>
 <p>属性                  说明</p>
 <p>type                input元素类型                          </p>
 <p>name              input 元素的名称</p>
@@ -759,7 +751,7 @@ href也可以链接到别的地址，如邮箱、电话、sms。
 <p>maxlength       输入字符的最大长度</p>
 <p>disabled               是否禁用</p>
 <p>密码字段</p>
-<p>密码字段通过标签<input type="password"> 来定义:</p>
+<p>密码字段通过标签&lsaquo;input type=”password”&rsaquo; 来定义:</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>form<span class="token operator">></span>
 Password: <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"password"</span> name<span class="token operator">=</span><span class="token string">"pwd"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>/form<span class="token operator">></span>
@@ -804,9 +796,8 @@ Password: <span class="token operator">&lt;</span>input type<span class="token o
 <p>rows                  　 指定文本框的高度</p>
 <p>cols         　　　 　  指定文本框的宽度</p>
 <p>例：</p>
-<textarea name="content" rows="5" cols="50"> </textarea>
-
-<p>注：此处的文本框宽高是由字符个数组成的。</p>
+<pre><code>&lt;textarea name=&quot;content&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt; &lt;/textarea&gt;
+</code></pre><p>注：此处的文本框宽高是由字符个数组成的。</p>
 <p>简单下拉框：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token string">""</span><span class="token operator">></span>
 
@@ -863,8 +854,7 @@ Password: <span class="token operator">&lt;</span>input type<span class="token o
 
  <span class="token operator">&lt;</span>/select<span class="token operator">></span>
 </code></pre>
-<datalist>
-
+<p>&lsaquo;datalist&rsaquo;</p>
 <p> 标签定义选项列表。与 input 元素配合使用该元素，来定义 input 可能的值。datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。使用 input 元素的 list 属性来绑定 datalist。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>input list<span class="token operator">=</span><span class="token string">"cars"</span> /<span class="token operator">></span>
 <span class="token operator">&lt;</span>datalist id<span class="token operator">=</span><span class="token string">"cars"</span><span class="token operator">></span>
@@ -875,19 +865,19 @@ Password: <span class="token operator">&lt;</span>input type<span class="token o
 </code></pre>
 <p> HTML5新标签</p>
 <p>标签                   描述</p>
-<p><form>              定义供用户输入的表单</form></p>
-<p><input>             定义输入域</p>
-<p><textarea>          定义文本域 (一个多行的输入控件)</textarea></p>
-<p><label>            定义了 <input> 元素的标签，一般为输入标题</label></p>
-<p><fieldset>         定义了一组相关的表单元素，并使用外框包含起来</fieldset></p>
-<p><legend>           定义了 <fieldset> 元素的标题</fieldset></legend></p>
-<p><select>           定义了下拉选项列表</select></p>
-<p><optgroup>         定义选项组</optgroup></p>
-<p><option>           定义下拉列表中的选项</option></p>
-<p><button>           定义一个点击按钮</button></p>
-<p><datalist>New      指定一个预先定义的输入控件选项列表</datalist></p>
-<p><keygen>New        定义了表单的密钥对生成器字段</p>
-<p><output>New        定义一个计算结果</output></p>
+<p>&lsaquo;form&rsaquo;              定义供用户输入的表单</p>
+<p>&lsaquo;input&rsaquo;              定义输入域</p>
+<p>&lsaquo;textarea&rsaquo;          定义文本域 (一个多行的输入控件)</p>
+<p>&lsaquo;label&rsaquo;            定义了&lsaquo;input&rsaquo;  元素的标签，一般为输入标题</p>
+<p>&lsaquo;fieldset&rsaquo;          定义了一组相关的表单元素，并使用外框包含起来</p>
+<p>&lsaquo;legend&rsaquo;           定义了 &lsaquo;fieldset&rsaquo;  元素的标题</p>
+<p>&lsaquo;select&rsaquo;            定义了下拉选项列表</p>
+<p>&lsaquo;optgroup&rsaquo;         定义选项组</p>
+<p>&lsaquo;option&rsaquo;            定义下拉列表中的选项</p>
+<p>&lsaquo;button&rsaquo;            定义一个点击按钮</p>
+<p>&lsaquo;datalist&rsaquo; New      指定一个预先定义的输入控件选项列表</p>
+<p>&lsaquo;keygen&rsaquo; New        定义了表单的密钥对生成器字段</p>
+<p>&lsaquo;output&rsaquo; New        定义一个计算结果</p>
 <p>HTML5的表单所有type类型</p>
 <p>button              定义可点击的按钮（大多与 JavaScript 使用来启动脚本）</p>
 <p>checkbox            定义复选框。</p>
@@ -912,7 +902,7 @@ Password: <span class="token operator">&lt;</span>input type<span class="token o
 <p>tel                 定义用于电话号码的文本字段。</p>
 <p>text                默认。定义单行输入字段，用户可在其中输入文本。默认是 20 个字符。</p>
 <p>url                 定义用于 URL 的文本字段。</p>
-<h3 id="14、音频"><a href="#14、音频" class="headerlink" title="14、音频"></a>14、音频</h3><p>基本格式：<audio src="" controls><audio></audio></audio></p>
+<h3 id="14、音频"><a href="#14、音频" class="headerlink" title="14、音频"></a>14、音频</h3><p>基本格式：&lsaquo;audio src=”” controls&rsaquo;&lsaquo; audio&rsaquo; </p>
 <p>不同浏览器会对音频的兼容性不同，所以最好是在属性type中指明其类型</p>
 <p>属性说明：</p>
 <p>autoplay        如果出现该属性，则视频在就绪后马上播放。</p>
@@ -929,7 +919,7 @@ Password: <span class="token operator">&lt;</span>input type<span class="token o
 <h3 id="15、视频"><a href="#15、视频" class="headerlink" title="15、视频　"></a>15、视频　</h3><p>基本格式：<video src="4.ogv" controls>　</video></p>
 <p>其属性与音频类同。</p>
 <p>作者：ly婠婠<br><a href="http://www.cnblogs.com/46ly/" target="_blank" rel="noopener">出处</a></p>
-</datalist></h1></h1>
+
             </div>
             <hr/>
 
