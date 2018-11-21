@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-21T02:50:25.834Z</updated>
+  <updated>2018-11-21T03:11:30.553Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>嵌入式学习 准备篇</title>
+    <link href="https://www.sggxxl.club/2018/11/21/qian-ru-shi-xue-xi-zhun-bei-pian/"/>
+    <id>https://www.sggxxl.club/2018/11/21/qian-ru-shi-xue-xi-zhun-bei-pian/</id>
+    <published>2018-11-21T02:57:48.000Z</published>
+    <updated>2018-11-21T03:11:30.553Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>琴瑟在御，莫不静好。</title>
     <link href="https://www.sggxxl.club/2018/11/21/qin-se-zai-yu-mo-bu-jing-hao/"/>
     <id>https://www.sggxxl.club/2018/11/21/qin-se-zai-yu-mo-bu-jing-hao/</id>
     <published>2018-11-21T02:42:56.000Z</published>
-    <updated>2018-11-21T02:50:25.834Z</updated>
+    <updated>2018-11-21T03:11:29.646Z</updated>
     
     <summary type="html">
     
@@ -49,7 +75,7 @@
     <link href="https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/"/>
     <id>https://www.sggxxl.club/2018/11/21/hexo-zhong-tian-jia-ben-di-tu-pian-he-shi-yong-wang-luo-tu-pian/</id>
     <published>2018-11-21T02:17:14.000Z</published>
-    <updated>2018-11-21T02:47:29.318Z</updated>
+    <updated>2018-11-21T03:11:32.735Z</updated>
     
     <summary type="html">
     
@@ -77,7 +103,7 @@
     <link href="https://www.sggxxl.club/2018/11/20/hello-world/"/>
     <id>https://www.sggxxl.club/2018/11/20/hello-world/</id>
     <published>2018-11-20T08:25:00.000Z</published>
-    <updated>2018-11-21T02:50:23.518Z</updated>
+    <updated>2018-11-21T03:11:28.906Z</updated>
     
     <summary type="html">
     
