@@ -450,7 +450,7 @@ a.length                                //获取当前字符串的长度
         //setInterval(&quot;alert(123);&quot;,2000);
         setInterval(&quot;f1();&quot;,2000);
 &lt;/script&gt;
-</code></pre><ul><br><li>这样就每隔2秒钟就在console上打印1</li><br><li>根据id选择器名称获得标签内容：tag=document.getElementById(“i1”);</li><br><li>获取标签内部内容：tag.innerText</li><br></ul><br>有了上面的知识，我们就可以做出一个 跑马灯 了：<br><br><code>bash
+</code></pre><ul><br><li>这样就每隔2秒钟就在console上打印1</li><br><li>根据id选择器名称获得标签内容：tag=document.getElementById(“i1”);</li><br><li>获取标签内部内容：tag.innerText</li><br></ul><br>有了上面的知识，我们就可以做出一个 跑马灯了<br><br><br><code>bash
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -476,8 +476,7 @@ a.length                                //获取当前字符串的长度
 
     &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code><br><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png" class="[class names]"><br><br>字符串的其他函数：<br><br><code>bash
-
+&lt;/html&gt;</code><br><br><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png</a><br><br>字符串的其他函数：<br><br><code>bash
 a = &#39;xiaoming&#39;;
 a.trim()                           　　//移除空白,比如a = &#39;  xiaoming    &#39;，返回的值就是xiaoming,没有了两边的空格
 a.trimLeft()
@@ -493,10 +492,10 @@ a.search(regexp)                　　　 // 从头开始匹配，返回匹配�
 obj.match(regexp)                 　　 //全局搜索，如果正则中有g表示找到全部，否则只找到第一个。
 obj.replace(regexp, replacement)     　//替换，正则中有g则替换所有，否则只替换第一个匹配项，
                                      $数字：匹配的第n个组内容；
-                                     $&amp;：当前匹配的内容；
+                                     $&amp;amp;：当前匹配的内容；
                                      $`：位于匹配子串左侧的文本；
                                      $&#39;：位于匹配子串右侧的文本
-                                     $$：直接量$符号</code><br><br>### 3.布尔类型（Boolean）<br><br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br><br>### 4.数组<br><br><br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>bash
+                                     $$：直接量$符号</code><br><br><br><h3>3.布尔类型（Boolean）<h3><br><br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br><br>### 4.数组<br><br><br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>bash
 a = [11,22,33,44]
 a.length          //数组的大小
 
@@ -1195,7 +1194,7 @@ document.getElementById(&#39;i1&#39;).onclick = function(){
 </code></pre><p> 当然菜单的点击事件也可以做一下修改：我们之前点击菜单的时候，我们因为每个菜单都设置了id,所以在onclick事件中我们传入的参数是id名称，</p>
 <p>如果不添加id,我们改成onclick=”ChangeMenu(this)”，即在onclick传入的是this参数。</p>
 <p>然后我们就不用通过document获取id标签，而是直接用var current_header = nid;</p>
-
+</h3></h3>
             </div>
             <hr>
 
