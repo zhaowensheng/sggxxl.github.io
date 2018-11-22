@@ -437,8 +437,6 @@ a.substring(起始位置，结束位置)            //截取a中的某段字符�
 a.length                                //获取当前字符串的长度
 </code></pre><p>首先先介绍：</p>
 <p><b>console.log(1);</b><br>这个是在F12调试的console页面打印东西，我们可以在自己的网页的console放一些东西，比如百度，放的是招聘信息。</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314152215859-252168384.png" class="[class names]">
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314152431138-635760298.png" class="[class names]">
 <p>下面我们用我们上面的知识写一个 跑马灯 ：</p>
 <p>先介绍一些知识：</p>
 <ul><li>定时器：setInterval(‘要执行的代码’,间隔时间)</li></ul>
@@ -452,7 +450,8 @@ a.length                                //获取当前字符串的长度
         //setInterval(&quot;alert(123);&quot;,2000);
         setInterval(&quot;f1();&quot;,2000);
 &lt;/script&gt;
-</code></pre><ul><br><li>这样就每隔2秒钟就在console上打印1</li><br><li>根据id选择器名称获得标签内容：tag=document.getElementById(“i1”);</li><br><li>获取标签内部内容：tag.innerText</li><br></ul><br>有了上面的知识，我们就可以做出一个 跑马灯 了：<br><br><code>&lt;!DOCTYPE html&gt;
+</code></pre><ul><br><li>这样就每隔2秒钟就在console上打印1</li><br><li>根据id选择器名称获得标签内容：tag=document.getElementById(“i1”);</li><br><li>获取标签内部内容：tag.innerText</li><br></ul><br>有了上面的知识，我们就可以做出一个 跑马灯 了：<br><br><code>bash
+&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -477,7 +476,9 @@ a.length                                //获取当前字符串的长度
 
     &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png" class="[class names]"><br><br>字符串的其他函数：<br><br><code>a = &#39;xiaoming&#39;;
+&lt;/html&gt;</code><br><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png" class="[class names]"><br><br>字符串的其他函数：<br><br><code>bash
+
+a = &#39;xiaoming&#39;;
 a.trim()                           　　//移除空白,比如a = &#39;  xiaoming    &#39;，返回的值就是xiaoming,没有了两边的空格
 a.trimLeft()
 a.trimRight)
@@ -495,7 +496,8 @@ obj.replace(regexp, replacement)     　//替换，正则中有g则替换所有�
                                      $&amp;：当前匹配的内容；
                                      $`：位于匹配子串左侧的文本；
                                      $&#39;：位于匹配子串右侧的文本
-                                     $$：直接量$符号</code><br>### 3.布尔类型（Boolean）<br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br>### 4.数组<br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>a = [11,22,33,44]
+                                     $$：直接量$符号</code><br><br>### 3.布尔类型（Boolean）<br><br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br>### 4.数组<br><br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>bash
+a = [11,22,33,44]
 a.length          //数组的大小
 
 a.push(ele)       //尾部追加元素 和python中的append一样
@@ -511,7 +513,7 @@ a.slice( )        //切片,和字符串的substring差不多
 a.reverse( )      //反转
 a.join(sep)       //将数组元素连接起来以构建一个字符串
 a.concat(val,..)  //连接数组
-a.sort( )         //对数组元素进行排序</code><br><br>### 5.字典<br> js中的字典和python的差不多<br><br>a={‘k1’:’v1’,’k2’:’v2’}<br><br>取值的话：a[‘k1’]=’v1’<br><br>### 6.序列化<br>在python中有json模块，把字典列表转换成字符串，再转换回来就用load()等。<br><br>在js中也有，比如我们在访问一个页面的时候，会返回数据 。返回的数据默认都是一个字符串，这个时候我们就需要对其进行处理<br><ul><br><li>JSON.stringify(obj)    序列化:把一个数组转换成字符串</li><br><li>JSON.parse(str)        反序列化：把字符串转换成数组</li><br></ul>
+a.sort( )         //对数组元素进行排序</code><br><br>### 5.字典<br><br> js中的字典和python的差不多<br><br>a={‘k1’:’v1’,’k2’:’v2’}<br><br>取值的话：a[‘k1’]=’v1’<br><br><br>### 6.序列化<br><br>在python中有json模块，把字典列表转换成字符串，再转换回来就用load()等。<br><br>在js中也有，比如我们在访问一个页面的时候，会返回数据 。返回的数据默认都是一个字符串，这个时候我们就需要对其进行处理<br><ul><br><li>JSON.stringify(obj)    序列化:把一个数组转换成字符串</li><br><li>JSON.parse(str)        反序列化：把字符串转换成数组</li><br></ul>
 
 <pre><code>li = [11,22,33,77,5]
 s=JSON.stringify(li)        //s的结果为&quot;[11,22,33,77,5]&quot;
@@ -549,18 +551,21 @@ Fri Mar 16 2018 15:20:27 GMT+0800 (中国标准时间)
 </code></pre><p>d.getXXXX获取时间</p>
 <p>d.setXXXX设置时间</p>
 <h3 id="10-js正则"><a href="#10-js正则" class="headerlink" title="10.js正则"></a>10.js正则</h3><p>在JavaScript我们定义一个字符串是rep=’aasdfasd’,但是定义正则表达式是用//即：rep=/\d+/</p>
-<ul><br><li>/…/  用于定义正则表达式</li><br><li>/…/g 表示全局匹配</li><br><li>/…/i 表示不区分大小写</li><br><li>/…/m 表示多行匹配</li><br></ul><br>JS正则匹配时本身就是支持多行，此处多行匹配只是影响正则表达式^和$，m模式也会使用^$来匹配换行的内容<br><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180319180406291-778585251.png" class="[class names]"><br><br>上述例子中，如果只用了g 那么匹配到了JavaScript之后，换行之后的java就匹配不到了；如果加了m，就能够匹配到<br><br><br><br>在JavaScript中正则匹配有两个函数<br><br>test -   判断字符串是否符合规定的zhengze,如果符合返回true,如果不符合返回false<br><br>exec -  获得匹配的数据，如果匹配到了，以数组的形式返回匹配到的数据<br><br>　　非全局模式:获取匹配结果数组，注意：第一个元素是第一个匹配的结果，后面元素是正则子匹配（正则内容分组匹配）<br><br>　　全局模式:需要反复调用exec方法，来一个一个获取结果，直到匹配获取结果为null表示获取完毕<br><br><br><br><br><br>## 四、循环<br>### for循环<br>1.循环时，循环的元素是索引<br><br><code>a = [11,22,33,44]
+<ul><br><li>/…/  用于定义正则表达式</li><br><li>/…/g 表示全局匹配</li><br><li>/…/i 表示不区分大小写</li><br><li>/…/m 表示多行匹配</li><br></ul><br>JS正则匹配时本身就是支持多行，此处多行匹配只是影响正则表达式^和$，m模式也会使用^$来匹配换行的内容<br><br><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180319180406291-778585251.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180319180406291-778585251.png</a><br><br>上述例子中，如果只用了g 那么匹配到了JavaScript之后，换行之后的java就匹配不到了；如果加了m，就能够匹配到<br><br><br><br>在JavaScript中正则匹配有两个函数<br><br>test -   判断字符串是否符合规定的zhengze,如果符合返回true,如果不符合返回false<br><br>exec -  获得匹配的数据，如果匹配到了，以数组的形式返回匹配到的数据<br><br>　　非全局模式:获取匹配结果数组，注意：第一个元素是第一个匹配的结果，后面元素是正则子匹配（正则内容分组匹配）<br><br>　　全局模式:需要反复调用exec方法，来一个一个获取结果，直到匹配获取结果为null表示获取完毕<br><br><br><br><br><br>## 四、循环<br><br>### for循环<br><br>1.循环时，循环的元素是索引<br><br><br><code>bash
+a = [11,22,33,44]
 for(var item in a){
 　　console.log(a[item]);  
 }
 a = {&#39;k1&#39;:&#39;v1&#39;,&#39;k2&#39;,&#39;v2&#39;}
 for(var item in a){
 　　console.log(a[item]);
-}</code><br><br>2.设置变量i:<br><code>a = [11,22,33,44]
+}</code><br><br>2.设置变量i:<br><br><code>bash
+a = [11,22,33,44]
 for(var i=0;i&lt;a.length;i++){
 
 }
-这种循环不适合字典的循环</code><br><br>## 五、条件语句<br><code>if(条件){
+这种循环不适合字典的循环</code><br><br>## 五、条件语句<br><br><br><code>bash
+if(条件){
 
 }else if(条件){
 
@@ -638,7 +643,7 @@ function func(){
 }
 var ret = func();
 ret()//返回的是tony,当解释器解析的时候里面的代码是不会执行的，只创建作用域。
-</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316154914788-1112621431.png" class="[class names]">
+</code></pre><p> <a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316154914788-1112621431.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316154914788-1112621431.png</a></p>
 <p>上面的代码，在没有执行的时候解释器编译的时候遇到func函数就生成一个作用域，里面又有一个inner函数，所以又生成了inner作用域，这两个是嵌套的关系，这个就是作用域链。</p>
 <p>d.JavaScript函数内部局部变量提前声明</p>
 <pre><code>function func(){
@@ -652,9 +657,9 @@ function func(){
 func();//这里输出的undefined，当解释器解析的时候会生成作用域链，同时会找出内部的局部变量，然后执行：var xxoo;但是没有赋值，那就是undefined。下面我们执行func()的时候，代码是从上到下执行的，运行console.log(xxoo)时，xxoo还没有被赋值，所以打印的就是undefined
 
 </code></pre><p> 例子：</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230139169-1075541496.png" class="[class names]">
+<p><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230139169-1075541496.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230139169-1075541496.png</a></p>
 <p>所以上面的代码的结果依次为：</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230422229-1398481031.png" class="[class names]">
+<p><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230422229-1398481031.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230422229-1398481031.png</a></p>
 <h3 id="3-JavaScript面向对象"><a href="#3-JavaScript面向对象" class="headerlink" title="3.JavaScript面向对象"></a>3.JavaScript面向对象</h3><p>对函数的一个变种：</p>
 <p>之前我们创建函数是这样的：</p>
 <pre><code>function foo(){
@@ -676,7 +681,7 @@ obj2.name
 obj2.sayName()
 </code></pre><p> a.this代指对象（python self）</p>
 <p>b.创建对象时，new函数（）</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316160815866-1566884061.png" class="[class names]">
+<p><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316160815866-1566884061.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316160815866-1566884061.png</a></p>
 <p>我们看，我们创建了obj1,2两个对象，当我们都执行.name和.sayName()函数的时候，sayName()相当于在每一个对象中都重复了定义了一次，这个就完全没有必要。所以我们应该把这个sayName()放在某一个地方，然后以后要用的时候就调用就可以了。</p>
 <p>原型：</p>
 <pre><code>function Foo(n){
@@ -694,7 +699,8 @@ obj2 = new Foo(&#39;wwe&#39;);
 </code></pre><p> 这样我们在创建两个对象的时候，也就在Foo中只封装了一个name，如果在调用sayName函数的时候，会通过obj1先找到Foo这个类，然后通过这个类找到他的原型里的sayName函数，如果有就执行。</p>
 <h2 id="七、DOM"><a href="#七、DOM" class="headerlink" title="七、DOM"></a>七、DOM</h2><p> 把html的标签转换成了文档对象，就可以依据JavaScript提供的功能找到当前页面的某些标签，从而可以改变标签的属性，内容等</p>
 <h3 id="1-找到标签"><a href="#1-找到标签" class="headerlink" title="1.找到标签"></a>1.找到标签</h3><p>直接找：</p>
-<ul><br><li>document.getElementById(‘i1’):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;通过id选择器查找</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByTagName(‘div’):&nbsp; &nbsp;通过标签名获取标签集合，获得的是多个元素，使用<span style="color: #ff0000">数组</span>组成的&nbsp;</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByClassName(‘div’):根据class选择器获取标签集合</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByName(‘user’):&nbsp; &nbsp; &nbsp; &nbsp;根据name属性获取标签集合</li><br></ul><br>间接找：<br><br>先找到一个标签，然后使用下面的方法可以找到其他的<br><br><code>parentNode          // 父节点
+<ul><br><li>document.getElementById(‘i1’):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;通过id选择器查找</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByTagName(‘div’):&nbsp; &nbsp;通过标签名获取标签集合，获得的是多个元素，使用<span style="color: #ff0000">数组</span>组成的&nbsp;</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByClassName(‘div’):根据class选择器获取标签集合</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByName(‘user’):&nbsp; &nbsp; &nbsp; &nbsp;根据name属性获取标签集合</li><br></ul><br>间接找：<br><br>先找到一个标签，然后使用下面的方法可以找到其他的<br><br><br><code>bash
+parentNode          // 父节点
 childNodes          // 所有子节点
 firstChild          // 第一个子节点
 lastChild           // 最后一个子节点
@@ -706,7 +712,7 @@ children                // 所有子标签
 firstElementChild       // 第一个子标签元素
 lastElementChild        // 最后一个子标签元素
 nextElementtSibling     // 下一个兄弟标签元素
-previousElementSibling  // 上一个兄弟标签元素</code><br><br><br>### 2.操作标签<br>文件内容操作：<br><ul><br><li>获取标签中的文本内容：标签.innerText&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 对标签内部文本进行重新赋值：标签.innerText=” “</li><br></ul>
+previousElementSibling  // 上一个兄弟标签元素</code><br><br><br>### 2.操作标签<br><br>文件内容操作：<br><ul><br><li>获取标签中的文本内容：标签.innerText&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 对标签内部文本进行重新赋值：标签.innerText=” “</li><br></ul>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -920,9 +926,9 @@ mydiv.addEventListener(&quot;click&quot;,function(){console.log(&#39;bbb&#39;)},
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p>我们看看上面的例子，当我们是false的时候，我们点击content的div，显示的是：</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" class="[class names]">
+<p><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png</a></p>
 <p>当我们的参数是true的时候，我们显示的是：</p>
-<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" class="[class names]">
+<p><a href="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" target="_blank" rel="noopener">https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png</a></p>
 <img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183401359-2114176358.png" class="[class names]">
 <h2 id="总结一下："><a href="#总结一下：" class="headerlink" title="总结一下："></a>总结一下：</h2><h3 id="1-第一种绑定方式："><a href="#1-第一种绑定方式：" class="headerlink" title="1.第一种绑定方式："></a>1.第一种绑定方式：</h3><pre><code>&lt;input id=&quot;i1&quot; type=&quot;button&quot; onclick=&quot;ClickOn(this)&quot;&gt;
 
