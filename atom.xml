@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-21T09:11:23.659Z</updated>
+  <updated>2018-11-22T02:59:27.215Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML基础知识总结</title>
+    <link href="https://www.sggxxl.club/2018/11/22/html-ji-chu-zhi-shi-zong-jie/"/>
+    <id>https://www.sggxxl.club/2018/11/22/html-ji-chu-zhi-shi-zong-jie/</id>
+    <published>2018-11-22T07:30:53.000Z</published>
+    <updated>2018-11-22T02:59:27.215Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。&lt;/p&gt;
+&lt;h2 id=&quot;一、HTML的定义&quot;&gt;&lt;a href=&quot;#一、HTML的定义&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/categories/HTML/"/>
+    
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript知识简单介绍</title>
+    <link href="https://www.sggxxl.club/2018/11/22/javascript-zhi-shi-jian-dan-jie-shao/"/>
+    <id>https://www.sggxxl.club/2018/11/22/javascript-zhi-shi-jian-dan-jie-shao/</id>
+    <published>2018-11-22T03:01:42.000Z</published>
+    <updated>2018-11-22T03:44:33.236Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JavaScript基本知识&quot;&gt;&lt;a href=&quot;#JavaScript基本知识&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://www.sggxxl.club/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.sggxxl.club/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>css基本知识</title>
@@ -40,33 +93,6 @@
     
     
       <category term="CSS" scheme="https://www.sggxxl.club/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML基础知识总结</title>
-    <link href="https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/"/>
-    <id>https://www.sggxxl.club/2018/11/21/html-ji-chu-zhi-shi-zong-jie/</id>
-    <published>2018-11-21T07:30:53.000Z</published>
-    <updated>2018-11-21T09:11:28.195Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。&lt;/p&gt;
-&lt;h2 id=&quot;一、HTML的定义&quot;&gt;&lt;a href=&quot;#一、HTML的定义&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="HTML" scheme="https://www.sggxxl.club/categories/HTML/"/>
-    
-    
-      <category term="HTML" scheme="https://www.sggxxl.club/tags/HTML/"/>
     
   </entry>
   

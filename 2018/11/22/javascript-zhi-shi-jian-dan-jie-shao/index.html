@@ -1,0 +1,1575 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript知识简单介绍, 盛哥修行录">
+    <meta name="description" content="JavaScript基本知识JavaScript是一门独立的语言，像我们学习php,python等需要安装apache,python3.6，那我们学习JavaScript只需要我们电脑有一个浏览器即可，浏览器具有js解释器
+一、如何编写首先">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JavaScript知识简单介绍 | 盛哥修行录</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">盛哥修行录</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">盛哥修行录</div>
+        <div class="logo-desc">
+            
+            世上没有绝望的处境，只有对处境绝望的人。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhaowensheng" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhaowensheng" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        JavaScript知识简单介绍
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/JavaScript/" target="_blank">
+                    <span class="chip bg-color">JavaScript</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                        JavaScript
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-22
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="JavaScript基本知识"><a href="#JavaScript基本知识" class="headerlink" title="JavaScript基本知识"></a>JavaScript基本知识</h2><p>JavaScript是一门独立的语言，像我们学习php,python等需要安装apache,python3.6，那我们学习JavaScript只需要我们电脑有一个浏览器即可，浏览器具有js解释器</p>
+<h2 id="一、如何编写"><a href="#一、如何编写" class="headerlink" title="一、如何编写"></a>一、如何编写</h2><p>首先我们看看JavaScript代码存在的形式：</p>
+<p>head中：</p>
+<pre><code>第一种
+&lt;script&gt;
+        //javascript代码
+        alert(123);
+&lt;/script&gt;
+第二种
+&lt;script type=&quot;text/javascript&quot;&gt;
+        //javascript代码
+        alert(123);
+&lt;/script&gt;
+第三种，js代码保存在文件中
+&lt;script src=&quot;js文件路径&quot;&gt;&lt;/script&gt;
+</code></pre><p> 对于js代码，如果我们把它放在head里面，那么浏览器在解析的时候就会先执行js代码，然后才会显示html中的代码，这样，如果你引入的js代码的地址有问题，那么浏览器就会相应很长时间，然后才会显示body里面的内容，这样就给用户造成了很大的影响，所以我们一般把js代码的引入放在body的最下面</p>
+<p> 最后才去加载js。</p>
+<p>js的注释：</p>
+<pre><code>单行注释：//
+多行注释：/*  代码  */
+</code></pre><h2 id="二、变量"><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h2><p>JavaScript中变量，局部变量必须一个 var 开头，如果未使用var，则默认表示声明的是全局变量。</p>
+<pre><code>&lt;script&gt;
+        //全局变量
+        name=&#39;alex&#39;
+        function func(){
+            //局部变量
+            var name=&#39;eric&#39;
+        }
+&lt;/script&gt;
+</code></pre><h2 id="三、基本的数据类型"><a href="#三、基本的数据类型" class="headerlink" title="三、基本的数据类型"></a>三、基本的数据类型</h2><p>JavaScript 中的数据类型分为原始类型和对象类型：<br>    <ul>原始类型<br>        <li>数字</li><br>        <li>字符串</li><br>        <li>布尔值</li><br>    </ul><br>    <ul>对象类型<br>        <li>数组</li><br>        <li>“字典”</li><br>        <li>…</li><br>    </ul></p>
+<h3 id="1-数字（Number）"><a href="#1-数字（Number）" class="headerlink" title="1.数字（Number）"></a>1.数字（Number）</h3><p>在js中不区分整数值和浮点数值，所有数字均用浮点数值表示</p>
+<p>转换：</p>
+<ul><br><li>parseInt(..)    将某值转换成数字，不成功则返回NaN</li><br><li>parseFloat(..) 将某值转换成浮点数，不成功则返回NaN</li><br></ul><br>特殊值：<br><ul><br><li>NaN，非数字。可使用 isNaN(num) 来判断。</li><br><li>Infinity，无穷大。可使用 isFinite(num) 来判断。</li><br></ul>
+
+<h3 id="2-字符串（String）"><a href="#2-字符串（String）" class="headerlink" title="2.字符串（String）"></a>2.字符串（String）</h3><p>字符串是由字符组成的数组，但在JavaScript中字符串是不可变的：可以访问字符串任意位置的文本</p>
+<pre><code>a=&quot;xiaoming&quot;
+a.charAt(索引位置)                       // 获得某个位置的字符
+a.substring(起始位置，结束位置)            //截取a中的某段字符，不包含结束位置的字符
+a.length                                //获取当前字符串的长度
+</code></pre><p>首先先介绍：</p>
+<p><b>console.log(1);</b><br>这个是在F12调试的console页面打印东西，我们可以在自己的网页的console放一些东西，比如百度，放的是招聘信息。</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314152215859-252168384.png" class="[class names]">
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314152431138-635760298.png" class="[class names]">
+<p>下面我们用我们上面的知识写一个 跑马灯 ：</p>
+<p>先介绍一些知识：</p>
+<ul><li>定时器：setInterval(‘要执行的代码’,间隔时间)</li></ul>
+
+<pre><code>&lt;script&gt;
+
+        function f1(){
+            console.log(1);
+        }
+        //创建一个定时器
+        //setInterval(&quot;alert(123);&quot;,2000);
+        setInterval(&quot;f1();&quot;,2000);
+&lt;/script&gt;
+</code></pre><ul><br><li>这样就每隔2秒钟就在console上打印1</li><br><li>根据id选择器名称获得标签内容：tag=document.getElementById(“i1”);</li><br><li>获取标签内部内容：tag.innerText</li><br></ul><br>有了上面的知识，我们就可以做出一个 跑马灯 了：<br><br><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;i1&quot;&gt;JavaScript学习实例&lt;/div&gt;
+    &lt;script&gt;
+        function func() {
+            //根据id获得指定的标签内容
+            var tag = document.getElementById(&quot;i1&quot;);
+            //获取标签内部的内容
+            var content = tag.innerText;
+            var f = content.charAt(0);
+            var l = content.substring(1,content.length);
+
+            var new_string = l+f;
+
+            tag.innerText = new_string;
+        }
+        setInterval(&quot;func()&quot;,1000);
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314154118446-1041447125.png" class="[class names]"><br><br>字符串的其他函数：<br><br><code>a = &#39;xiaoming&#39;;
+a.trim()                           　　//移除空白,比如a = &#39;  xiaoming    &#39;，返回的值就是xiaoming,没有了两边的空格
+a.trimLeft()
+a.trimRight)
+a.concat(value, ...)               　　//拼接,比如：a.concat(&#39;xixi&#39;);  返回的a的值就为xiaomingxixi  
+a.indexOf(substring,start)        　　 //子序列位置，比如a.indexOf(&#39;ao&#39;); 返回的就是 2
+a.lastIndexOf(substring,start)    　　 //子序列位置，倒着找
+a.slice(start, end)              　　  //切片
+a.toLowerCase()                 　　   //大写
+a.toUpperCase()                　　    //小写
+a.split(delimiter, limit)       　　   //分割 比如：a=&quot;xixixixi&quot;; a.split(&#39;i&#39;);返回的就是[&quot;x&quot;,&quot;x&quot;,&quot;x&quot;,&quot;&quot;]    a.split(&#39;i&#39;,2);返回的就是[&quot;x&quot;,&quot;x&quot;]
+a.search(regexp)                　　　 // 从头开始匹配，返回匹配成功的第一个位置(g无效)
+obj.match(regexp)                 　　 //全局搜索，如果正则中有g表示找到全部，否则只找到第一个。
+obj.replace(regexp, replacement)     　//替换，正则中有g则替换所有，否则只替换第一个匹配项，
+                                     $数字：匹配的第n个组内容；
+                                     $&amp;：当前匹配的内容；
+                                     $`：位于匹配子串左侧的文本；
+                                     $&#39;：位于匹配子串右侧的文本
+                                     $$：直接量$符号</code><br>### 3.布尔类型（Boolean）<br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br>### 4.数组<br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>a = [11,22,33,44]
+a.length          //数组的大小
+
+a.push(ele)       //尾部追加元素 和python中的append一样
+a.pop()           //尾部获取一个元素
+a.unshift(ele)    //头部插入元素
+a.shift()         //头部移除元素
+a.splice(start, deleteCount, value, ...)  //插入、删除或替换数组的元素，起始位置，删除个数，要插入的值
+　　比如：a = [11,22,33,44];
+　　　　　a.splice(1,1,99);  那此时的a中就有[11,99,33,44]
+　　　　　a.splice(1,0,909); 那此时的a中就有[11,909,99,33,44]
+　　　　　a.splice(1,1);     那此时的a中就有[11,99,33,44]               
+a.slice( )        //切片,和字符串的substring差不多
+a.reverse( )      //反转
+a.join(sep)       //将数组元素连接起来以构建一个字符串
+a.concat(val,..)  //连接数组
+a.sort( )         //对数组元素进行排序</code><br><br>### 5.字典<br> js中的字典和python的差不多<br><br>a={‘k1’:’v1’,’k2’:’v2’}<br><br>取值的话：a[‘k1’]=’v1’<br><br>### 6.序列化<br>在python中有json模块，把字典列表转换成字符串，再转换回来就用load()等。<br><br>在js中也有，比如我们在访问一个页面的时候，会返回数据 。返回的数据默认都是一个字符串，这个时候我们就需要对其进行处理<br><ul><br><li>JSON.stringify(obj)    序列化:把一个数组转换成字符串</li><br><li>JSON.parse(str)        反序列化：把字符串转换成数组</li><br></ul>
+
+<pre><code>li = [11,22,33,77,5]
+s=JSON.stringify(li)        //s的结果为&quot;[11,22,33,77,5]&quot;
+
+new_li = JSON.parse(s)  //new_li的值为[11, 22, 33, 77, 5]
+</code></pre><h3 id="7-转义"><a href="#7-转义" class="headerlink" title="7.转义"></a>7.转义</h3><p>场景：我在地址框中输入这个中文搜索，然后我把这个地址复制下来的时候就变成这样子：<a href="https://www.baidu.com/s?wd=%E5%B0%8F%E6%98%8E，会把我们的中文转义为其他的" target="_blank" rel="noopener">https://www.baidu.com/s?wd=%E5%B0%8F%E6%98%8E，会把我们的中文转义为其他的</a></p>
+
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316011243975-82675763.png" class="[class names]">
+<ul><br><li>decodeURI( )                   URl中未转义的字符</li><br><li>decodeURIComponent( )   URI组件中的未转义字符</li><br><li>encodeURI( )                   URI中的转义字符</li><br><li>encodeURIComponent( )   转义URI组件中的字符</li><br><li>escape( )                         对字符串转义</li><br><li>unescape( )                     给转义字符串解码</li><br><li>URIError                         由URl的编码和解码方法抛出</li><br></ul>
+
+<pre><code>url = &quot;https://www.baidu.com/s?wd=小明&quot;
+
+newurl=encodeURI(url)
+    &quot;https://www.baidu.com/s?wd=%E5%B0%8F%E6%98%8E&quot;
+decodeURI(newurl)
+    &quot;https://www.baidu.com/s?wd=小明&quot;
+newUrl = encodeURIComponent(url)
+　　&quot;https%3A%2F%2Fwww.baidu.com%2Fs%3Fwd%3D%E5%B0%8F%E6%98%8E&quot;    
+</code></pre><h3 id="8-eval"><a href="#8-eval" class="headerlink" title="8.eval"></a>8.eval</h3><p> 在python中有eval()函数和exec()函数</p>
+<p>eval()只能执行表达式，并且可以得到返回值：var = eval(“1+1”),即使表达式是一个字符串，我们也能够得到运算结果。</p>
+<p>exec()可以直接执行代码，但是没有返回值</p>
+<p>在JavaScript中的eval是上面两个函数的合集，既可以执行表达式，也可以执行代码</p>
+<h3 id="9-时间"><a href="#9-时间" class="headerlink" title="9.时间"></a>9.时间</h3><p>在python中，有time模块来获取当前时间，在JavaScript中需要有一个Date对象，比如</p>
+<p>var d = new Date() </p>
+<pre><code>var d =  new Date()
+    d的值：Fri Mar 16 2018 15:16:27 GMT+0800 (中国标准时间)
+d.getMinutes()
+    得到分钟:16
+n = d.getMinutes()+4
+    可以加上4分钟：20
+d.setMinutes(n)
+    设置时间：1521184827952
+d
+Fri Mar 16 2018 15:20:27 GMT+0800 (中国标准时间)
+</code></pre><p>d.getXXXX获取时间</p>
+<p>d.setXXXX设置时间</p>
+<h3 id="10-js正则"><a href="#10-js正则" class="headerlink" title="10.js正则"></a>10.js正则</h3><p>在JavaScript我们定义一个字符串是rep=’aasdfasd’,但是定义正则表达式是用//即：rep=/\d+/</p>
+<ul><br><li>/…/  用于定义正则表达式</li><br><li>/…/g 表示全局匹配</li><br><li>/…/i 表示不区分大小写</li><br><li>/…/m 表示多行匹配</li><br></ul><br>JS正则匹配时本身就是支持多行，此处多行匹配只是影响正则表达式^和$，m模式也会使用^$来匹配换行的内容<br><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180319180406291-778585251.png" class="[class names]"><br><br>上述例子中，如果只用了g 那么匹配到了JavaScript之后，换行之后的java就匹配不到了；如果加了m，就能够匹配到<br><br><br><br>在JavaScript中正则匹配有两个函数<br><br>test -   判断字符串是否符合规定的zhengze,如果符合返回true,如果不符合返回false<br><br>exec -  获得匹配的数据，如果匹配到了，以数组的形式返回匹配到的数据<br><br>　　非全局模式:获取匹配结果数组，注意：第一个元素是第一个匹配的结果，后面元素是正则子匹配（正则内容分组匹配）<br><br>　　全局模式:需要反复调用exec方法，来一个一个获取结果，直到匹配获取结果为null表示获取完毕<br><br><br><br><br><br>## 四、循环<br>### for循环<br>1.循环时，循环的元素是索引<br><br><code>a = [11,22,33,44]
+for(var item in a){
+　　console.log(a[item]);  
+}
+a = {&#39;k1&#39;:&#39;v1&#39;,&#39;k2&#39;,&#39;v2&#39;}
+for(var item in a){
+　　console.log(a[item]);
+}</code><br><br>2.设置变量i:<br><code>a = [11,22,33,44]
+for(var i=0;i&lt;a.length;i++){
+
+}
+这种循环不适合字典的循环</code><br><br>## 五、条件语句<br><code>if(条件){
+
+}else if(条件){
+
+}else{
+
+}</code><br><br><br>判断条件：<br><ul><br><li>==      比较值相等</li><br><li>!=       不等于</li><br><li>===   比较值和类型相等</li><br><li>!===  不等于</li><br><li>||        或         python:or</li><br><li>&amp;&amp;      且　　 python:and</li><br></ul>
+
+<h2 id="六、函数"><a href="#六、函数" class="headerlink" title="六、函数"></a>六、函数</h2><h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><p>JavaScript中函数基本上可以分为一下三类：</p>
+<p>普通函数：</p>
+<pre><code>function func(){
+  alert(13);  
+}
+</code></pre><p>匿名函数：</p>
+<pre><code>//我们的定时器，我们可以写成：
+setInterval(&quot;func&quot;,5000);
+
+//但是我们也可以写成匿名函数的样式：这里面的函数没有名字
+setInterval(function(){
+    console.log(123);
+},5000);
+
+//下面的也是一个匿名函数
+var func = function(arg){
+     return &quot;tony&quot;;
+}
+</code></pre><p>自执行函数：创建函数并且自动执行，两个（），一个（）里面写函数，一个（）中写需要执行这个函数所传入的参数：</p>
+<pre><code>(function(arg){
+    console.log(arg);
+})(1)
+</code></pre><h3 id="2-作用域"><a href="#2-作用域" class="headerlink" title="2.作用域"></a>2.作用域</h3><p>其他的语言：以代码块作为作用域：</p>
+<pre><code>public void Func(){
+      if(1==1){
+            string name=&quot;java&quot;;          
+      }            
+      console.writeline(name);
+}
+Func()
+</code></pre><p>上述代码在运行的时候会报错，name这个变量只在if这个代码块中生效，如果出了这个代码块在调用就会报错</p>
+<p>python：是以函数作为作用域的</p>
+<pre><code>def func(){
+      if 1==1:
+           name=&#39;xiaoming&#39;
+      print(name)   
+}
+func()//在python中这个代码是可以运行的&lt;br&gt;print(name)//在python中这个代码是不可以运行的
+</code></pre><p>JavaScript：<br>a.是以函数作为作用域的</p>
+<pre><code>function func(){
+     if(1==1){
+           var name=&quot;xiaoming&quot;;   
+     }
+     console.log(name);  
+}
+func();//这个就可以执行
+</code></pre><p>b.函数的作用域在函数未被调用之前，已经被创建　　</p>
+<p>c.函数的作用域存在作用域链，并且也是在被调用之前创建的</p>
+<pre><code>xo = &#39;xiaoming&#39;
+function func(){
+　　var xo=&#39;eric&#39;
+    function inner(){
+    　　console.log(xo)
+　　}
+　　return inner;
+}
+var ret = func();//执行这个ret是inner的代码块:inner(){console.log(xo)}
+ret()//返回的是eric
+
+xo = &#39;xiaoming&#39;
+function func(){
+　　var xo=&#39;eric&#39;
+    function inner(){
+    　　console.log(xo)
+　　}
+　　var xo = &#39;tony&#39;;
+　　return inner;
+}
+var ret = func();
+ret()//返回的是tony,当解释器解析的时候里面的代码是不会执行的，只创建作用域。
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316154914788-1112621431.png" class="[class names]">
+<p>上面的代码，在没有执行的时候解释器编译的时候遇到func函数就生成一个作用域，里面又有一个inner函数，所以又生成了inner作用域，这两个是嵌套的关系，这个就是作用域链。</p>
+<p>d.JavaScript函数内部局部变量提前声明</p>
+<pre><code>function func(){
+    console.log(xxoo);
+}
+func();//程序直接报错
+function func(){
+    console.log(xxoo);
+    var xxoo = &#39;xiaoming&#39;;  
+}
+func();//这里输出的undefined，当解释器解析的时候会生成作用域链，同时会找出内部的局部变量，然后执行：var xxoo;但是没有赋值，那就是undefined。下面我们执行func()的时候，代码是从上到下执行的，运行console.log(xxoo)时，xxoo还没有被赋值，所以打印的就是undefined
+
+</code></pre><p> 例子：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230139169-1075541496.png" class="[class names]">
+<p>所以上面的代码的结果依次为：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316230422229-1398481031.png" class="[class names]">
+<h3 id="3-JavaScript面向对象"><a href="#3-JavaScript面向对象" class="headerlink" title="3.JavaScript面向对象"></a>3.JavaScript面向对象</h3><p>对函数的一个变种：</p>
+<p>之前我们创建函数是这样的：</p>
+<pre><code>function foo(){
+  var xo=&#39;xiaoming&#39;;  
+}
+foo();
+</code></pre><p>那下面我们创建函数的时候用下面的方法：</p>
+<pre><code>function Foo(n){
+     this.name=n;//这个this其实就是python中的self
+　　　this.sayName = function(){
+　　　　　console.log(this.name);
+　　　}
+}
+var obj1 = new Foo(&#39;we&#39;);//这样obj就创建了一个对象，对象中封装了一个name
+obj1.name
+obj1.sayName()
+var obj2 = new Foo(&#39;we&#39;);//这样obj就创建了一个对象，对象中封装了一个name
+obj2.name
+obj2.sayName()
+</code></pre><p> a.this代指对象（python self）</p>
+<p>b.创建对象时，new函数（）</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316160815866-1566884061.png" class="[class names]">
+<p>我们看，我们创建了obj1,2两个对象，当我们都执行.name和.sayName()函数的时候，sayName()相当于在每一个对象中都重复了定义了一次，这个就完全没有必要。所以我们应该把这个sayName()放在某一个地方，然后以后要用的时候就调用就可以了。</p>
+<p>原型：</p>
+<pre><code>function Foo(n){
+    this.name=n;
+}
+#Foo的原型
+Foo.prototype={
+　　&#39;sayName&#39;:function(){
+　　　　console.log(this.name);　　
+　　}
+}
+obj1 = new Foo(&#39;we&#39;);
+obj1.sayName()
+obj2 = new Foo(&#39;wwe&#39;);
+</code></pre><p> 这样我们在创建两个对象的时候，也就在Foo中只封装了一个name，如果在调用sayName函数的时候，会通过obj1先找到Foo这个类，然后通过这个类找到他的原型里的sayName函数，如果有就执行。</p>
+<h2 id="七、DOM"><a href="#七、DOM" class="headerlink" title="七、DOM"></a>七、DOM</h2><p> 把html的标签转换成了文档对象，就可以依据JavaScript提供的功能找到当前页面的某些标签，从而可以改变标签的属性，内容等</p>
+<h3 id="1-找到标签"><a href="#1-找到标签" class="headerlink" title="1.找到标签"></a>1.找到标签</h3><p>直接找：</p>
+<ul><br><li>document.getElementById(‘i1’):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;通过id选择器查找</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByTagName(‘div’):&nbsp; &nbsp;通过标签名获取标签集合，获得的是多个元素，使用<span style="color: #ff0000">数组</span>组成的&nbsp;</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByClassName(‘div’):根据class选择器获取标签集合</li><br><li>document.get<span style="color: #ff0000">Elements</span>ByName(‘user’):&nbsp; &nbsp; &nbsp; &nbsp;根据name属性获取标签集合</li><br></ul><br>间接找：<br><br>先找到一个标签，然后使用下面的方法可以找到其他的<br><br><code>parentNode          // 父节点
+childNodes          // 所有子节点
+firstChild          // 第一个子节点
+lastChild           // 最后一个子节点
+nextSibling         // 下一个兄弟节点
+previousSibling     // 上一个兄弟节点
+
+parentElement           // 父节点标签元素
+children                // 所有子标签
+firstElementChild       // 第一个子标签元素
+lastElementChild        // 最后一个子标签元素
+nextElementtSibling     // 下一个兄弟标签元素
+previousElementSibling  // 上一个兄弟标签元素</code><br><br><br>### 2.操作标签<br>文件内容操作：<br><ul><br><li>获取标签中的文本内容：标签.innerText&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 对标签内部文本进行重新赋值：标签.innerText=” “</li><br></ul>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;i1&quot;&gt;
+        我是i1
+    &lt;/div&gt;
+    &lt;a&gt;asdf&lt;/a&gt;
+    &lt;a&gt;5+9&lt;/a&gt;
+    &lt;a&gt;greg&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>现在我有div,3个a标签：在console上进行调试</p>
+<pre><code>document.getElementById(&#39;i1&#39;)                //获得id为i1的标签内容
+　　&lt;div id=​&quot;i1&quot;&gt;​
+    　　    我是i1
+   　　 ​&lt;/div&gt;​
+document.getElementById(&#39;i1&#39;).innerText;    //获取i1标签中的文字
+　　&quot;我是i1&quot;
+document.getElementById(&#39;i1&#39;).innerText = &#39;新内容&#39;;   //修改i1标签中的文字
+　　&quot;新内容&quot;
+document.getElementsByTagName(&#39;a&#39;)                   //通过标签名a来获得标签集合
+　　HTMLCollection(3) [a, a, a]0: a1: a2: alength: 3__proto__: HTMLCollection
+
+document.getElementsByTagName(&#39;a&#39;)[1]                //想要获得标签集合中的某一个，就要像去数组元素一样的去取
+　　&lt;a&gt;​5+9​&lt;/a&gt;​
+document.getElementsByTagName(&#39;a&#39;)[1].innerText = 666;
+　　666
+tags=document.getElementsByTagName(&#39;a&#39;);
+　　HTMLCollection(3) [a, a, a]
+for(var i=0;i&lt;tags.length;i++){tags[i].innerText=777;}  //用循环把超链接中的文字都修改了
+　　777
+</code></pre><ul><br><li>innerHTML&nbsp; :获取全部内容包括HTML</li><br><li>value :<br><ul><br><li>对input操作，获取当前标签中的值</li><br><li>对select操作，获取当前已经选中的value值（selectedIndex以数组的形式改变选中的选项）</li><br><li>对textarea操作，获取文本框的值</li><br></ul><br></li><br></ul><br><h4>样式操作：</h4><br><ul><br><li>className<br><ul><br><li>tag.classname= ‘’ 直接做整体操作，如果标签有class选择器就修改class选择器的名称，如果没有就添加class选择器</li><br><li>tag.classList.add(‘样式名’) 一个选择器可以有多个名字，所以就有了classList，使用add方法就可以添加样式名</li><br><li>tag.classList.remove(‘样式名’)删除一个样式名</li><br></ul><br></li><br><li>style</li><br></ul>
+
+<pre><code>&lt;div id=&#39;i1&#39; class=&quot;c1 c2&quot; style=&quot;fon-size:16px;background-color:red;&quot;&gt;&lt;/div&gt;
+
+//我们用js来为div加样式的话就可以这样写：
+var obj = document.getElementById(&#39;i1&#39;);
+obj.style.fontSize=&#39;16px&#39;;
+obj.style.backgroundColor = &#39;red&#39;;
+obj.style.color=&#39;red&#39; 
+</code></pre><p></p><h4>属性操作：</h4><p></p>
+<ul><br><li>setAttribute(‘属性名’，‘值’)</li><br><li>removeAttribute(‘属性名’)</li><br><li>attributes:获取所有属性</li><br></ul>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; onclick=&quot;AddEle();&quot; value=&quot;+&quot;/&gt;
+    &lt;input type=&quot;button&quot; onclick=&quot;AddEle2();&quot; value=&quot;+&quot;/&gt;
+    &lt;div id=&quot;i1&quot;&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; /&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+    &lt;script&gt;
+　　　　　//第一种创建标签的方式，以字符串的方式
+        function AddEle(){
+            var tag = &quot;&lt;p&gt;&lt;input type=&#39;text&#39;/&gt;&lt;/p&gt;&quot;;
+　　　　　　　//注意：第一个参数只能是&#39;beforeBegin&#39;、 &#39;afterBegin&#39;、 &#39;beforeEnd&#39;、 &#39;afterEnd&#39;
+　　　　　　　document.getElementById(&#39;i1&#39;).insertAdjacentHTML(&quot;beforeEnd&quot;,tag); }
+function AddEle2() {
+            var tag=document.createElement(&#39;input&#39;);
+            tag.setAttribute(&#39;type&#39;,&#39;text&#39;);
+            tag.style.fontSize=&#39;16px&#39;;
+            tag.style.color=&#39;red&#39;;
+
+            var p =document.createElement(&#39;p&#39;);
+            p.appendChild(tag);
+            document.getElementById(&#39;i1&#39;).appendChild(p);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>提交表单<br>任何标签都可以通过DOM提交表单</p>
+<p>document.getElementById(‘form表单的选择器名称’).submit();</p>
+<pre><code>&lt;form id=&quot;f1&quot; action=&quot;http://www.baidu.com&quot;&gt;
+        &lt;input type=&quot;text&quot;/&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;
+        &lt;a onclick=&quot;submitForm();&quot;&gt;提交&lt;/a&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function submitForm(){
+            document.getElementById(&#39;f1&#39;).submit();
+        }
+    &lt;/script&gt;
+</code></pre><p></p><h4>其他操作</h4><p></p>
+<ul><br><li>console.log()&nbsp; 输出框</li><br><li>alert()&nbsp; 弹出框</li><br><li>confirm(信息)&nbsp; &nbsp;如果点击确定返回true,点击取消返回false</li><br><li>location.href&nbsp; 获取当前url</li><br><li>location.href = ‘<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">www.baidu.com&#39;</a>&nbsp; 重定向，跳转</li><br><li>location.reload()&nbsp; 重新加载，页面刷新</li><br><li>setInterval(‘func(){}’,second)&nbsp; 定时器&nbsp; ,var obj = setInterval(function(){},500);&nbsp; 定时器一直执行</li><br><li>clearInterval(obj)&nbsp; 清除定时器</li><br><li>setTimeout();&nbsp; 定时器，只执行一次。setTimeout(function(){},5000)；等5s之后才执行function</li><br><li>clearTimeout();&nbsp; 清楚setTimeout的定时器　</li><br></ul>
+
+<h3 id="3-事件"><a href="#3-事件" class="headerlink" title="3.事件"></a>3.事件</h3><p>先看一道面试题：</p>
+<p>　　行为 样式 结构     相分离的页面？</p>
+<p>　　js     css    html    相互独立 </p>
+<p>一般我们写HTML是下面这个样子的：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+
+&lt;/head&gt;
+ &lt;style&gt;
+        #test{
+            background-color: red;
+            width:300px;
+            height:400px;
+        }
+ &lt;/style&gt;
+&lt;body&gt;
+    &lt;div id=&quot;test&quot; onclick=&quot;t1();&quot;&gt;asdf&lt;/div&gt;
+    &lt;script&gt;
+        function t1(){
+            console.log(&quot;asdf&quot;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>但是这个没有做到相分离，我们在html中还是有onclick，所以是不符合要求的，那我们可以稍微的改一下：</p>
+<pre><code> &lt;style&gt;
+        #test{background-color: red;width:300px;height:400px;}
+ &lt;/style&gt;
+&lt;body&gt;
+    &lt;div id=&quot;test&quot;&gt;asdf&lt;/div&gt;
+    &lt;script&gt;
+        var mydiv = document.getElementById(&#39;test&#39;);
+        mydiv.onclick = function(){
+            console.log(&quot;asdfa&quot;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre><p>这样我们就把css,html,js分离了出来。</p>
+<p>在看一个例子，一个表格，鼠标移动到哪行背景颜色变红色，移出来的时候恢复：</p>
+<pre><code> &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table border=&quot;1&quot; width=&quot;300px;&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;script&gt;
+        var myTrs = document.getElementsByTagName(&quot;tr&quot;);
+        var len = myTrs.length;
+        for(var i=0;i&lt;len;i++){
+            myTrs[i].onmousemove = function(){
+                //this,谁调用这个函数，this就指向谁
+                this.style.backgroundColor=&#39;red&#39;;
+            }
+            myTrs[i].onmouseout = function(){
+                this.style.backgroundColor=&#39;&#39;;
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>需要注意的是，里面有一个this,表示的是当前触发事件的标签，而不能写成myTrs[i]，原因是：作用域的问题。在解析的时候，function里面的代码并不会去执行，在解析的时候循环就已经执行好了，相当于我们在看到的时候 i 已经等于3，那就获取不到想要的行了</p>
+<p>再来看一道面试题：</p>
+<p>　　div已经绑定了一个click事件，点击之后能够console出aaa，能不能再绑定一个click事件，在打印出aaa同时再打印出bbb?</p>
+<pre><code>mydiv.addEventListener(&quot;click&quot;,function(){console.log(&#39;aaa&#39;)},false);
+mydiv.addEventListener(&quot;click&quot;,function(){console.log(&#39;bbb&#39;)},false);
+</code></pre><p>用到的是addEventListener，我们看一下第三个参数的含义：事件之捕捉和冒泡：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    #main{
+        width:300px;
+        height:400px;
+        background-color: pink;
+    }
+    #content{
+        width:150px;
+        height:200px;
+        background-color: green;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div id=&quot;main&quot;&gt;
+        &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var mymain = document.getElementById(&#39;main&#39;);
+        var mycontent = document.getElementById(&#39;content&#39;);
+        mymain.addEventListener(&quot;click&quot;,function(){console.log(&quot;main&quot;)},false);
+        mycontent.addEventListener(&quot;click&quot;,function(){console.log(&quot;content&quot;)},false);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>我们看看上面的例子，当我们是false的时候，我们点击content的div，显示的是：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" class="[class names]">
+<p>当我们的参数是true的时候，我们显示的是：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183211859-1316554001.png" class="[class names]">
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316183401359-2114176358.png" class="[class names]">
+<h2 id="总结一下："><a href="#总结一下：" class="headerlink" title="总结一下："></a>总结一下：</h2><h3 id="1-第一种绑定方式："><a href="#1-第一种绑定方式：" class="headerlink" title="1.第一种绑定方式："></a>1.第一种绑定方式：</h3><pre><code>&lt;input id=&quot;i1&quot; type=&quot;button&quot; onclick=&quot;ClickOn(this)&quot;&gt;
+
+function ClickOn(self){
+  //self当前点击的标签  
+}
+</code></pre><h3 id="2-第二种绑定方式："><a href="#2-第二种绑定方式：" class="headerlink" title="2.第二种绑定方式："></a>2.第二种绑定方式：</h3><pre><code>&lt;input id=&#39;i1&#39; type=&quot;button&quot;&gt;
+document.getElementById(&#39;i1&#39;).onclick = function(){
+  //this代指当前点击的标签  
+}
+</code></pre><ul><br><li>onmousemove：鼠标移入</li><br><li>onmouseout：鼠标移出</li><br><li>onclick:点击</li><br><li>onfocus:获得焦点</li><br><li>onblur：失去焦点</li><br><li>&nbsp;……</li><br></ul>
+
+
+<p>下面我们来写一个模态对话框的实例：</p>
+<pre><code> &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .hide{
+            display: none;
+        }
+        .c1{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: black;
+            opacity: 0.6;
+            z-index:9;
+        }
+        .c2{
+            width:500px;
+            height:300px;
+            background-color: white;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-top:-150px;
+            margin-left:-250px;
+            z-index:10;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin:0;&quot;&gt;
+    &lt;div&gt;
+        &lt;table style=&quot;border:1px solid black;background-color:pink;text-align: center&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;主机名&lt;/th&gt;
+                    &lt;th&gt;端口&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;192.168.123.1&lt;/td&gt;
+                    &lt;td&gt;22&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;192.168.123.2&lt;/td&gt;
+                    &lt;td&gt;23&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;192.168.123.3&lt;/td&gt;
+                    &lt;td&gt;24&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;input type=&quot;button&quot; value=&quot;添加&quot; onclick=&quot;ShowModel();&quot;/&gt;
+    &lt;/div&gt;
+
+    &lt;!--遮罩层开始--&gt;
+    &lt;div id=&quot;i1&quot; class=&quot;c1 hide&quot;&gt;&lt;/div&gt;
+    &lt;!--遮罩层结束--&gt;
+
+    &lt;!--模态框开始--&gt;
+    &lt;div id=&quot;i2&quot; class=&quot;c2 hide&quot;&gt;
+        &lt;p&gt;&lt;input id=&quot;p1&quot; type=&quot;text&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;input id=&quot;p2&quot; type=&quot;text&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;
+            &lt;input type=&quot;button&quot; value=&quot;取消&quot; onclick=&quot;CancelModel();&quot; /&gt;
+            &lt;input type=&quot;button&quot; value=&quot;确定&quot; onclick=&quot;AcceptData();&quot;/&gt;
+        &lt;/p&gt;
+
+    &lt;/div&gt;
+    &lt;!--模态框结束--&gt;
+    &lt;script&gt;
+        function ShowModel() {
+            document.getElementById(&#39;i1&#39;).classList.remove(&#39;hide&#39;);
+            document.getElementById(&#39;i2&#39;).classList.remove(&#39;hide&#39;);
+        }
+        function CancelModel(){
+            document.getElementById(&#39;i1&#39;).classList.add(&#39;hide&#39;);
+            document.getElementById(&#39;i2&#39;).classList.add(&#39;hide&#39;);
+        }
+        function AcceptData(){
+            var p1 = document.getElementById(&#39;p1&#39;).value;
+            var p2 = document.getElementById(&#39;p2&#39;).value;
+
+            if(p1&amp;&amp;p2){
+                document.getElementById(&#39;i1&#39;).classList.add(&#39;hide&#39;);
+                document.getElementById(&#39;i2&#39;).classList.add(&#39;hide&#39;);
+            }else{
+                alert(&quot;请将数据填写完整&quot;);
+            }
+
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>我们还可以对表格实现全选反选和取消：</p>
+<pre><code> &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin:0;&quot;&gt;
+    &lt;div&gt;
+        &lt;table style=&quot;border:1px solid black;background-color:pink;text-align: center&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;请选择&lt;/th&gt;
+                    &lt;th&gt;主机名&lt;/th&gt;
+                    &lt;th&gt;端口&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody id=&quot;tb&quot;&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+                    &lt;td&gt;192.168.123.1&lt;/td&gt;
+                    &lt;td&gt;22&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+                    &lt;td&gt;192.168.123.2&lt;/td&gt;
+                    &lt;td&gt;23&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+                    &lt;td&gt;192.168.123.3&lt;/td&gt;
+                    &lt;td&gt;24&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;input type=&quot;button&quot; value=&quot;添加&quot; onclick=&quot;ShowModel();&quot;/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;全选&quot; onclick=&quot;AllChoose();&quot;/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;取消&quot; onclick=&quot;NoneChoose();&quot;/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;反选&quot; onclick=&quot;ReserveChoose();&quot;/&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        function AllChoose(){
+            var tbody = document.getElementById(&#39;tb&#39;);
+            //获取所有的tr
+            var tr_list = tbody.children;
+            for (var i=0;i&lt;tr_list.length;i++){
+                //循环所有的tr,current_tr
+                var current_tr = tr_list[i];
+                var checkbox = current_tr.children[0].children[0];
+                checkbox.checked=true;
+            }
+        }
+        function NoneChoose(){
+            var tbody = document.getElementById(&#39;tb&#39;);
+            //获取所有的tr
+            var tr_list = tbody.children;
+            for (var i=0;i&lt;tr_list.length;i++){
+                //循环所有的tr,current_tr
+                var current_tr = tr_list[i];
+                var checkbox = current_tr.children[0].children[0];
+                checkbox.checked=false;
+            }
+        }
+        function ReserveChoose(){
+            var tbody = document.getElementById(&#39;tb&#39;);
+            //获取所有的tr
+            var tr_list = tbody.children;
+            for (var i=0;i&lt;tr_list.length;i++){
+                //循环所有的tr,current_tr
+                var current_tr = tr_list[i];
+                var checkbox = current_tr.children[0].children[0];
+                checkbox.checked=!checkbox.checked;
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>这里的checkbox:</p>
+<p>　　获取值：checkbox对象.checked                                 设置值：checkbox对象.checked=true　　　　</p>
+<p>后台管理左侧菜单：实现点击菜单一，其他菜单都收起来。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .hide{
+            display: none;
+        }
+        .item .header{
+            height:35px;
+            background-color: #2459a2;
+            color:white;
+            line-height: 35px;
+        }
+        .item .header:hover{
+            background-color: blue;
+            color:orange;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;height:48px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;width:300px&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;div id=&quot;i1&quot; class=&quot;header&quot; onclick=&quot;ChangeMenu(&#39;i1&#39;);&quot;&gt;菜单一&lt;/div&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;div&gt;内容一&lt;/div&gt;
+                &lt;div&gt;内容二&lt;/div&gt;
+                &lt;div&gt;内容三&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;div id=&quot;i2&quot; class=&quot;header&quot; onclick=&quot;ChangeMenu(&#39;i2&#39;);&quot;&gt;菜单二&lt;/div&gt;
+            &lt;div class=&quot;content hide&quot;&gt;
+                &lt;div&gt;内容一&lt;/div&gt;
+                &lt;div&gt;内容二&lt;/div&gt;
+                &lt;div&gt;内容三&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;div id=&quot;i3&quot; class=&quot;header&quot; onclick=&quot;ChangeMenu(&#39;i3&#39;);&quot;&gt;菜单三&lt;/div&gt;
+            &lt;div class=&quot;content hide&quot;&gt;
+                &lt;div&gt;内容一&lt;/div&gt;
+                &lt;div&gt;内容二&lt;/div&gt;
+                &lt;div&gt;内容三&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;
+            &lt;div id=&quot;i4&quot; class=&quot;header&quot; onclick=&quot;ChangeMenu(&#39;i4&#39;);&quot;&gt;菜单四&lt;/div&gt;
+            &lt;div class=&quot;content hide&quot;&gt;
+                &lt;div&gt;内容一&lt;/div&gt;
+                &lt;div&gt;内容二&lt;/div&gt;
+                &lt;div&gt;内容三&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        function ChangeMenu(nid){
+            var current_header = document.getElementById(nid);
+            var item_list = current_header.parentElement.parentElement.children;
+            for(var i = 0;i &lt; item_list.length;i++){
+                var current_item = item_list[i];
+                current_item.children[1].classList.add(&#39;hide&#39;);
+            }
+            current_header.nextElementSibling.classList.remove(&#39;hide&#39;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 当然菜单的点击事件也可以做一下修改：我们之前点击菜单的时候，我们因为每个菜单都设置了id,所以在onclick事件中我们传入的参数是id名称，</p>
+<p>如果不添加id,我们改成onclick=”ChangeMenu(this)”，即在onclick传入的是this参数。</p>
+<p>然后我们就不用通过document获取id标签，而是直接用var current_header = nid;</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/22/javascript-zhi-shi-jian-dan-jie-shao/" class="b-link-green">JavaScript知识简单介绍</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'bb4c14c47159f54683cd',
+        clientSecret: 'f9971a2ed854a62d38aa1382ceedbbc4bb5cafa0',
+        repo: 'hexo-Gitalk',
+        owner: 'wensheng',
+        admin: "wensheng",
+        id: '2018-11-22T11-01-42',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/11/22/html-ji-chu-zhi-shi-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="HTML基础知识总结">
+                        
+                        <span class="card-title">HTML基础知识总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。
+一、HTML的定义   HTML，超文本标记语言，写给浏览器的语言，目前网络上应</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category" target="_blank">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/21/css-ji-ben-zhi-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="css基本知识">
+                        
+                        <span class="card-title">css基本知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">css基本知识我们先看一个小例子：
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&q</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CSS/" class="post-category" target="_blank">
+                                    CSS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://zhaowensheng.github.io/" target="_blank">zhaowensheng</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
