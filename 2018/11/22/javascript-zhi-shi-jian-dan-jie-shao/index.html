@@ -495,7 +495,7 @@ obj.replace(regexp, replacement)     　//替换，正则中有g则替换所有�
                                      $&amp;amp;：当前匹配的内容；
                                      $`：位于匹配子串左侧的文本；
                                      $&#39;：位于匹配子串右侧的文本
-                                     $$：直接量$符号</code><br><br><br><h3>3.布尔类型（Boolean）<h3><br><br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br><br>### 4.数组<br><br><br> 在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>bash
+                                     $$：直接量$符号</code><br><br><br>### 3.布尔类型（Boolean)<br><br>布尔类型仅包含真假，与Python不同的是其首字母小写,在python中表示真假用True和False，在JavaScript中表示真假用true和false。<br><br><br>### 4.数组<br><br><br>在python中[11,22,33]，这种叫做列表，但是在js中叫做数组。<br><br>常用函数：<br><br><code>bash
 a = [11,22,33,44]
 a.length          //数组的大小
 
@@ -512,7 +512,7 @@ a.slice( )        //切片,和字符串的substring差不多
 a.reverse( )      //反转
 a.join(sep)       //将数组元素连接起来以构建一个字符串
 a.concat(val,..)  //连接数组
-a.sort( )         //对数组元素进行排序</code><br><br><br>### 5.字典<br><br><br> js中的字典和python的差不多<br><br>a={‘k1’:’v1’,’k2’:’v2’}<br><br>取值的话：a[‘k1’]=’v1’<br><br><br><br>### 6.序列化<br><br><br>在python中有json模块，把字典列表转换成字符串，再转换回来就用load()等。<br><br>在js中也有，比如我们在访问一个页面的时候，会返回数据 。返回的数据默认都是一个字符串，这个时候我们就需要对其进行处理<br><ul><br><li>JSON.stringify(obj)    序列化:把一个数组转换成字符串</li><br><li>JSON.parse(str)        反序列化：把字符串转换成数组</li><br></ul>
+a.sort( )         //对数组元素进行排序</code><br><br><br>### 5.字典<br><br><br>js中的字典和python的差不多<br><br>a={‘k1’:’v1’,’k2’:’v2’}<br><br>取值的话：a[‘k1’]=’v1’<br><br><br><br>### 6.序列化<br><br>在python中有json模块，把字典列表转换成字符串，再转换回来就用load()等。<br><br>在js中也有，比如我们在访问一个页面的时候，会返回数据 。返回的数据默认都是一个字符串，这个时候我们就需要对其进行处理<br><ul><br><li>JSON.stringify(obj)    序列化:把一个数组转换成字符串</li><br><li>JSON.parse(str)        反序列化：把字符串转换成数组</li><br></ul>
 
 <pre><code>li = [11,22,33,77,5]
 s=JSON.stringify(li)        //s的结果为&quot;[11,22,33,77,5]&quot;
@@ -1194,7 +1194,7 @@ document.getElementById(&#39;i1&#39;).onclick = function(){
 </code></pre><p> 当然菜单的点击事件也可以做一下修改：我们之前点击菜单的时候，我们因为每个菜单都设置了id,所以在onclick事件中我们传入的参数是id名称，</p>
 <p>如果不添加id,我们改成onclick=”ChangeMenu(this)”，即在onclick传入的是this参数。</p>
 <p>然后我们就不用通过document获取id标签，而是直接用var current_header = nid;</p>
-</h3></h3>
+
             </div>
             <hr>
 
