@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-27T02:45:36.082Z</updated>
+  <updated>2018-11-27T06:46:58.469Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>做Typora入门（中文版）)</title>
+    <link href="https://www.sggxxl.club/2018/11/27/zuo-typora-ru-men-zhong-wen-ban/"/>
+    <id>https://www.sggxxl.club/2018/11/27/zuo-typora-ru-men-zhong-wen-ban/</id>
+    <published>2018-11-27T06:37:47.000Z</published>
+    <updated>2018-11-27T06:46:58.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;写Markdown费事？Typora让你像写word一样行云流水，所见即所得。&lt;/p&gt;
+&lt;h2 id=&quot;Typora&quot;&gt;&lt;a href=&quot;#Typora&quot; class=&quot;headerlink&quot; title=&quot;Typora&quot;&gt;&lt;/a&gt;Typora&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://www.sggxxl.club/categories/Hexo/"/>
+    
+    
+      <category term="博客" scheme="https://www.sggxxl.club/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="https://www.sggxxl.club/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>做一个好前端必须要知道的事——JS语言</title>
     <link href="https://www.sggxxl.club/2018/11/27/zuo-yi-ge-hao-qian-duan-bi-xu-yao-zhi-dao-de-shi-js-yu-yan/"/>
     <id>https://www.sggxxl.club/2018/11/27/zuo-yi-ge-hao-qian-duan-bi-xu-yao-zhi-dao-de-shi-js-yu-yan/</id>
     <published>2018-11-27T01:58:05.000Z</published>
-    <updated>2018-11-27T02:45:36.082Z</updated>
+    <updated>2018-11-27T06:41:53.835Z</updated>
     
     <summary type="html">
     
