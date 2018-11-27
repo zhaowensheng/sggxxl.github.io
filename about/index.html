@@ -489,7 +489,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"JavaScript","value":2},{"name":"Hexo","value":3},{"name":"嵌入式","value":1},{"name":"HTML","value":1},{"name":"CSS","value":2}],
+                data: [{"name":"Hexo","value":3},{"name":"JavaScript","value":2},{"name":"CSS","value":2},{"name":"嵌入式","value":1},{"name":"HTML","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -635,8 +635,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
-            
-            
             <a href="/tags/博客/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">博客</span>
             </a>
@@ -649,6 +647,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            
+            
+            
+            
             <a href="/tags/嵌入式/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">嵌入式</span>
             </a>
@@ -658,8 +660,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <a href="/tags/HTML/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">HTML</span>
             </a>
-            
-            
             
             
         </div>
@@ -714,6 +714,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         </div>
     </div>
 </main>
+{% if theme.fireworks %}
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+  {% endif %}
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
