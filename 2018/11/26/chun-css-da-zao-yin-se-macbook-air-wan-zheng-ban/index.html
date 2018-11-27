@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="纯CSS打造银色MacBook Air（完整版）, 盛哥修行录">
+    <meta name="description" content="纯CSS打造银色MacBook Air（完整版）写在前面前段时间自己用CSS绘制了一个银色的MacBook Air，今天把它从电脑硬盘深处挖了出来，我把我的思路和想法写下来和小伙伴们分享分享。先把最后的效果给大家。
+
+这其实是一个半成品，键">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>纯CSS打造银色MacBook Air（完整版） | 盛哥修行录</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">盛哥修行录</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">盛哥修行录</div>
+        <div class="logo-desc">
+            
+            世上没有绝望的处境，只有对处境绝望的人。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhaowensheng" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhaowensheng" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        纯CSS打造银色MacBook Air（完整版）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/CSS/" target="_blank">
+                    <span class="chip bg-color">CSS</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/CSS/" class="post-category" target="_blank">
+                        CSS
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-26
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="纯CSS打造银色MacBook-Air（完整版）"><a href="#纯CSS打造银色MacBook-Air（完整版）" class="headerlink" title="纯CSS打造银色MacBook Air（完整版）"></a>纯CSS打造银色MacBook Air（完整版）</h2><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>前段时间自己用CSS绘制了一个银色的MacBook Air，今天把它从电脑硬盘深处挖了出来，我把我的思路和想法写下来和小伙伴们分享分享。先把最后的效果给大家。</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkAHI.jpg" alt="FAkAHI.jpg"></p>
+<p>这其实是一个半成品，键盘上的其他图标和文字都还没有加，图标的话可以用font-face，待我找着合适的字体图标网址链接后给大家补全，同时也欢迎小伙伴们捣腾。</p>
+<h2 id="零、第零步"><a href="#零、第零步" class="headerlink" title="零、第零步"></a>零、第零步</h2><p>这里使用了CSS的before、after伪元素、渐变gradient、阴影、nth-child选择器等相关内容，阴影和渐变效果从图片上可能看的不太清楚，小伙伴们可以去上面的Codepen上查看，文章的最后我会给出整个源代码，有兴趣的可以自己随意修改完善。</p>
+<p>Ok，开始肆无忌惮地进入。</p>
+<p>首先介绍一下绘制的结构。</p>
+<p>对于键盘，就是建立了一个无序列表ul，然后写上若干个li即可，其他的用几个div包裹即可，先给出HTML结构：</p>
+<pre><code>&lt;div class=&quot;board&quot;&gt;
+&lt;div class=&quot;blackbar&quot;&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;keyboard&quot;&gt;
+&lt;ul&gt;
+
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;touch&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>4个div加上2个伪元素，总共六个部分构成整个MacBook Air。board是MacBook Air的底座，blackbar是屏幕的那个黑色旋转轴，keyboard是键盘，touch是触控板；board:before是上面的盖子，border-bottom是盖子下面的那个黑色细长条。Ok，这六部分构成了整个MacBook Air。</p>
+<p>没图我说个什么：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkkDA.jpg" alt="FAkkDA.jpg"></p>
+<p>接下来，我按照我的绘制顺序一步步来介绍。口渴的小伙伴可以先去沏杯茶。</p>
+<h2 id="一、第一步"><a href="#一、第一步" class="headerlink" title="一、第一步"></a>一、第一步</h2><p>先给出HTML，下面是一段很长很长但是却没什么研究价值的无序列表，让滚轮飞起来吧：</p>
+<pre><code>&lt;div class=&quot;board&quot;&gt;
+&lt;div class=&quot;blackbar&quot;&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;keyboard&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;!&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;@&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;#&lt;/span&gt;&lt;span&gt;3&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;$&lt;/span&gt;&lt;span&gt;4&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;%&lt;/span&gt;&lt;span&gt;5&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;^&lt;/span&gt;&lt;span&gt;6&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;&amp;&lt;/span&gt;&lt;span&gt;7&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;*&lt;/span&gt;&lt;span&gt;8&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;9&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;0&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;—&lt;/span&gt;&lt;span&gt;-&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;+&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;Q&lt;/li&gt;
+&lt;li&gt;W&lt;/li&gt;
+&lt;li&gt;E&lt;/li&gt;
+&lt;li&gt;R&lt;/li&gt;
+&lt;li&gt;T&lt;/li&gt;
+&lt;li&gt;Y&lt;/li&gt;
+&lt;li&gt;U&lt;/li&gt;
+&lt;li&gt;I&lt;/li&gt;
+&lt;li&gt;O&lt;/li&gt;
+&lt;li&gt;P&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;A&lt;/li&gt;
+&lt;li&gt;S&lt;/li&gt;
+&lt;li&gt;D&lt;/li&gt;
+&lt;li&gt;F&lt;/li&gt;
+&lt;li&gt;G&lt;/li&gt;
+&lt;li&gt;H&lt;/li&gt;
+&lt;li&gt;J&lt;/li&gt;
+&lt;li&gt;K&lt;/li&gt;
+&lt;li&gt;L&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;Z&lt;/li&gt;
+&lt;li&gt;X&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;V&lt;/li&gt;
+&lt;li&gt;B&lt;/li&gt;
+&lt;li&gt;N&lt;/li&gt;
+&lt;li&gt;M&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;By Pure CSS.To Be Continued.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;touch&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>键盘按键为若干个li，其中按键上有两个符号的我用两个span包了起来，像这样：</p>
+<pre><code>&lt;li&gt;&lt;span&gt;!&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+</code></pre><p>因为它们最后式一上一下的69体位，用span包裹住便于分别布置它们的位置。</p>
+<p>先绘制一个600&lowast;450的div，并将board居中，给一个银色的color，这里用的是rgb(210,210,210)，用border-radius绘制出四个20px的圆角，用box-shadow给出一个灰色的阴影，这里用的灰色是rgb(160,160,160)，小伙伴们可以自己选择合适的颜色，最后从div的左下角到右上角以60度添加一个线性渐变linear-gradient，是从白色开始从四分之一出过渡到灰色。因为之后的div会用到绝对定位，所以在此先把其父元素board定位为relative。</p>
+<p>完整的代码及效果如下：</p>
+<pre><code>.board{
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 600px;
+    height: 450px;
+    margin-top: 50px;
+    background: rgb(210,210,210);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 5px 6px rgb(160,160,160);
+    background:-webkit-linear-gradient(60deg,rgba(250,250,250,1) 25%,rgba(210,210,210,1));
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkFud.jpg" alt="FAkFud.jpg"></p>
+<p>这样，一个有阴影和线性渐变过渡效果的面板就率先完成了。</p>
+<h2 id="二、第二步"><a href="#二、第二步" class="headerlink" title="二、第二步"></a>二、第二步</h2><p>接下来我要画笔记本盖子，用的是伪元素board:before。</p>
+<p>因为盖子是翻起来的，所以从上往下看是一个窄边。把board:before填充为780px&lowast;20px的div，背景颜色为灰色。</p>
+<p>实现及效果如下：</p>
+<pre><code>.board:before{
+    content: &#39;&#39;;
+    display: block;
+    width: 780px;
+    height: 20px;
+    background: rgb(210,210,210);
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkPjH.jpg" alt="FAkPjH.jpg"></p>
+<p>然后调一下位置，board:before定位为绝对定位，board宽600px，盖子宽780px，所以left=-(780-600)/2=-90px，top为board:before的高20px，顺带做出一个大弧形的效果，水平半径取大一些，垂直半径取小一些，like this：</p>
+<pre><code>border-top-left-radius: 390px 18px;
+border-top-right-radius: 390px 18px;
+</code></pre><p>此时的效果如下：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkCge.jpg" alt="FAkCge.jpg"></p>
+<p>有那么个意思了，为了做出立体的效果，我们给盖子从上到下加个渐变的过渡效果：</p>
+<pre><code>background:-webkit-linear-gradient(top,rgb(210,210,210) 50%,rgb(255,255,255));
+</code></pre><p>再顺带把屏幕下的那条小黑条加上，一句话很简单：</p>
+<pre><code>border-bottom: 2px solid rgb(0,0,0);
+</code></pre><p>看看效果先：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkVEt.jpg" alt="FAkVEt.jpg"></p>
+<p>有没有感觉某些地方有些违和？放大看一下这里：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAknC8.jpg" alt="FAknC8.jpg"></p>
+<p>来个更加菊部的：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkZUP.jpg" alt="FAkZUP.jpg"></p>
+<p>对，就是这个小角处，给点效果：</p>
+<pre><code>border-bottom: 2px solid rgb(0,0,0);
+</code></pre><p>再看看效果：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAke4f.jpg" alt="FAke4f.jpg"></p>
+<p>这样黑边那也有了小的光滑弧度过渡，显得更加自然。</p>
+<p>附上这一步的完整代码和效果：</p>
+<pre><code>.board:before{
+    content: &#39;&#39;;
+    display: block;
+    width: 780px;
+    height: 20px;
+    background: rgb(210,210,210);
+    border-radius: 0px 0px 3px 3px;
+    border-top-left-radius: 390px 18px;
+    border-top-right-radius: 390px 18px;
+    position: absolute;
+    top:-20px; 
+    left: -90px;
+    border-bottom: 2px solid rgb(0,0,0); 
+    background:-webkit-linear-gradient(top,rgb(210,210,210) 50%,rgb(255,255,255));
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkKgg.jpg" alt="FAkKgg.jpg"></p>
+<h2 id="三、第三步"><a href="#三、第三步" class="headerlink" title="三、第三步"></a>三、第三步</h2><p>这一步我们来做屏幕旋转轴，也就是屏幕下方的那条黑色矩形blackbar。</p>
+<p>同样先设置width和height，absolute定位，居中显示，移动的距离可以参考上面的方法小算一下就可以了，加上2px的圆角，为了显示出旋转轴立体的沟槽，我们给blackbar类的下边框和右边框加上2px的白色实线，同时给blackbar一个从上到下的渐变，中间显示出窄窄的亮丽的白色即可，颜色和过渡的位置小伙伴们可以自行了断，oops，是自行把握。</p>
+<p>实现和效果：</p>
+<pre><code>.blackbar{
+    width: 450px;
+    height: 18px;
+    position: absolute; 
+    left: 75px;
+    border-radius: 2px;
+    border-bottom: 2px solid #ffffff; /* 小白边 */
+    border-right: 2px solid #ffffff;
+    background: -webkit-linear-gradient(top,rgb(30,30,30) ,rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+    background: -linear-gradient(top,rgb(30,30,30) ,rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAku8S.jpg" alt="FAku8S.jpg"></p>
+<h2 id="四、第四步"><a href="#四、第四步" class="headerlink" title="四、第四步"></a>四、第四步</h2><p>接下来就是MacBook Air最显眼的部分了，那就是键盘部分，为什么显眼呢，因为它占的地儿最大吧哈哈哈（不好笑的事也要大笑三声）。</p>
+<p>在画键盘之前呢，小伙伴们最好先算好整个键盘区域的大小，各个按键的大小和排列，否则到时候只能一点点重新调，很麻烦。好了，咱先把键盘区域画下来吧。</p>
+<p>传统步骤，设置宽高，绝对定位，然后设置left、top居中，勾勒出1px solid 颜色为rgb(180,180,180)的border，8px的圆角，白色的背景颜色；</p>
+<p>实现和效果如下：</p>
+<pre><code>.keyboard{
+    position: absolute;
+    width:530px;
+    height: 216px;
+    left: 35px;
+    top: 35px;
+    border: 1px solid rgb(180,180,180);
+    border-radius: 8px;
+    background:rgba(250,250,250,1);
+}
+
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkMvQ.jpg" alt="FAkMvQ.jpg"></p>
+<p>为了显示出立体的沟槽感，阴影又该出来了。我们用box-shadow给keyboard的四条边框添加四条内部inset阴影，关于box-shadow以后有机会再讲，先把实现和效果贴上：</p>
+<pre><code>box-shadow:2px 0px 2px rgb(180,180,180) inset,
+0px 3px 3px rgb(180,180,180) inset,
+-5px -0px 1px rgb(255,255,255) inset,
+0px -3px 3px rgb(180,180,180) inset;
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkNCT.jpg" alt="FAkNCT.jpg"></p>
+<p>雏形出来了，接下来就是一个个的nth-child了。让我们接着猛烈地荡起双桨吧。</p>
+<h2 id="五、第五步"><a href="#五、第五步" class="headerlink" title="五、第五步"></a>五、第五步</h2><p>就像前面提到的，我们最好事先先计算好每个按键的大小和位置，做到心中有数，不至于到时候一片混乱，否则整个键盘就像东汉末年似的这一块儿那一块儿。</p>
+<p>首先是一些常规的设置，去掉列表标志，margin、padding设置，列表的宽和高balabala，按照之前的计算，设置按键与按键的间距，大致排列下这么多个按键，并给按键添加4px的圆角，为了显示立体效果，加上一个border：</p>
+<pre><code>border: 1px solid rgb(70,70,70);
+</code></pre><p>并四个边添加阴影：</p>
+<pre><code>box-shadow: 1px 0px 0px rgb(0,0,0),
+0px 1px 0px rgb(0,0,0),
+-1px 0px 0px rgb(0,0,0),
+0px -1px 0px rgb(0,0,0);
+</code></pre><p>附上代码和效果:</p>
+<pre><code>ul,li{
+    list-style: none;
+    margin:0 auto;
+    padding:0 auto;
+    display: block;
+    font-family: &quot;Vrinda&quot;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul{
+    width:530px;
+    margin-top: 8px;
+    padding-left: 8px;
+    /* border:2px solid black; */
+}
+
+li{
+    width:29px;
+    height:29px;
+    float: left;
+    /* padding-left: 0px; */
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(30,30,30);
+    color: rgb(200,200,200);
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid rgb(70,70,70);
+    box-shadow: 1px 0px 0px rgb(0,0,0),
+    0px 1px 0px rgb(0,0,0),
+    -1px 0px 0px rgb(0,0,0),
+    0px -1px 0px rgb(0,0,0);
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkluj.jpg" alt="FAkluj.jpg"></p>
+<p>看上去还很乱，连文本都溢出了，但是妈妈说过，心急吃不了热豆腐，慢慢来，保准等会就驯服得她服服帖帖的。</p>
+<p>Tips：请用力记住父母的生日哦。</p>
+<p>细心的小伙伴们会发现有一段代码，貌似不细心的也能发现，就是这段：</p>
+<pre><code>-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+</code></pre><p>这是什么意思呢？先来看下不加这段代码的效果：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAk1Ds.jpg" alt="FAk1Ds.jpg"></p>
+<p>对，就是这一片的蓝色，当用鼠标去键盘上拖着选中的时候，那一个个的li就会被选中，添加这段代码就能还我们一片巧克力键盘了，就能还我们一个洁白的蓝天了。</p>
+<p>洁白…的…蓝天…^o^</p>
+<p>我们先把键盘最上面的那一排功能键先捣腾好。这里我们用nth-child来选择上面那一排我没数错数量应该是14个的功能键，并给它们简单设置样式。</p>
+<p>这里使用链式写法，实现和效果如下：</p>
+<pre><code>li:nth-child(-n+14):nth-child(n+1){
+    width:30px;
+    height:15px;
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAk3bn.jpg" alt="FAk3bn.jpg"></p>
+<p>接下来调整第二行的数字按键上的那些数字和符号的一上一下的69体位，同样先用nth-child选中再设置样式：</p>
+<pre><code>li:nth-child(-n+27):nth-child(n+16) span,li:nth-child(40) span,li:nth-child(41) span,li:nth-child(42) span,
+    li:nth-child(53) span,li:nth-child(54) span,li:nth-child(-n+66):nth-child(n+64) span{
+    display: block;
+    margin-top: 5px;
+    line-height: 0.5; 
+}
+</code></pre><p>然后设置除了最后的那四个方向键外的其他键的大小，很简单，算准写就行，要做一个心中有数的男人，这块直接贴代码：</p>
+<pre><code>li:nth-child(28),li:nth-child(29){
+    width:45px;
+}
+li:nth-child(43),li:nth-child(55){
+    width:55px;
+}
+li:nth-child(56),li:nth-child(67){
+    width:73px;
+}
+    li:nth-child(-n+74):nth-child(n+68){
+    height:33px;
+}
+li:nth-child(72){
+    width:173px;
+}
+li:nth-child(71),li:nth-child(73){
+    width:37px;
+}
+</code></pre><p>找个驿站半路休息下先，顺带看下效果：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkGEq.jpg" alt="FAkGEq.jpg"></p>
+<p>除了四个方向键，其他的按键放置得还算可以，接着走。</p>
+<p>四个方向键设置也很简单，设置宽高，定位即可，不罗嗦了，直接上：</p>
+<pre><code>li:nth-child(75),li:nth-child(77),li:nth-child(78){
+    margin-top: 18px;
+    height: 14px;
+}
+
+li:nth-child(76){
+    height: 13px;
+    margin-top: 19px;
+}
+
+li:nth-child(78){
+    position: absolute;
+    bottom: 22px;
+    right:38px;
+}
+</code></pre><p>效果：</p>
+<p><img src="https://s1.ax1x.com/2018/11/26/FAkY5V.jpg" alt="FAkY5V.jpg"></p>
+<p>恩，美感效果还在我的审美范围之内。</p>
+<h2 id="六、第六步"><a href="#六、第六步" class="headerlink" title="六、第六步"></a>六、第六步</h2><p>最后一步就是触控板touch的绘制了，哈哈哈，终于要诺曼底登陆了，待我喝口菊花茶先。</p>
+<p>触控板的绘制和键盘的绘制基本上是一样的，设置大小，定位，圆角，border即可。直接上：</p>
+<pre><code>.touch{
+    position: absolute;
+    width:200px;
+    height:150px;
+    border: 2px solid rgb(190,190,190);
+    bottom: 23px;
+    left: 200px;
+    border-radius: 8px;
+}
+</code></pre><p><img src="https://s1.ax1x.com/2018/11/26/FAkJU0.jpg" alt="FAkJU0.jpg"></p>
+<h2 id="七、小了个结"><a href="#七、小了个结" class="headerlink" title="七、小了个结"></a>七、小了个结</h2><p>到这里，MacBook Air就算完成了，还是那句话，是个半成品，一些字体图标还待用font-face来完成，当然还可以添加些动画，让它像产品旋转来展示等等，这只是抛砖引玉而已，期待小伙伴们更多奇思妙想。小伙伴们有好的想法欢迎分享~~~</p>
+<p>源自：<a href="http://www.cnblogs.com/myvin/p/4621231.html" target="_blank" rel="noopener">www.cnblogs.com/myvin/p/4621231.html</a><br>声明：文章著作权归作者所有，如有侵权，请联系小编删除。<br>感谢 · 转发<br>欢迎大家留言</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/26/chun-css-da-zao-yin-se-macbook-air-wan-zheng-ban/" class="b-link-green">纯CSS打造银色MacBook Air（完整版）</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'bb4c14c47159f54683cd',
+        clientSecret: 'e90cfc3fd582c8014121a269bea84484520a2f12',
+        repo: 'hexo-Gitalk',
+        owner: 'zhaowensheng',
+        admin: "zhaowensheng",
+        id: '2018-11-26T09-15-29',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/11/27/zuo-yi-ge-hao-qian-duan-bi-xu-yao-zhi-dao-de-shi-js-yu-yan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="做一个好前端必须要知道的事——JS语言">
+                        
+                        <span class="card-title">做一个好前端必须要知道的事——JS语言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">做一个好前端必须要知道的事——JS语言编程语言按各种方法可以分为各种类型，现在让我们来看看JS属于什么类型语言
+解释型语言按编译执行过程，可以分为编译型语言和解释型语言。比如
+c 语言，必须先经过编译生成目标文件，然后链接各个目标文件和库文</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/22/html-ji-chu-zhi-shi-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="HTML基础知识总结">
+                        
+                        <span class="card-title">HTML基础知识总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">经过这段时间的学习，对于html的一些基础知识有了一定的了解。所谓好记性不如烂笔头，唯有一点点累积，才能汇聚成知识的海洋。现在，我对这段时间的学习做一个总结。
+一、HTML的定义   HTML，超文本标记语言，写给浏览器的语言，目前网络上应</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category" target="_blank">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://zhaowensheng.github.io/" target="_blank">zhaowensheng</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
