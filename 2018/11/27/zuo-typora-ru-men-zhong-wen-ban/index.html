@@ -488,27 +488,25 @@ Markdown的语法因不同的解析器或编辑器而异，Typora使">
 <p>这是一个<a href="http://example.com/" target="_blank" rel="noopener">参考链接</a>。</p>
 <h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><p>Typora允许用&lt;括号括起来&gt;, 把URL作为链接插入。输入[<a href="mailto:td_simon@outlook.com" target="_blank" rel="noopener">td_simon@outlook.com</a>](mailto:<a href="mailto:td_simon@outlook.com" target="_blank" rel="noopener">td_simon@outlook.com</a>) 即 <a href="mailto:td_simon@outlook.com" target="_blank" rel="noopener">td_simon@outlook.com</a>。<br>Typora还会自动链接标准网址。例如：<a href="http://www.simon96.online./" target="_blank" rel="noopener">www.simon96.online。</a></p>
 <h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><blockquote>
-<p><img src="/path/to/img.jpg" alt="显示的文字"><br><img src="/path/to/img.jpg “图片标题”" alt="显示的文字"></p>
+<p><img src="/path/to/img.jpg" alt="显示的文字"><br><img src="/path/to/img.jpg" alt="显示的文字" title="图片标题"></p>
 </blockquote>
-<h4 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h4><blockquote>
-<p><em>单个星号</em><br><em>单下划线</em></p>
-</blockquote>
-<p>效果如下：<br><em>单个星号</em></p>
+<h4 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h4><pre><code>&gt; *单个星号*
+&gt; _单下划线_
+</code></pre><p>效果如下：<br><em>单个星号</em></p>
 <p><em>单下划线</em></p>
-<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><blockquote>
-<p><em>两个星号</em><br><em>双下划线</em></p>
-</blockquote>
-<p>效果如下：<br><strong>两个星号</strong><br><strong>双下划线</strong></p>
-<h4 id="代码标记"><a href="#代码标记" class="headerlink" title="代码标记"></a>代码标记</h4><p>标记代码使用反引号，即在英文输入法下，ESC键下面和1键左边的符号——`</p>
+<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><pre><code>&gt; *两个星号*
+&gt; _双下划线_
+</code></pre><p>效果如下：<br><strong>两个星号</strong><br><strong>双下划线</strong></p>
+<h4 id="代码标记"><a href="#代码标记" class="headerlink" title="代码标记"></a>代码标记</h4><p>标记代码使用反引号，即在英文输入法下，ESC键下面和1键左边的符号——</p>
 <p>使用该<code>printf()</code>功能。<br>效果如下：<br>使用该<code>printf()</code>功能。</p>
 <h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><blockquote>
-<p><del>删除线</del></p>
+<p><code>~~删除线~~</code></p>
 </blockquote>
 <p>效果如下：</p>
 <p><del>删除线</del></p>
-<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>\下划线</p>
+<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>\<u>\下划线</u></p>
 <p>效果如下：</p>
-<p>下划线</p>
+<p><u>\下划线</u></p>
 <h4 id="表情符号-smile"><a href="#表情符号-smile" class="headerlink" title="表情符号:smile:"></a>表情符号:smile:</h4><blockquote>
 <p>：smile ：（注意为：是英文的冒号）</p>
 </blockquote>
@@ -776,7 +774,8 @@ Markdown的语法因不同的解析器或编辑器而异，Typora使</div>
                 <div class="card-content article-content">
                     <div class="summary">做一个好前端必须要知道的事——JS语言编程语言按各种方法可以分为各种类型，现在让我们来看看JS属于什么类型语言
 解释型语言按编译执行过程，可以分为编译型语言和解释型语言。比如
-c 语言，必须先经过编译生成目标文件，然后链接各个目标文件和库文</div>
+
+c 语言，必须先经过编译生成目标文件，然后链接各个目标文件和库</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
@@ -920,5 +919,5 @@ c 语言，必须先经过编译生成目标文件，然后链接各个目标文
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-haruto"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
