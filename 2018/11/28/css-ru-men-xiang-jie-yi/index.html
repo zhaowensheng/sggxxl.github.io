@@ -1,0 +1,2544 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CSS入门详解(一), 盛哥修行录">
+    <meta name="description" content="CSS入门详解(一)前言
+如同人类的的进化一样，CSS3是CSS2的“进化”版本，在CSS2基础上，增强或新增了许多特性，弥补了CSS2的众多不足之处，使得Web开发变得更为高效和便捷。
+
+1.选择器
+CSS3新增了许多灵活查找元素的方法，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CSS入门详解(一) | 盛哥修行录</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">盛哥修行录</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">盛哥修行录</div>
+        <div class="logo-desc">
+            
+            世上没有绝望的处境，只有对处境绝望的人。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhaowensheng" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhaowensheng" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CSS入门详解(一)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/CSS/" target="_blank">
+                    <span class="chip bg-color">CSS</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/CSS/" class="post-category" target="_blank">
+                        CSS
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-28
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="CSS入门详解-一"><a href="#CSS入门详解-一" class="headerlink" title="CSS入门详解(一)"></a>CSS入门详解(一)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>如同人类的的进化一样，<code>CSS3</code>是<code>CSS2</code>的“进化”版本，在<code>CSS2</code>基础上，增强或新增了许多特性，弥补了<code>CSS2</code>的众多不足之处，使得<code>Web</code>开发变得更为高效和便捷。</p>
+</blockquote>
+<h2 id="1-选择器"><a href="#1-选择器" class="headerlink" title="1.选择器"></a>1.选择器</h2><blockquote>
+<p><code>CSS3</code>新增了许多灵活查找元素的方法，极大的提高了查找元素的效率和精准度。<code>CSS3</code>选择器与<code>jQuery</code>中所提供的绝大部分选择器兼容。</p>
+</blockquote>
+<h3 id="1-1-属性选择器"><a href="#1-1-属性选择器" class="headerlink" title="1.1 属性选择器"></a>1.1 属性选择器</h3><blockquote>
+<p>属性选择器就是通过属性来选择元素。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[attr]</code></td>
+<td>存在<code>attr</code>属性即可</td>
+</tr>
+<tr>
+<td><code>[attr=val]</code></td>
+<td>属性值完全等于<code>val</code></td>
+</tr>
+<tr>
+<td><code>[attr*=val]</code></td>
+<td>属性值里包含<code>val</code>字符并且在“任意”位置</td>
+</tr>
+<tr>
+<td><code>[attr^=val]</code></td>
+<td>属性值里包含<code>val</code>字符并且在“开始”位置</td>
+</tr>
+<tr>
+<td><code>[attr$=val]</code></td>
+<td>属性值里包含<code>val</code>字符并且在“结束”位置</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1、[attr]</strong></p>
+<pre><code>&lt;style&gt;
+    /* 所有拥有class属性的标签，添加color样式 */
+    [class]{
+        color: #333;
+    }
+&lt;/style&gt;
+</code></pre><p><strong>2、[attr=val]</strong></p>
+<pre><code>&lt;style&gt;
+    /* 所有拥有class属性全等于“one”的标签，添加color样式 */
+    [class = &quot;one&quot;]{
+        color: #333;
+    }
+&lt;/style&gt;
+</code></pre><p><strong>3、[attr*=val]</strong></p>
+<pre><code>&lt;style&gt;
+    /* class属性的值里面包含“one”的标签，添加color样式 */
+    [attr*=&quot;one&quot;]{
+        color: #333;
+    }
+&lt;/style&gt;
+</code></pre><p><strong>4、[attr^=val]</strong></p>
+<pre><code>&lt;style&gt;
+    /* class属性的值以“one”开始的标签，添加color样式 */
+    [attr ^= &quot;one&quot;]{
+        color: #333;
+    }
+&lt;/style&gt;
+</code></pre><p><strong>5、[attr$=val]</strong></p>
+<pre><code>&lt;style&gt;
+    /* class属性的值以“one”结束的标签，添加color样式 */
+    [attr $= &quot;one&quot;]{
+        color: #333;
+    }
+&lt;/style&gt;
+</code></pre><h3 id="1-2-伪类选择器"><a href="#1-2-伪类选择器" class="headerlink" title="1.2 伪类选择器"></a>1.2 伪类选择器</h3><blockquote>
+<p>除了以前介绍的的<code>:link</code>、<code>:active</code>、<code>:visited</code>、<code>:hover</code>，<code>CSS3</code>又新增了其它的伪类选择器。</p>
+</blockquote>
+<p><strong>1、结构（位置）伪类</strong></p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:first-child</code></td>
+<td>其父元素的第<code>1</code>个子元素</td>
+</tr>
+<tr>
+<td><code>:last-child</code></td>
+<td>其父元素的最后<code>1</code>个子元素</td>
+</tr>
+<tr>
+<td><code>:nth-child(n)</code></td>
+<td>其父元素的第<code>n</code>个子元素</td>
+</tr>
+<tr>
+<td><code>:nth-last-child(n)</code></td>
+<td>其父元素的第<code>n</code>个子元素（倒着数）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2、空伪类</strong></p>
+<blockquote>
+<p><code>:empty</code>选中没有任何子节点的元素</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+   div:empty {   /* 没有子元素的div元素 */
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+&lt;/style&gt;
+
+&lt;!-- css 样式不起作用 --&gt;
+&lt;div class=&quot;one&quot;&gt;阿斯蒂芬&lt;/div&gt;   
+
+&lt;!-- css样式不起作用 --&gt;
+&lt;div&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- css样式生效 --&gt;
+&lt;div&gt;&lt;/div&gt;
+</code></pre><p><strong>3、目标伪类</strong></p>
+<blockquote>
+<p><code>:target</code>结合锚点进行使用，处于当前锚点的元素会被选中；</p>
+</blockquote>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    /* 使用锚链接指向当前标签的时候 */
+    .one:target {
+        background-color: pink;
+        font-size: 30px;
+    }
+&lt;/style&gt;
+
+&lt;a href=&quot;#hh&quot;&gt;找笑脸去&lt;/a&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p id=&quot;hh&quot; class=&quot;one&quot;&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+&lt;p&gt;阿斯顿发撒旦法撒打发放大法的撒双方都&lt;/p&gt;
+</code></pre><p><strong>4、排除伪类</strong></p>
+<blockquote>
+<p><code>:not(selector)</code>除<code>selector</code>（任意选择器）外的元素会被选中；</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    /* 除了类名是“.not”的div元素 */
+    div:not(.one) {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+&lt;/style&gt;
+
+&lt;!-- css样式不生效 --&gt;
+&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;
+
+&lt;!-- css样式生效 --&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!-- css样式生效 --&gt;
+&lt;div&gt;&lt;/div&gt;
+</code></pre><h3 id="1-3-伪元素选择器"><a href="#1-3-伪元素选择器" class="headerlink" title="1.3 伪元素选择器"></a>1.3 伪元素选择器</h3><ul>
+<li>1、<code>::first-letter</code>文本的第一个单词或字（如中文、日文、韩文等）</li>
+<li>2、<code>::first-line</code> 文本第一行；</li>
+<li>3、<code>::selection</code> 可改变选中文本的样式；</li>
+<li>4、<code>::before</code>和<code>::after</code></li>
+</ul>
+<p><strong>示例代码：伪元素实现横竖分割线</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    * {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+    }
+    .box {
+         width: 300px;
+         height: 200px;
+         background-color: pink;
+         margin: 50px auto;
+    }
+    .box li {
+         width: 100px;
+         height: 100px;
+         float: left;
+         background-color: #555;
+         position: relative;
+         overflow: hidden;
+    }
+
+    li:before {
+         content: &quot;&quot;;
+         display: block;
+         width: 90px;
+         height: 1px;
+         background-color: #ccc;
+         position: absolute;
+         top: 97px;
+         left: 5px;
+    }
+    li:after {
+         content: &quot;&quot;;
+         display: block;
+         width: 1px;
+         height: 90px;
+         background-color: #ccc;
+         position: absolute;
+         left: 0px;
+         top: 4px;
+    }
+    li:nth-child(1):after,li:nth-child(4):after {
+         display: none;
+    }
+
+    li:nth-last-child(-n+3):before {
+         display: none;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099839?w=369&amp;h=255" alt="image"></p>
+<blockquote>
+<p><code>:after</code>、<code>:before</code>在旧版本里是伪元素，<code>CSS3</code>的规范里“<code>:</code>”用来表示伪类，“<code>::</code>”用来表示伪元素，但是在高版本浏览器下<code>:after</code>、<code>:before</code>会被自动识别为<code>::after</code>、<code>::before</code>，这样做的目的是用来做兼容处理。</p>
+</blockquote>
+<h2 id="2-颜色"><a href="#2-颜色" class="headerlink" title="2. 颜色"></a>2. 颜色</h2><blockquote>
+<p>新增了<code>RGBA</code>、<code>HSLA</code>模式，其中的<code>A</code>表示透明度，即可以设置颜色值的透明度，相较<code>opacity</code>，它们不具有继承性，即不会影响子元素的透明度。</p>
+</blockquote>
+<h3 id="2-1-RGBA"><a href="#2-1-RGBA" class="headerlink" title="2.1 RGBA"></a>2.1 RGBA</h3><blockquote>
+<p><code>Red</code>、<code>Green</code>、<code>Blue</code>、<code>Alpha</code>即<code>RGBA</code>，<code>R</code>、<code>G</code>、<code>B</code>取值范围<code>0~255</code>。</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    #box{
+        width:100px;
+        height:100px;
+        background: rgba(200,200,200,.5);
+    }
+&lt;/style&gt;
+
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><h3 id="2-2-HSLA"><a href="#2-2-HSLA" class="headerlink" title="2.2 HSLA"></a>2.2 HSLA</h3><ul>
+<li><code>H</code> 色调 取值范围<code>0~360</code>，<code>0/360</code>表示红色、<code>120</code>表示绿色、<code>240</code>表示蓝色</li>
+<li><code>S</code> 饱和度 取值范围<code>0%~100%</code></li>
+<li><code>L</code> 亮度 取值范围<code>0%~100%</code></li>
+<li><code>A</code> 透明度 取值范围<code>0~1</code></li>
+</ul>
+<pre><code>&lt;style&gt;
+    #box{
+        width:100px;
+        height:100px;
+        background: hsla(200,50%,50%,.5);
+    }
+&lt;/style&gt;
+
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><h3 id="2-3-关于-CSS-的透明度"><a href="#2-3-关于-CSS-的透明度" class="headerlink" title="2.3 关于 CSS 的透明度"></a>2.3 关于 CSS 的透明度</h3><blockquote>
+<pre><code>Alpha
+</code></pre><p>和</p>
+<pre><code>opacity
+</code></pre><p>的区别主要就是，</p>
+<pre><code>opacity
+</code></pre><p>具有继承性，父盒子设置该属性，下面所有的子元素都会继承该属性。</p>
+<p><code>transparent</code>不可调节透明度，始终完全透明。</p>
+</blockquote>
+<h2 id="3-文本阴影"><a href="#3-文本阴影" class="headerlink" title="3. 文本阴影"></a>3. 文本阴影</h2><blockquote>
+<p><code>text-shadow</code>，可分别设置偏移量、模糊度、颜色（可设透明度）。</p>
+</blockquote>
+<p>如：</p>
+<pre><code>text-shadow: 2px 2px 2px #CCC;
+</code></pre><ul>
+<li>1、水平偏移量 正值向右 负值向左；</li>
+<li>2、垂直偏移量 正值向下 负值向上；</li>
+<li>3、模糊度是不能为负值；</li>
+<li>4、阴影颜色。</li>
+</ul>
+<p><strong>示例代码：文字浮雕</strong></p>
+<pre><code>&lt;style&gt;
+     html,body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #999;
+          font-size: 50px;
+          text-align: center;
+          line-height: 260px;
+          color: #999;
+     }
+
+    .one {
+         text-shadow: -1px -1px 1px #fff,1px 1px 1px #000;
+    }
+
+    .two {
+         text-shadow: -1px -1px 1px #000,1px 1px 1px #fff;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;one&quot;&gt;我是凸起文字&lt;/div&gt;
+&lt;div class=&quot;two&quot;&gt;我是凹下去的文字&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099840?w=535&amp;h=385" alt="image"></p>
+<h2 id="4-盒模型"><a href="#4-盒模型" class="headerlink" title="4. 盒模型"></a>4. 盒模型</h2><blockquote>
+<p><code>CSS3</code>中可以通过<code>box-sizing</code>来指定盒模型，即可指定为<code>content-box</code>、<code>border-box</code>，这样我们计算盒子大小的方式就发生了改变。</p>
+</blockquote>
+<p>可以分成两种情况：</p>
+<ul>
+<li>1、<code>box-sizing: border-box</code>盒子大小为<code>width</code></li>
+<li>2、<code>box-sizing: content-box</code>盒子大小为<code>width + padding + border</code></li>
+</ul>
+<p><em>注：上面的标注的width指的是CSS属性里设置的width: length，content的值是会自动调整的。</em></p>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+     .box {
+          width: 316px;
+          height: 170px;
+          float: left;
+          margin-left: 20px;
+          box-sizing: border-box;
+     }
+     .box img {
+          width: 100%;
+          height: 100%;
+     }
+
+     .box:hover {
+          border: 10px solid #00eeff;
+     }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+   &lt;img src=&quot;1.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+   &lt;img src=&quot;1.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099841?w=671&amp;h=185" alt="image"></p>
+<p><em>可以看出通过设置盒子模型后，虽然.box设置了边框，但是整个box的盒子大小没有改变。</em></p>
+<h2 id="5-边框"><a href="#5-边框" class="headerlink" title="5. 边框"></a>5. 边框</h2><blockquote>
+<p>边框中的边框圆角、边框阴影属性，应用十分广泛，兼容性也相对较好，具有符合渐进增强原则的特征。</p>
+</blockquote>
+<h3 id="5-1-边框圆角"><a href="#5-1-边框圆角" class="headerlink" title="5.1 边框圆角"></a>5.1 边框圆角</h3><blockquote>
+<p>通过<code>border-radius</code>属性，设置边框圆角，圆角处理时，脑中要形成圆、圆心、横轴、纵轴的概念，正圆是椭圆的一种特殊情况。</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/remote/1460000017099842?w=324&amp;h=186" alt="image"></p>
+<p>为了方便表述，我们将四个角标记成<code>1</code>、<code>2</code>、<code>3</code>、<code>4</code>，如<code>2</code>代表右上角，<code>CSS</code>里提供了<code>border-radius</code>来设置这些角横纵轴半径值。</p>
+<p><em>分别设置横纵轴半径，以“/”进行分隔，遵循“1，2，3，4”规则，“/”前面的1~4个用来设置横轴半径（分别对应横轴1、2、3、4位置），“/”后面1~4个参数用来设置纵轴半径（分别对应纵轴1、2、3、4位置 ）。</em></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        margin: 50px auto;
+        width: 300px;
+        height: 500px;
+        border: 1px solid #ccc;
+        border-radius: 10px 20px 50px 70px / 10px 20px 50px 70px;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p>效果图：</p>
+<p><em>一般情况下，我们用不到这么复杂的，除非特殊需求的时候。</em></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099843?w=330&amp;h=528" alt="image"></p>
+<p><strong>支持简写模式，具体如下：</strong></p>
+<ul>
+<li>1、<code>border-radius: 10px;</code>表示四个角的横纵轴半径都为<code>10px</code>；</li>
+<li>2、<code>border-radius: 10px 5px;</code>表示<code>1</code>和<code>3</code>角横纵轴半径都为<code>10px</code>，<code>2</code>和<code>4</code>角横纵轴半径为<code>5px</code>；</li>
+<li>3、<code>border-radius: 10px 5px 8px;</code>表示<code>1</code>角模纵轴半径都为<code>10px</code>，<code>2</code>和<code>4</code>角横纵轴半径都为<code>8px</code>，<code>3</code>角的横纵轴半径都为<code>8px</code>；</li>
+<li>4、<code>border-radius: 10px 8px 6px 4px;</code>表示<code>1</code>角横纵轴半径都为<code>10px</code>，表示<code>2</code>角横纵轴半径都为<code>8px</code>，表示<code>3</code>角横纵轴半径都为<code>6px</code>，表示<code>4</code>角横纵轴半径都为<code>6px</code>；</li>
+</ul>
+<p><strong>椭圆的画法：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        margin: 50px auto;
+        width: 300px;
+        height: 500px;
+        border: 1px solid #ccc;
+        /* 当盒子长宽不一致时，圆角属性 分别设置宽度的一半，以及长度的一半，即是椭圆 */
+        /* 或者直接 border-radius:50%; */
+        border-radius: 150px 250px;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><img src="https://segmentfault.com/img/remote/1460000017099844?w=320&amp;h=518" alt="image"></p>
+<p><em>如果不想计算，直接设百分比：“50%”。</em></p>
+<p><strong>正圆的画法：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        margin: 50px auto;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        /* 当盒子长宽相等时，圆角属性分别设置宽度的一半，以及长度的一半，即是正圆 */
+        /* 或者直接 border-radius:50%; */
+        border-radius: 100px;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><img src="https://segmentfault.com/img/remote/1460000017099845?w=343&amp;h=327" alt="image"></p>
+<p><strong>示例代码：边框圆角合集</strong></p>
+<pre><code>&lt;style&gt;
+    * {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          background-color: wheat;
+          overflow: hidden;
+     }
+
+     .box {
+          width: 980px;
+          height: 400px;
+          background-color: #fff;
+          margin: 50px auto;
+     }
+
+     .box li {
+          float: left;
+          width: 193px;
+          height: 193px;
+          background-color: #fff;
+          margin:5px;
+          box-shadow: 2px 3px 5px #aaa;
+     }
+
+     li:first-child:after {
+          content: &quot;&quot;;
+          height: 130px;
+          width: 130px;
+          margin: 30px auto;
+          display: block;
+          border: 1px solid orangered;
+          border-radius: 50%;
+     }
+     li:nth-child(2):after {
+          content: &quot;&quot;;
+          display: block;
+          height: 130px;
+          width: 130px;
+          border: 1px solid orangered;
+          margin: 30px auto;
+          border-radius: 65px 65px 0px 0px;
+     }
+
+     li:nth-child(3):after {
+          content: &quot;&quot;;
+          display: block;
+          width: 130px;
+          height: 65px;
+          border: 1px solid orangered;
+          margin: 50px auto;
+          border-radius: 65px 65px 0px 0px;
+     }
+
+     li:nth-child(4):after {
+          content: &quot;&quot;;
+          display: block;
+          width: 130px;
+          height: 130px;
+          border: 1px solid orangered;
+          margin: 20px auto;
+          border-radius: 65px 0px 0px 0px;
+     }
+
+     li:nth-child(5):after {
+          content: &quot;&quot;;
+          width: 130px;
+          height: 65px;
+          display: block;
+          border: 1px solid orangered;
+          border-radius: 50%;
+          margin: 50px auto;
+     }
+     li:nth-child(6):after{
+          content: &quot;&quot;;
+          height: 130px;
+          width: 65px;
+          display: block;
+          border: 1px solid orangered;
+          border-radius: 50%;
+          margin: 20px auto;
+     }
+
+     li:nth-child(7):after {
+          content: &quot;&quot;;
+          height: 130px;
+          width: 130px;
+          display: block;
+          border: 1px solid orangered;
+          margin: 20px auto;
+          border-radius: 135px 0px 0px 0px;
+     }
+
+     li:nth-child(8):after {
+          content: &quot;&quot;;
+          width: 135px;
+          height: 30px;
+          display: block;
+          margin: 30px auto;
+          border: 1px solid orangered;
+          border-radius: 65px 65px 0px 0px / 30px 30px 0px 0px;
+     }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099846?w=911&amp;h=500" alt="image"></p>
+<h3 id="5-2-边框阴影"><a href="#5-2-边框阴影" class="headerlink" title="5.2 边框阴影"></a>5.2 边框阴影</h3><blockquote>
+<p><code>box-shadow</code>，与文字阴影类似，可分别设置盒子阴影偏移量、模糊度、颜色（可设透明度）。</p>
+</blockquote>
+<p>如：</p>
+<pre><code>box-shadow: 5px 5px 5px #CCC
+</code></pre><ul>
+<li>1、水平偏移量 正值向右 负值向左；</li>
+<li>2、垂直偏移量 正值向下 负值向上；</li>
+<li>3、模糊度是不能为负值；</li>
+<li>4、<code>inset</code>可以设置内阴影；</li>
+</ul>
+<p><em>注：设置边框阴影不会改变盒子的大小，即不会影响其兄弟元素的布局。可以设置多重边框阴影，实现更好的效果，增强立体感，符合渐进增强，实际开发中可以大胆使用。</em></p>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;style&gt;
+    .box {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+        border: 1px dashed #000;
+        box-shadow: 2px 3px 4px rgba(0, 247, 255, 0.452),inset 5px 6px 7px rgba(255, 0, 140, 0.562);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099847?w=254&amp;h=249" alt="image"></p>
+<p><em>我们通过上图可以看到，虚线是盒子的位置，粉色阴影是inset属性设置的，所以是内阴影，浅蓝色是直接设置的外阴影，效果一目了然。</em></p>
+<h2 id="6-背景"><a href="#6-背景" class="headerlink" title="6. 背景"></a>6. 背景</h2><blockquote>
+<p>背景在<code>CSS3</code>中也得到很大程度的增强，比如背景图片尺寸、背景裁切区域、背景定位参照点、多重背景等。</p>
+</blockquote>
+<h3 id="6-1-background-size"><a href="#6-1-background-size" class="headerlink" title="6.1 background-size"></a>6.1 background-size</h3><blockquote>
+<p>通过<code>background-size</code>设置背景图片的尺寸，就像我们设置<code>img</code>的尺寸一样，在移动<code>Web</code>开发中做屏幕适配应用非常广泛。</p>
+</blockquote>
+<p>其参数设置如下：</p>
+<ul>
+<li>可以设置长度单位(<code>px</code>)或百分比（设置百分比时，参照盒子的宽高）</li>
+<li>设置为<code>cover</code>时，会自动调整缩放比例，保证图片始终填充满背景区域，如有溢出部分则会被隐藏。</li>
+<li>设置为<code>contain</code>会自动调整缩放比例，保证图片始终完整显示在背景区域。</li>
+</ul>
+<h3 id="6-2-background-origin"><a href="#6-2-background-origin" class="headerlink" title="6.2 background-origin"></a>6.2 background-origin</h3><blockquote>
+<p>通过<code>background-origin</code>可以设置背景图片定位(<code>background-position</code>)的参照原点。</p>
+</blockquote>
+<p>其参数设置如下：</p>
+<ul>
+<li><code>border-box</code>以边框做为参考原点；</li>
+<li><code>padding-box</code>以内边距做为参考原点；</li>
+<li><code>content-box</code>以内容区做为参考点；</li>
+</ul>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box1,.box2,.box3 {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        margin: 50px 30px;
+        border: 10px dashed aquamarine;
+        padding: 10px;
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+    }
+    .box1{
+        background-origin: padding-box;
+    }
+    .box2{
+        background-origin: content-box;
+    }
+    .box3{
+        background-origin: border-box;
+    }
+&lt;/style&gt;
+
+
+&lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box3&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099848?w=933&amp;h=387" alt="image"></p>
+<h3 id="6-3-background-clip"><a href="#6-3-background-clip" class="headerlink" title="6.3 background-clip"></a>6.3 background-clip</h3><blockquote>
+<p>通过<code>background-clip</code>，可以设置对背景区域进行裁切，即改变背景区域的大小。</p>
+</blockquote>
+<p>其参数设置如下：</p>
+<ul>
+<li><code>border-box</code>裁切边框以内为背景区域；</li>
+<li><code>padding-box</code>裁切内边距以内为背景区域；</li>
+<li><code>content-box</code>裁切内容区做为背景区域；</li>
+</ul>
+<p><img src="https://segmentfault.com/img/remote/1460000017099849?w=954&amp;h=411" alt="image"></p>
+<h3 id="6-4-多背景"><a href="#6-4-多背景" class="headerlink" title="6.4 多背景"></a>6.4 多背景</h3><blockquote>
+<p>以逗号分隔可以设置多背景，可用于自适应布局。在一个盒子里可以设置多个背景图片，通过背景定位的功能将两张图片组装起来。</p>
+</blockquote>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 320px;
+        height: 410px;
+        margin: 50px auto;
+        background: url(head.jpg) no-repeat left top,
+                      url(foot.jpg) no-repeat left bottom; 
+        background-size: contain;
+        background-color: #ccc;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099850?w=397&amp;h=517" alt="image"></p>
+<p><em>从效果图中我们可以看到，在盒子里面设置了两张背景图，分别是上面一部分，下面一部分。这里故意给盒子高度拉长了一点，并且设置了一个灰色的背景，为的就是大家能够清楚的看到上下两部分的背景图。</em></p>
+<h2 id="7-渐变"><a href="#7-渐变" class="headerlink" title="7. 渐变"></a>7. 渐变</h2><blockquote>
+<p>渐变是<code>CSS3</code>当中比较丰富多彩的一个特性，通过渐变我们可以实现许多炫丽的效果，有效的减少图片的使用数量，并且具有很强的适应性和可扩展性。</p>
+</blockquote>
+<h3 id="7-1-线性渐变"><a href="#7-1-线性渐变" class="headerlink" title="7.1 线性渐变"></a>7.1 线性渐变</h3><blockquote>
+<p><code>linear-gradient</code>线性渐变指沿着某条直线朝一个方向产生渐变效果。</p>
+</blockquote>
+<p><strong>1、必要的元素：</strong></p>
+<blockquote>
+<p>借助<code>Photoshop</code>总结得出线性渐变的必要元素</p>
+</blockquote>
+<ul>
+<li>a、方向</li>
+<li>b、起始色</li>
+<li>c、终止色</li>
+<li>d、渐变距离</li>
+</ul>
+<p><strong>2、关于方向</strong></p>
+<blockquote>
+<p>通过具体的方位词指定</p>
+</blockquote>
+<ul>
+<li><code>to left</code></li>
+<li><code>to right</code></li>
+<li><code>to top</code></li>
+<li><code>to bottom</code></li>
+</ul>
+<blockquote>
+<p>通过角度改变渐变的方向</p>
+</blockquote>
+<ul>
+<li><code>0°</code>，从下往上渐变</li>
+<li><code>90°</code>，从左向右渐变</li>
+</ul>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 400px;
+        height: 150px;
+        margin: 100px auto;
+        /* 线性渐变 */
+        background-image: linear-gradient(
+            /*渐变的方向*/
+            45deg,
+            /*渐变开始的颜色*/
+            #88f5ea,
+            /*渐变结束的颜色*/
+            #d36be7
+        );
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099851?w=685&amp;h=373" alt="image"></p>
+<p><strong>3、渐变范围</strong></p>
+<blockquote>
+<p>如果不设置范围，默认渐变的范围是父盒子的宽度，如果通过<code>background-size</code>设置宽度的话，渐变范围即为设置的宽度。</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .box {
+        width: 500px;
+        height: 100px;
+        margin: 100px auto;
+        background-image: linear-gradient(
+            135deg,
+            yellow 20%,
+            black 20%,
+            black 40%,
+            yellow 40%,
+            yellow 60%,
+            black 60%,
+            black 80%,
+            yellow 80%,
+            yellow 
+        );
+        background-size: 66px 100px;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099852?w=530&amp;h=123" alt="image"></p>
+<h3 id="7-2-径向渐变"><a href="#7-2-径向渐变" class="headerlink" title="7.2 径向渐变"></a>7.2 径向渐变</h3><blockquote>
+<p><code>radial-gradient</code>径向渐变指从一个中心点开始沿着四周产生渐变效果。</p>
+</blockquote>
+<p><strong>1、必要的元素：</strong></p>
+<ul>
+<li>a、辐射范围即圆半径</li>
+<li>b、中心点 即圆的中心</li>
+<li>c、渐变起始色</li>
+<li>d、渐变终止色</li>
+<li>e、渐变范围</li>
+</ul>
+<p><strong>2、关于中心点</strong></p>
+<blockquote>
+<p>中心位置参照的是盒子的左上角，例如：</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    #div{
+        width:200px;
+        height:200px;
+        background: radial-gradient(
+            /* 100px是渐变辐射的范围 0 0 指的是圆心在盒子的左上角 */
+            100px at 0 0,
+            /*渐变起始色*/
+            orange,
+            /*渐变终止色*/
+            #ff4500
+        )
+    }
+&lt;/style&gt;
+
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><img src="https://segmentfault.com/img/remote/1460000017099853?w=361&amp;h=345" alt="image"></p>
+<p><strong>示例代码：镜像渐变画个球</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,body {
+        width: 100%;
+        height: 100%;
+        background-color: #ccc;
+    }
+
+    .box {
+         width: 400px;
+         height: 400px;
+         background-color: #fff;
+         margin: 50px auto;
+         border-radius: 50%;
+
+         background-image: radial-gradient(
+               300px at 100px 100px,
+               rgba(0,0,0,.1),
+               rgba(0,0,0,.8)
+         );
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099854?w=801&amp;h=556" alt="image"></p>
+<h2 id="8-过渡"><a href="#8-过渡" class="headerlink" title="8. 过渡"></a>8. 过渡</h2><blockquote>
+<p>过渡是<code>CSS3</code>中具有颠覆性的特征之一，可以实现元素不同状态间的平滑过渡（补间动画），经常用来制作动画效果。</p>
+</blockquote>
+<h3 id="8-1-帧动画"><a href="#8-1-帧动画" class="headerlink" title="8.1 帧动画"></a>8.1 帧动画</h3><blockquote>
+<p>通过一帧一帧的画面按照固定顺序和速度播放，如电影胶片。</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/remote/1460000017099855?w=311&amp;h=220" alt="image"></p>
+<p><strong>示例代码：</strong></p>
+<pre><code>&lt;!--
+    baidu.png这个背景图由64张图片横向组成，我们通过动态改变图片的位置，实现动画效果
+--&gt;
+&lt;style&gt;
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+    }
+
+    .logo {
+        width: 270px;
+        height: 129px;
+        margin: 100px auto;
+        background-image: url(./baidu.png);
+        background-position: 0 0;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;logo&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    var logo = document.querySelector(&#39;.logo&#39;);
+
+    var offset = -270;
+    var n = 0;
+    setInterval(function () {
+        n++;
+        logo.style.backgroundPosition = offset * n + &#39;px 0px&#39;;
+        if(n &gt;= 64) n = 0;
+    },100);
+&lt;/script&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099856?w=347&amp;h=193" alt="image"></p>
+<p><em>这里不做详细了解，主要是为了区分与补间动画的区别。</em></p>
+<h3 id="8-2-补间动画"><a href="#8-2-补间动画" class="headerlink" title="8.2 补间动画"></a>8.2 补间动画</h3><blockquote>
+<p>自动完成从起始状态到终止状态的的过渡。</p>
+</blockquote>
+<p><strong>语法：transition</strong></p>
+<blockquote>
+<p>当前元素只要有“属性”发生变化时，可以平滑的进行过渡，并不仅仅局限于<code>hover</code>状态。</p>
+</blockquote>
+<ul>
+<li><code>transition-property</code>设置过渡属性</li>
+</ul>
+<pre><code>/*设置哪些属性要参加到动画效果中*/
+transition-property: all;
+</code></pre><ul>
+<li><code>transition-duration</code>设置动画过渡执行时间</li>
+</ul>
+<pre><code>transition-duration: 2s;
+</code></pre><ul>
+<li><code>transition-timing-function</code>设置过渡速度类型</li>
+</ul>
+<pre><code>transition-timing-function:linear; 
+
+/* ease| ease-in | ease-out | ease-in-out | linear; */
+</code></pre><ul>
+<li><code>transition-delay</code>设置过渡延时</li>
+</ul>
+<pre><code>/*1s后，过渡动画开始过渡*/
+transition-delay: 1s;
+</code></pre><p><strong>连写：</strong></p>
+<pre><code>/*          属性  执行时间 延时时间 过渡类型*/
+transition: all   2s       1s       linear;
+</code></pre><p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 250px;
+        height: 250px;
+        background-color: pink;
+        margin: 100px auto;
+        transition: all 2s 1s linear;
+    }
+
+    .box:hover {
+        width: 200px;
+        height: 200px;
+        border-radius:50%;
+        background-color: rgb(25, 221, 247);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099857?w=363&amp;h=342" alt="image"></p>
+<p><em>我们可以看到，触发hover事件的时候延迟1s后开始执行动画。</em></p>
+<p><strong>示例代码：过渡的实际应用</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    html,body {
+         margin: 0;
+         padding: 0;
+         width: 100%;
+         height: 100%;
+    }
+
+    .box {
+         width: 100%;
+         height: 100%;
+         background-color: #eee;
+    }
+
+    .l_box {
+         float: left;
+         width: 234px;
+         height: 300px;
+         margin: 100px 50px;
+         cursor: pointer;
+         transition: all 0.5s linear;
+    }
+
+    .l_box:hover {
+        box-shadow: -2px -2px 20px #777;
+        margin-top: 90px;
+    }
+
+    .r_box {
+         width: 234px;
+         height: 300px;
+         float: left;
+         margin: 100px 0px;
+         background-color: #fff;
+         text-align: center;
+         position: relative;
+    }
+
+    .cover {
+        position: absolute;
+        bottom: 0;
+        height: 0px;
+        width: 234px;
+        background-color: orange;
+        transition: all 1s linear;
+    }
+
+    .r_box:hover .cover {
+        height: 100px;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;l_box&quot;&gt;
+        &lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;r_box&quot;&gt;
+        &lt;img src=&quot;img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;div class=&quot;cover&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099858?w=586&amp;h=393" alt="image"></p>
+<h2 id="9-2D转换"><a href="#9-2D转换" class="headerlink" title="9. 2D转换"></a>9. 2D转换</h2><blockquote>
+<p>转换（<code>transform</code>）是<code>CSS3</code>中具有颠覆性的特征之一，可以实现元素的位移、旋转、变形、缩放，甚至支持矩阵方式，配合即将学习的过渡和动画知识，可以取代大量之前只能靠<code>Flash</code>才可以实现的效果。</p>
+</blockquote>
+<h3 id="9-1-位移"><a href="#9-1-位移" class="headerlink" title="9.1 位移"></a>9.1 位移</h3><blockquote>
+<p><code>CSS3</code>中，通过<code>translate</code>属性对元素进行位移。</p>
+</blockquote>
+<p>移动<code>translate(x, y)</code>可以改变元素的位置，<code>x</code>、<code>y</code>可为负值；</p>
+<ul>
+<li>a、移动位置相当于自身原来位置</li>
+<li>b、<code>y</code>轴正方向朝下</li>
+<li>c、除了可以像素值，也可以是百分比，相对于自身的宽度或高度</li>
+</ul>
+<pre><code>transform: translate(100px, 30px);
+</code></pre><p><strong>示例代码</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .line {
+        height: 200px;
+        background-color: pink;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(30, 230, 245);
+        transition: all 1s linear;
+    }
+
+    .line:hover .box {
+        /* 位移 */
+        transform: translate(100px, 30px);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;line&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099859?w=637&amp;h=214" alt="image"></p>
+<p><em>我们可以看到，鼠标移上去之后，蓝色盒子，分别向左和向下移动了一段距离。</em></p>
+<h3 id="9-2-缩放"><a href="#9-2-缩放" class="headerlink" title="9.2 缩放"></a>9.2 缩放</h3><blockquote>
+<p>缩放<code>scale(x, y)</code>可以对元素进行水平和垂直方向的缩放，<code>x</code>、<code>y</code>的取值可为小数；</p>
+</blockquote>
+<pre><code>/*宽和高都放大1倍*/
+transform: scale(1.5);
+</code></pre><p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 50px auto;
+        transition: all 2s linear;
+    }
+
+    .box:hover {
+        /* 缩放 */
+        transform: scale(0.5);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099860?w=287&amp;h=265" alt="image"></p>
+<h3 id="9-3-旋转"><a href="#9-3-旋转" class="headerlink" title="9.3 旋转"></a>9.3 旋转</h3><blockquote>
+<p>旋转<code>rotate</code>(<code>deg</code>)可以对元素进行旋转，正值为顺时针，负值为逆时针；</p>
+</blockquote>
+<ul>
+<li>a、当元素旋转以后，坐标轴也跟着发生的转变</li>
+<li>b、调整顺序可以解决，把旋转放到最后</li>
+</ul>
+<pre><code>/* 顺时针旋转 90度 */
+transform: rotate(90deg);
+</code></pre><p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #0df3cd;
+        margin: 100px auto;
+        transition: all 2s linear;
+    }
+
+    .box:hover {
+        transform: rotate(-90deg);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099861?w=287&amp;h=265" alt="image"></p>
+<p><strong>旋转原点：</strong></p>
+<blockquote>
+<p>默认情况下，旋转是按照元素的中心点旋转的，但是我们可以手动设置元素旋转的中心点。</p>
+</blockquote>
+<pre><code>transform-origin: 30px 40px;
+</code></pre><p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: cyan;
+        margin: 100px auto;
+        transition: all 1s linear;
+        /* 设置旋转原点位置 */
+        /* transform-origin: left top; */
+        transform-origin: 30px 40px;
+    }
+
+    .box:hover {
+        transform: rotate(90deg);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099862?w=347&amp;h=332" alt="image"></p>
+<p><strong>示例代码：扑克牌</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+         width: 310px;
+         height: 438px;
+         border: 1px solid #ccc;
+         margin: 50px auto;
+         position: relative;
+    }
+
+    .box img {
+         position: absolute;
+         transform-origin:bottom;
+         transition: all 2s linear;
+    }
+
+    .box:hover img:nth-child(1) {
+         transform: rotate(10deg);
+    }
+    .box:hover img:nth-child(2) {
+         transform: rotate(20deg);
+    }
+    .box:hover img:nth-child(3) {
+         transform: rotate(30deg);
+    }
+    .box:hover img:nth-child(4) {
+         transform: rotate(40deg);
+    }
+    .box:hover img:nth-child(5) {
+         transform: rotate(50deg);
+    }
+    .box:hover img:nth-child(6) {
+         transform: rotate(60deg);
+    }
+&lt;/style&gt;
+
+
+&lt;div class=&quot;box&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;img/pk1.png&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099863?w=749&amp;h=595" alt="image"></p>
+<h3 id="9-4-倾斜"><a href="#9-4-倾斜" class="headerlink" title="9.4 倾斜"></a>9.4 倾斜</h3><blockquote>
+<p>倾斜<code>skew(deg, deg)</code>可以使元素按一定的角度进行倾斜，可为负值，第二个参数不写默认为<code>0</code>。</p>
+</blockquote>
+<pre><code>transform: skew(30deg,30deg);
+</code></pre><p><strong>示例代码：</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: cyan;
+        margin: 100px auto;
+        transition: all 2s linear;
+    }
+
+    .box:hover {
+        /* 倾斜 */
+        transform: skew(30deg, 30deg);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099864?w=253&amp;h=246" alt="image"></p>
+<h3 id="9-5-矩阵"><a href="#9-5-矩阵" class="headerlink" title="9.5 矩阵"></a>9.5 矩阵</h3><blockquote>
+<p>矩阵<code>matrix()</code>把所有的<code>2D</code>转换组合到一起，需要<code>6</code>个参数。<code>transform-origin</code>可以调整元素转换的原点，但是对于<code>transform: translate(x，y)</code>没有影响。我们可以同时使用多个转换，其格式为：<code>transform: translate() rotate() scale()</code> …等，其顺序会影转换的效果。</p>
+</blockquote>
+<p><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank" rel="noopener">详细可参见</a></p>
+<h2 id="10-3D-转换"><a href="#10-3D-转换" class="headerlink" title="10. 3D 转换"></a>10. 3D 转换</h2><h3 id="10-1-3D-坐标轴"><a href="#10-1-3D-坐标轴" class="headerlink" title="10.1 3D 坐标轴"></a>10.1 3D 坐标轴</h3><blockquote>
+<p>用<code>X</code>、<code>Y</code>、<code>Z</code>分别表示空间的<code>3</code>个维度，三条轴互相垂直。如下图：</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/remote/1460000017099865?w=368&amp;h=402" alt="image"></p>
+<p><em>网格状的正方形，可以想象成是我们的电脑桌面2D平面。</em></p>
+<p><strong>在 3D 转换中，前面 2D 转换的属性在这都可以使用：</strong></p>
+<ul>
+<li>位移</li>
+</ul>
+<pre><code>transform:translate(100px,100px,100px);
+</code></pre><ul>
+<li>旋转</li>
+</ul>
+<pre><code>transform:rotate(30deg,30deg,30deg);
+</code></pre><ul>
+<li>缩放</li>
+</ul>
+<pre><code>transform:scale(2,0.5,0.5);
+</code></pre><ul>
+<li>倾斜</li>
+</ul>
+<pre><code>transform:skew(30deg,30deg,30deg);
+</code></pre><p><em>在3D转换中，一定要加上一个透视属性，才能在电脑2D平面中显示出3D的效果，透视属性请看下章。</em></p>
+<h3 id="10-2-透视（perspective）"><a href="#10-2-透视（perspective）" class="headerlink" title="10.2 透视（perspective）"></a>10.2 透视（perspective）</h3><blockquote>
+<p>电脑显示屏是一个<code>2D</code>平面，图像之所以具有立体感（<code>3D</code>效果），其实只是一种视觉呈现，通过透视可以实现此目的。<code>perspective</code>通过透视产生的<code>3D</code>效果，只是视觉呈现而已，并不是真正的<code>3d</code>立体的盒子；就是<code>近大远小</code>的效果。</p>
+</blockquote>
+<p>透视的概念其实很简单，就是“近大远小”。</p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099866?w=600&amp;h=600" alt="image"></p>
+<p><strong>举个例子：</strong></p>
+<blockquote>
+<p>在<code>2D</code>转换的时候，我们知道一个<code>translate</code>属性，他分别可以设置向左向右或者向上向下平移，但是却不能向里面或外面平移。</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .box{
+        width: 550px;
+        height: 150px;
+        margin: 100px auto;
+        padding: 6px;
+        border: 1px dashed #ccc;
+    }
+    .box li{
+        float: left;
+        width: 150px;
+        height: 150px;
+        padding: 0;
+        list-style: none;
+        margin-right: 50px;
+        transition: all 0.5s linear;
+
+    }
+    .box li:first-child{
+        background: salmon;
+    }
+    .box li:nth-child(2){
+        background: deepskyblue;
+    }
+    .box li:last-child{
+        background: khaki;
+        margin-right: 0px;
+    }
+    /* 第一个盒子向X轴的负方向移动100px */
+    .box li:first-child:hover{
+        transform: translateX(-100px);
+    }
+    /* 第二个盒子向Y轴的正方向移动100px */
+    .box li:nth-child(2):hover{
+        transform: translateY(100px);
+    }
+    /* 第三个盒子Z轴的负方向移动100px */
+    .box li:last-child:hover{
+        transform: translateZ(-100px);
+    }
+&lt;/style&gt;
+
+&lt;ul class=&quot;box&quot;&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099867?w=855&amp;h=383" alt="image"></p>
+<p><em>没有加透视属性的时候，因为z轴是垂直电脑平面射出来的，translateZ是看不出效果的。</em></p>
+<p><strong>如何设置透视属性？</strong></p>
+<blockquote>
+<p>给当前元素的直接父元素添加<code>perspective: 800px;</code>透视属性，注意这个值可以是随意的，但是最佳展现距离是<code>600px~1000px</code>。</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+    .box{
+        width: 550px;
+        height: 150px;
+        margin: 100px auto;
+        padding: 6px;
+        border: 1px dashed #ccc;
+        /* 给变换的 li 的直接父元素 ul 添加透视属性 perspective */
+        perspective: 800px;
+    }
+    .box li{
+        float: left;
+        width: 150px;
+        height: 150px;
+        padding: 0;
+        list-style: none;
+        margin-right: 50px;
+        transition: all 0.5s linear;
+
+    }
+    .box li:first-child{
+        background: salmon;
+    }
+    .box li:nth-child(2){
+        background: deepskyblue;
+    }
+    .box li:last-child{
+        background: khaki;
+        margin-right: 0px;
+    }
+    /* 第一个盒子向X轴的负方向移动100px */
+    .box li:first-child:hover{
+        transform: translateX(-100px);
+    }
+    /* 第二个盒子向Y轴的正方向移动100px */
+    .box li:nth-child(2):hover{
+        transform: translateY(100px);
+    }
+    /* 第三个盒子Z轴的负方向移动100px */
+    .box li:last-child:hover{
+        transform: translateZ(-100px);
+    }
+&lt;/style&gt;
+
+&lt;ul class=&quot;box&quot;&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099868?w=855&amp;h=383" alt="image"></p>
+<p><em>如图所示，在ul加上透视属性后，第三个盒子向着z轴的负方向移动了100px。</em></p>
+<p><em>透视可以将一个2D平面，在转换的过程当中，呈现3D效果。（没有perspective，便“没有”Z轴）并非任何情况下都需要透视效果。</em></p>
+<h3 id="10-3-3D呈现（transform-style）"><a href="#10-3-3D呈现（transform-style）" class="headerlink" title="10.3 3D呈现（transform-style）"></a>10.3 3D呈现（transform-style）</h3><blockquote>
+<p>什么是<code>3D</code>呈现呢？不要与前面的透视搞混，透视只能使一个物体呈现近大远小的状态，不能呈现出一个立体感的东西，比如我在页面上用六个面组成一个正方形，通过透视你可能只能改变他的远近距离，并不能让他看起来像个立体的盒子，所以这里需要用到另一个属性：<code>transform-style</code>。</p>
+</blockquote>
+<pre><code>transform-style: preserve-3d | flat
+</code></pre><ul>
+<li><code>flat</code>：所有子元素在<code>2D</code>平面呈现</li>
+<li><code>preserve-3d</code>：保留<code>3D</code>空间</li>
+</ul>
+<p><em>必须设置在父元素身上并且父元素有转换（就是有变形）并且子元素也得有转换（变形）才能看得到效果。</em></p>
+<p><strong>1、示例代码：正方体</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    * {
+         margin: 0;
+         padding: 0;
+
+    }
+
+    .box {
+         width: 200px;
+         height: 200px;
+         margin: 150px auto;
+
+         position: relative;
+
+         /* 透视 */
+         /* perspective: 1000px; */
+
+         /* 转为立方体 */
+         transform-style: preserve-3d;
+
+         transform: rotateY(45deg) rotateX(30deg);
+    }
+
+    .box&gt;div {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+    }
+
+    .left {
+        background-color: pink;
+        transform: rotateY(-90deg) translateZ(150px);
+    }
+
+    .right {
+        background-color: green;
+        transform: rotateY(90deg) translateZ(150px);
+    }
+
+    .top {
+        background-color: orange;
+        transform: rotateX(90deg) translateZ(150px);
+    }
+
+    .bottom {
+        background-color: blue;
+        transform: rotateX(-90deg) translateZ(150px);
+    }
+
+    .before {
+        background-color: red;
+        transform: translateZ(150px);
+    }
+
+    .back {
+        background-color: greenyellow;
+        transform: translateZ(-150px);
+    }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;top&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;before&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099869?w=649&amp;h=492" alt="image"></p>
+<p><strong>2、示例代码：3D 导航</strong></p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+
+     * {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+     }
+
+     nav {
+          width: 600px;
+          height: 60px;
+          line-height: 60px;
+          margin: 200px auto;
+     }
+
+     li {
+          height: 60px;
+          width: 150px;
+          float: left;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in;
+     }
+
+     span {
+          position: absolute;
+          width: 150px;
+          height: 60px;
+          display: block;
+         color: #fff;
+          text-align: center;
+     }
+
+     span:first-child{
+          background-color: #ff287a;
+         transform: rotateX(90deg) translateZ(30px);
+     }
+
+     span:last-child{
+         transform: translateZ(30px);
+         background-color: #00bdab;
+     }
+
+     li:hover {
+          transform: rotateX(-90deg);
+     }
+&lt;/style&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;span&gt;Home&lt;/span&gt;
+            &lt;span&gt;主页&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span&gt;Menu&lt;/span&gt;
+            &lt;span&gt;菜单&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span&gt;Admin&lt;/span&gt;
+            &lt;span&gt;管理&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span&gt;About&lt;/span&gt;
+            &lt;span&gt;关于我们&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre><p><strong>效果图：</strong></p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099870?w=648&amp;h=123" alt="image"></p>
+<h3 id="10-4-3D呈现案例：3D轮播图"><a href="#10-4-3D呈现案例：3D轮播图" class="headerlink" title="10.4 3D呈现案例：3D轮播图"></a>10.4 3D呈现案例：3D轮播图</h3><p><strong>1、普通版 3D 轮播图</strong></p>
+<p>实现思路：</p>
+<ul>
+<li>通过<code>CSS3</code>中<code>transform-style: preserve-3d</code>的概念，将视图设置成<code>3D</code>展示模式；</li>
+<li>四张图片，分别设置其绕着<code>X</code>轴旋转的角度，分别对应四个立体面；</li>
+<li>将旋转好的图片沿着<code>Z</code>轴平移盒子宽度的一半；</li>
+<li>定义一个全局变量<code>num</code>，用来记录按钮点击的次数，当当按动按钮的时候，让<code>ul</code>旋转<code>num*90°</code>；</li>
+</ul>
+<p>示例代码：</p>
+<pre><code>&lt;style&gt;
+    * {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .box {
+        width: 960px;
+        height: 540px;
+        /* border: 5px solid #999; */
+        margin: 150px auto;
+    }
+
+    .box ul {
+        width: 960px;
+        height: 540px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .6s;
+    }
+
+    .box ul li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box ul li:nth-child(1) {
+        transform: rotateX(90deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(2) {
+        transform: rotateX(-90deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(3) {
+        transform: rotateX(180deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(4) {
+        transform: translateZ(270px);
+    }
+
+    .btn {
+        width: 1080px;
+        margin: 0 auto;
+        position: relative;
+        height: 0px;
+        top: -470px;
+    }
+
+    .btn button {
+        width: 40px;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        outline: none;
+        font: 900 24px/80px &#39;宋体&#39;;
+        color: #fff;
+    }
+
+    .btn button:frist-child {
+        float: left;
+    }
+
+    .btn button:last-child {
+        /* border-radius: 0 10px 10px 0; */
+        float: right;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src=&quot;./imgs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;./imgs/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;./imgs/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;./imgs/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn&quot;&gt;
+    &lt;button&gt;&amp;lt;&lt;/button&gt;
+    &lt;button&gt;&amp;gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var btn = document.querySelectorAll(&#39;button&#39;);
+    var box = document.querySelector(&#39;.box&#39;);
+    var _ul = box.querySelector(&#39;ul&#39;);
+    var num = 0;
+
+    // btn 获取到的是一个伪数组
+    btn[1].onclick = function () {
+        num++;
+        _ul.style.transform = &#39;rotateX(&#39; + num * 90 + &#39;deg)&#39;
+    }
+
+    btn[0].onclick = function () {
+        num--;
+        _ul.style.transform = &#39;rotateX(&#39; + num * 90 + &#39;deg)&#39;;
+    }
+&lt;/script&gt;
+</code></pre><p>效果图：</p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099871?w=790&amp;h=513" alt="image"></p>
+<p><strong>2、切割版 3D 轮播图</strong></p>
+<p>实现思路：</p>
+<ul>
+<li>结构上将之前定义好的<code>ul</code>重复四次；</li>
+<li>设定延时，整个动画执行时间是<code>0.8s</code>，设定每一个<code>ul</code>延迟执行<code>0.2s</code>，即第一个延时<code>0s</code>，第二个延时<code>0.2s</code>，第三个延时<code>0.4s</code>，第四个延时<code>0.6s</code>；</li>
+<li>其余步骤同上，着重强调的是，相对于上面的案例，本案例给按钮加了限制，监听第一次所有的<code>ul</code>旋转结束之后，按钮才能再一次被点击。</li>
+</ul>
+<p>示例代码：</p>
+<pre><code>&lt;style&gt;
+    * {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .box {
+        width: 960px;
+        height: 540px;
+        margin: 150px auto;
+        display: flex;
+    }
+
+    .box ul {
+        width: 960px;
+        height: 540px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .8s;
+    }
+
+    .box ul li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+    }
+
+    img {
+        width: 960px;
+        height: 540px;
+    }
+
+    /* 设定延时 */
+    .box ul:nth-child(1) {
+      transition-delay:0s;
+    }
+    .box ul:nth-child(2) {
+      transition-delay:.2s;
+    }
+    .box ul:nth-child(3) {
+      transition-delay:.4s;
+    }
+    .box ul:nth-child(4) {
+      transition-delay:.6s;
+    }
+
+    /* 拼凑图片 */
+    .box ul:nth-child(2) img {
+      margin-left: -240px;
+    }
+    .box ul:nth-child(3) img {
+      margin-left: -480px;
+    }
+    .box ul:nth-child(4) img {
+      margin-left: -720px;
+    }
+
+    .box ul li:nth-child(1) {
+        transform: rotateX(90deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(2) {
+        transform: rotateX(-90deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(3) {
+        transform: rotateX(180deg) translateZ(270px);
+    }
+
+    .box ul li:nth-child(4) {
+        transform: translateZ(270px);
+    }
+
+    .btn {
+        width: 1080px;
+        margin: 0 auto;
+        position: relative;
+        height: 0px;
+        top: -470px;
+    }
+
+    .btn button {
+        width: 40px;
+        height: 80px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        outline: none;
+        font: 900 24px/80px &#39;宋体&#39;;
+        color: #fff;
+    }
+
+    .btn button:frist-child {
+        float: left;
+    }
+
+    .btn button:last-child {
+        /* border-radius: 0 10px 10px 0; */
+        float: right;
+    }
+&lt;/style&gt;
+
+
+&lt;div class=&quot;box&quot;&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;./imgs/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn&quot;&gt;
+&lt;button&gt;&amp;lt;&lt;/button&gt;
+&lt;button&gt;&amp;gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var btn = document.querySelectorAll(&#39;button&#39;);
+    var box = document.querySelector(&#39;.box&#39;);
+    var _ul = box.querySelectorAll(&#39;ul&#39;);
+    var num = 0;
+    var flag = true;
+    // btn 获取到的是一个伪数组    
+    btn[1].onclick = function () {
+      if (flag) {
+        flag = false;
+        num++;
+        for (var i = 0; i &lt; _ul.length; i++) {
+          _ul[i].style.transform = &#39;rotateX(&#39; + num * 90 + &#39;deg)&#39;;
+
+        }
+        // 监听最后一个transition事件结束的时候 将flag 置为 true 防止重复点击
+        _ul[_ul.length - 1].addEventListener(&#39;transitionend&#39;, function () {
+          flag = true;
+        })
+      }
+    }
+    btn[0].onclick = function () {
+      if (flag) {
+        flag = false;
+        num--;
+        for (var i = 0; i &lt; _ul.length; i++) {
+          _ul[i].style.transform = &#39;rotateX(&#39; + num * 90 + &#39;deg)&#39;;
+
+        }
+        _ul[_ul.length - 1].addEventListener(&#39;transitionend&#39;, function () {
+          flag = true;
+        })
+      }
+
+    }
+&lt;/script&gt;
+</code></pre><p>效果图：</p>
+<p><img src="https://segmentfault.com/img/remote/1460000017099872?w=790&amp;h=513" alt="image"></p>
+<h3 id="10-5-backface-visibility"><a href="#10-5-backface-visibility" class="headerlink" title="10.5 backface-visibility"></a>10.5 backface-visibility</h3><blockquote>
+<p><code>backface-visibility</code>属性定义当元素不面向屏幕时是否可见。</p>
+</blockquote>
+<p>如果在旋转元素不希望看到其背面时，该属性很有用。有两个属性：</p>
+<ul>
+<li>1、<code>visible</code>背面是可见的</li>
+<li>2、<code>hidden</code>背面是不可见的</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/28/css-ru-men-xiang-jie-yi/" class="b-link-green">CSS入门详解(一)</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'bb4c14c47159f54683cd',
+        clientSecret: 'e90cfc3fd582c8014121a269bea84484520a2f12',
+        repo: 'hexo-Gitalk',
+        owner: 'zhaowensheng',
+        admin: "zhaowensheng",
+        id: '2018-11-28T15-02-14',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/11/28/html5-ru-men-xiang-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="HTML5入门详解">
+                        
+                        <span class="card-title">HTML5入门详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1. 认识HTML5
+HTML5并不仅仅只是作为HTML标记语言的一个最新版本，更重要的是它制定了Web应用开发的一系列标准，成为第一个将Web做为应用开发平台的HTML语言。
+
+HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category" target="_blank">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/27/zuo-typora-ru-men-zhong-wen-ban/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="做Typora入门（中文版）">
+                        
+                        <span class="card-title">做Typora入门（中文版）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">写Markdown费事？Typora让你像写word一样行云流水，所见即所得。
+Typora简介
+Typora删除了预览窗口，以及所有其他不必要的干扰。取而代之的是实时预览。
+Markdown的语法因不同的解析器或编辑器而异，Typora使</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/博客/" target="_blank">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://zhaowensheng.github.io/" target="_blank">zhaowensheng</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

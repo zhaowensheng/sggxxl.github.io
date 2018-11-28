@@ -1,0 +1,1415 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="css基础知识总结, 盛哥修行录">
+    <meta name="description" content="css基本知识我们先看一个小例子：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;q">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>css基础知识总结 | 盛哥修行录</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">盛哥修行录</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">盛哥修行录</div>
+        <div class="logo-desc">
+            
+            世上没有绝望的处境，只有对处境绝望的人。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhaowensheng" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhaowensheng" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        css基础知识总结
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/CSS/" target="_blank">
+                    <span class="chip bg-color">CSS</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/CSS/" class="post-category" target="_blank">
+                        CSS
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-21
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="css基本知识"><a href="#css基本知识" class="headerlink" title="css基本知识"></a>css基本知识</h2><p>我们先看一个小例子：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;background-color:#2459a2;height: 48px;&quot;&gt;1&lt;/div&gt;
+    &lt;div style=&quot;background-color:red;&quot;&gt;2&lt;/div&gt;
+    &lt;div style=&quot;background-color:green;&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div style="background-color:#2459a2;height: 48px;">1</div><br> <div style="background-color:red;">2</div><br> <div style="background-color:green;">3</div>
+
+<p>我们可以看到我们在div中加了style,里面有background-color，height等属性，这样就使的原本什么都没有的div添加了背景色高度等。</p>
+<h2 id="css的编写"><a href="#css的编写" class="headerlink" title="css的编写"></a>css的编写</h2><p>在标签上设置style属性：width,height,background…….<br>写在head里面，写一个&lsaquo;style&rsaquo;标签中写样式：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>style<span class="token operator">></span>
+<span class="token comment" spellcheck="true">#i1{</span>
+  background-color:red<span class="token punctuation">;</span>
+  height:48px      
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">></span>
+<span class="token operator">&lt;</span>/head<span class="token operator">></span>
+</code></pre>
+<p> 单独创建一个.css格式的文件，在.css文件中写入样式，在html文件中的head标签中引入该.css文件：<br>&lsaquo;link rel=”stylesheet” href=”common.css” /&rsaquo;</p>
+<h2 id="选择器使用css"><a href="#选择器使用css" class="headerlink" title="选择器使用css"></a>选择器使用css</h2><p> 1.标签选择器：</p>
+<pre><code>div{background-color:red; } 
+&lt;div &gt; &lt;/div&gt;
+</code></pre><p>2.class选择器：</p>
+<pre><code>.bd{background-color:red; } 
+&lt;div class=&#39;bd&#39;&gt; &lt;/div&gt; 
+</code></pre><p>3.id选择器：</p>
+<pre><code>#idselect{background-color:red; } 
+&lt;div id=&#39;idselect&#39; &gt; &lt;/div&gt;
+</code></pre><p>4.关联选择器（空格）</p>
+<pre><code>#idselect p{background-color:red; } 
+&lt;div id=&#39;idselect&#39; &gt; &lt;p&gt; &lt;/p&gt; &lt;/div&gt;
+</code></pre><p>5.组合选择器：（逗号）</p>
+<pre><code>input,div,p{ background-color:red; } 
+</code></pre><p>6.属性选择器：</p>
+<pre><code>input[type=&#39;text&#39;]{ width:100px; height:200px; } 
+</code></pre><p>css中的优先级</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .c1{
+            background-color: red;
+            color: white;
+        }
+        .c2{
+            font-size: 58px;
+            #color:black;
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;c1 c2&quot;&gt;asdfas&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 上面我们设置了一个div有两个class名称，然后先设置了一个color:white,显示的效果如下：<br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313170423687-1932802288.png" class="[class names]"></p>
+<p>下面我们在.c2的css中把color:black的注释去掉，显示的效果如下：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313170519958-1912902775.png" class="[class names]">
+<p>我们再在&rsaquo;div&rsaquo;标签中添加：style=”color:blue”，那么显示的效果如下：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313170746969-1806163476.png" class="[class names]">
+<p>这就涉及到了css样式的优先级：（就近原则）</p>
+<p>　　style—&gt;c2—-c1(这里c2,c1的优先级是看在css中谁的样式写在下面，如果上面head标签的style标签中两个位置互换，那么就是c1的优先级大于c2)</p>
+<h2 id="常用的css中的样式"><a href="#常用的css中的样式" class="headerlink" title="常用的css中的样式"></a>常用的css中的样式</h2><p> 1.边框</p>
+<p>默认4个边都加上：</p>
+<p>　　 border:1px solid/dotted red (1像素，实线/虚线，红色)：</p>
+<p>只加左边和右边：</p>
+<p>　　border-left-right:1px solid/dotted red </p>
+<p> 2.height,width,line-height,color,font-size,font-weight:</p>
+<p>height,width:高度，宽度</p>
+<p>　　height:48px;width:200px     or     height:48px;width:80%（可以用具体的值也可以用百分比）</p>
+<p>text-align:center，水平方向居中</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313172436168-615590022.png" class="[class names]">
+<p>line-height行高：</p>
+<p>　　如果我们想要把文字垂直居中就可以用这个属性（行高像素==height像素）,即height:48px，line-height:48px，则字体就居中了。</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313172743598-915330394.png" class="[class names]">
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313172752196-1584586787.png" class="[class names]">
+<p>font-size字体大小：font-size:12px;</p>
+<p>font-weight字体的样式：100-900,bold(加粗),bolder（更粗），inherit,initial,lighter,normal,unset</p>
+<p>color字体颜色；</p>
+<p>3.float属性：浮动</p>
+<p>如果我们写了2个div,那这2个div就会每个各占一行，如果我们想让一个div在左边占20%，一个div在右边80%，想要两个div在一行对接起来，那就需要用到float</p>
+<p>首先看看我们不用float的效果：</p>
+<pre><code>&lt;div style=&quot;background-color: red;width:20%;&quot;&gt;div1&lt;/div&gt;
+&lt;div style=&quot;background-color: green;width:80%&quot;&gt;div2&lt;/div&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313173811075-1960358527.png" class="[class names]">
+<p> 如果我们让这两个div都向左浮动：</p>
+<pre><code>&lt;div style=&quot;background-color: red;width:20%;float:left;&quot;&gt;div1&lt;/div&gt;
+&lt;div style=&quot;background-color: green;width:80%;float:left&quot;&gt;div2&lt;/div&gt;
+</code></pre><p> 两个就重合在一起，并且一个站20%，一个占80%<br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313174005712-565863141.png" class="[class names]"></p>
+<p>如果我改成div1占20%往左浮动，div2占60%往右浮动：那么中间就会空出20%</p>
+<pre><code>&lt;div style=&quot;background-color: red;width:20%;float:left;&quot;&gt;div1&lt;/div&gt;
+&lt;div style=&quot;background-color: green;width:60%;float:right&quot;&gt;div2&lt;/div&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313174212711-495932291.png" class="[class names]">
+<p> 现在我们写一个盒子，里面有一些div：</p>
+<pre><code>&lt;div style=&quot;width: 300px; border: 1px solid red;&quot;&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+        &lt;div style=&quot;width:96px;height:30px;border:1px solid green;float:left&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p> 我们可以发现用了float我们就可以做到类似很多前端页面一块一块的样式，我们最外面的div的高度是随着里面小div不断的增多而增多的。</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313175552747-1722762029.png" class="[class names]">
+<p>但是有一个问题，我们可以看到上面有一个红色的线，他是外层div的边框，为什么父div的边框没有了呢，只有一个了呢？这个就是使用float之后会产生的问题。</p>
+<p>解决方法：</p>
+<p>在父div中的最后加上这么一段：<div style="clear:both;"></div></p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313175903532-1925960022.png" class="[class names]">
+<p>这样，父div的边框就显现了出来</p>
+<p>4.display</p>
+<p>首先我们看一段：</p>
+<pre><code>&lt;div style=&quot;background-color: red;&quot;&gt;div1&lt;/div&gt;
+&lt;span style=&quot;background-color: green;&quot;&gt;span1&lt;/span&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313180454153-496478144.png" class="[class names]">
+<p>现在我们想要让块级标签变成一个行内标签：display:inline</p>
+<pre><code>&lt;div style=&quot;background-color: red;display:inline;&quot;&gt;div1&lt;/div&gt;
+&lt;span style=&quot;background-color: green;&quot;&gt;span1&lt;/span&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313180620892-412934657.png" class="[class names]">
+<p>我们想要让span这个行内标签变成块级标签：display:block;<br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313180735746-1839341791.png" class="[class names]"></p>
+<hr>
+<p>行内标签：无法设置高度，宽度，padding,margin</p>
+<p>块级标签：可以设置高度，宽度，padding,margin</p>
+<pre><code>&lt;span style=&quot;background-color: red;width:200px;height:48px;&quot;&gt;span1&lt;/span&gt;
+&lt;a style=&quot;background-color: red;&quot;&gt;chaolianjei&lt;/a&gt;
+ 我们可以发现一点效果都没有
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313181138086-1758711987.png" class="[class names]">
+<p>display:inline-block;</p>
+<p>　　具有inline，默认自己有多少占多少；</p>
+<p>　　具有block，可以设置高度，宽度，padding,margin</p>
+<pre><code>&lt;span style=&quot;background-color: red;width:200px;height:48px;display: inline-block;&quot;&gt;span1&lt;/span&gt;
+&lt;a style=&quot;background-color: red;&quot;&gt;chaolianjei&lt;/a&gt;
+</code></pre><p> 加了display:inline-block;之后，span就可以设置宽高了：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313181452665-1096668336.png" class="[class names]">
+<p>display:none;让标签消失：<br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313181726886-476302618.png" class="[class names]"><br><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180313181829167-173447817.png" class="[class names]"></p>
+<p>5.padding margin(0 auto)内边距，外边距：</p>
+<p>margin:</p>
+<p>　　margin:0 auto;上下为0，左右居中</p>
+<p>6.position:</p>
+<p>fixed—-&gt;固定在页面的某个位置，滚轮滚动，位置也不会变<br>absolute—-&gt;绝对定位，单用它，滚轮滚动时，位置会改变，要和relative一起使用<br>relative<br>fixed：</p>
+<p>我们先看一串代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;width: 50px;height:50px;background-color: black;color:white&quot;&gt;返回顶部&lt;/div&gt;
+    &lt;div style=&quot;height: 5000px;background-color: #dddddd&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314004713565-29421786.png" class="[class names]">
+<p>现在我们希望的是 “返回顶部” 这个div 固定在浏览器的右下角</p>
+<pre><code>&lt;div style=&quot;width: 50px;height:50px;background-color: black;color:white;
+    position:fixed;bottom:20px;right:20px;&quot;
+    &gt;返回顶部&lt;/div&gt;
+</code></pre><p> 我在style中添加了</p>
+<p>position:fixed;bottom:20px;right:20px;</p>
+<p> 这样我们就把那个div固定在右下角了。</p>
+<p>我们再看一个例子：有的网站，它的菜单栏是一直在浏览器的上面的，即使是滚动条滚动，头部的菜单栏也不会变，这个我们应该怎么做呢：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .pg-header{
+            height:48px;
+            background-color: black;
+            color: #dddddd;
+            position:fixed;
+            top:0;
+            right:0;
+            left: 0;
+        }
+        .pg-body{
+            background-color: #dddddd;
+            height:5000px;
+            margin-top:50px ;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pg-header&quot;&gt;头部&lt;/div&gt;
+    &lt;div class=&quot;pg-body&quot;&gt;内容&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 其实只需要加上上面色的代码就可以了，下面的margin-top是为了让pg-body的能够往下来一点，显示出全部内容</p>
+<p> relative+absolute:</p>
+<p>我现在有3个div:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;div1&lt;/div&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;div2&lt;/div&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;div3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314011238569-1231745594.png" class="[class names]">
+<p>我想要在div1的左下角放一个黑色的小方框， div2的右下角放一个黑色的小方框，div3的左上角放一个黑色的小方框，应该怎么做 ：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;
+        div1
+        &lt;div style=&quot;width:50px;height:50px;background-color: black;position:absolute;left:0;bottom:0&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;
+        div2
+        &lt;div style=&quot;width:50px;height:50px;background-color: black;position:absolute;right:0;bottom:0&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;position: relative;height:200px;width:400px;border: 1px solid red;margin:0 auto;text-align: center;&quot;&gt;
+        div3
+        &lt;div style=&quot;width:50px;height:50px;background-color: black;position:absolute;left:0;top:0&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>只要relative 和 absolute 相配合，然后设置top,left,right,bottom的值就可以了，这个值可以是正数也可以是负数</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314011833776-1143210207.png" class="[class names]">
+<p>还有一个场景：我们点一个按钮，然后就会跳出一个小窗口，这个时候窗口以外的东西就没有办法进行操作了，如：我点击了大模态框，之后跳出了large model，但是灰色的地方是没有办法进行操作的</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314012405870-1499502095.png" class="[class names]">
+<p>这就是一个典型的三层模式：本身文本是一层，灰色的遮罩是一层，弹出的框是一层。那我们怎么实现这个呢？</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;width:400px;height:100px;background-color: white;
+        position: fixed;top:50%;left: 50%;
+        margin-top: -50px;margin-left:-200px;
+        z-index:10;&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;position: fixed;background-color: black;top:0;bottom:0;right:0;left: 0; opacity: 0.6;z-index: 9;&quot;&gt;&lt;/div&gt;
+
+    &lt;div style=&quot;height:5000px;background-color: green;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 效果如图所示：下面有一个green的div，然后有一个black的div，只是设置了透明度，最上面有一个居中的白色div</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314013726824-96467572.png" class="[class names]">
+<p>分析：首先我们先说两个新的属性：</p>
+<p>opcity:0.6;设置透明度，值为0-1</p>
+<p>z-index:9，设置优先级，值越高优先级越大</p>
+<p>我们先实现两个div，一个是绿色的，一个是黑色的。这个很简单。下面要再加上第三层。最关键的就是这上面两个属性，如果透明属性没有的话，在做两层的时候，黑色的就会把绿色彻底覆盖住，如果没有优先级属性的话，那么在做第三个div的时候就会不知道谁覆盖了谁。</p>
+<p>这里我们还要记录的是居中方法：</p>
+<p>position: fixed;top:50%;left: 50%;<br>margin-top: -50px;margin-left:-200px;<br> 设置50%，然后用margin返回宽高的一半，这样就能够让一个div居中显示</p>
+<p> 7.overflow</p>
+<p> 我们设置了一个div的宽度和高度，现在想要在这个div中放入一个图片，那图片有自己的高度和宽度。如果直接发放进去就会超出div的范围显示，那我们怎么办呢？</p>
+<p>在style中加入overflow属性：</p>
+<p>hidden：超出的部分隐藏<br>auto:超出的部分会给滚动条</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314015241693-1755946809.png" class="[class names]">
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314015337065-1802362552.png" class="[class names]">
+<p>8.hover</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .pg-header{
+            position: fixed;
+            top:0;
+            right:0;
+            left:0;
+            height:48px;
+            background-color: #2459a2;
+            line-height:48px;
+        }
+        .pg-body{
+            margin-top:50px;
+        }
+        .w{
+            width:980px;
+            margin:0 auto;
+        }
+        .pg-header .menu{
+            display: inline-block;
+            padding:0 10px;
+            color:white;
+        }
+        /*当鼠标移动到当前标签的时候，以下css属性才会生效*/
+        .pg-header .menu:hover{
+
+            background-color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pg-header&quot;&gt;
+        &lt;div class=&quot;w&quot;&gt;
+            &lt;a class=&quot;logo&quot;&gt;logo&lt;/a&gt;
+            &lt;a class=&quot;menu&quot;&gt;全部&lt;/a&gt;
+            &lt;a class=&quot;menu&quot;&gt;42区&lt;/a&gt;
+            &lt;a class=&quot;menu&quot;&gt;段子&lt;/a&gt;
+            &lt;a class=&quot;menu&quot;&gt;1024&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pg-body&quot;&gt;
+        &lt;div class=&quot;w&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> hover当鼠标移动到超链接的时候，就会对hover的css里的属性生效</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180314020509725-543658825.png" class="[class names]">
+<p>9.background</p>
+<p>background-image:url(‘image/4.jpg’)：背景是一个图片，如果这个div比图片的尺寸还要大的话，图片就会一直重复着放</p>
+<p>　　应用场景：渐变色的背景，我们只需要一个很窄的图片，就可以利用这个属性，让整个背景都是这个渐变色的图片</p>
+<p> background-repeat:no-repeat/repeat-x/repeat-y：改属性设置图片是否要重复，水平重复还是垂直重复</p>
+<p>background-position:10px 10px 选取一张图上的某一个位置进行显示</p>
+<p>　　应用场景：网站有的时候用一张图上存储了很多的图标，要用哪个图标就可以选哪个坐标</p>
+<h2 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h2><h3 id="一、主站布局："><a href="#一、主站布局：" class="headerlink" title="一、主站布局："></a>一、主站布局：</h3><pre><code>&lt;div class=&quot;pg-header&quot;&gt;
+        &lt;div style=&quot;width:980px;margin:0 auto;&quot;&gt;
+            内容自动居中
+        &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;pg-content&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;pg-footer&quot;&gt;&lt;/div&gt;
+</code></pre><h3 id="二、后台管理布局"><a href="#二、后台管理布局" class="headerlink" title="二、后台管理布局"></a>二、后台管理布局</h3><p>同样都是三个部分，头部，中间内容，和尾部：</p>
+<p>我们先看看中间的变化：<br>一类是中间内容的菜单和内容都不动，右边内容多的时候出现滚动条<br>我们用position:fixed做的话应该怎么做呢：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            margin:0 auto;
+        }
+        .left{
+            float:left;
+
+        }
+        .right{
+            float:right;
+        }
+        .pg-header{
+            height:48px;
+            background-color: #2459a2;
+            color:white;
+        }
+        .pg-content .menu{
+            position: fixed;
+            top:48px;
+            left:0;
+            bottom:0;
+            width:200px;
+            background-color: #dddddd;
+
+        }
+        .pg-content .content{
+            position: fixed;
+            top:48px;
+            bottom: 0;
+            left:200px;
+            right:0;
+            background-color:purple;
+            overflow: auto;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pg-header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pg-content&quot;&gt;
+        &lt;div class=&quot;menu left&quot;&gt;a&lt;/div&gt;
+        &lt;div class=&quot;content left&quot;&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pg-footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 我们通过用position:fixed实现了菜单栏和内容栏的固定，然后当内容过多的时候我们就可以用overflow：auto实现添加一个滚动条，从而实现了布局</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180315005150184-1155522269.png" class="[class names]">
+<p>还有一类是中间内容部分如果多了，我们让左边的菜单跟随滚动条：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180315005607953-367238078.png" class="[class names]">
+<pre><code> &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        body{
+            margin:0 auto;
+        }
+        .left{
+            float:left;
+
+        }
+        .right{
+            float:right;
+        }
+        .pg-header{
+            height:48px;
+            background-color: #2459a2;
+            color:white;
+        }
+        .pg-content .menu{
+            position: absolute;
+            top:48px;
+            left:0;
+            bottom:0;
+            width:200px;
+            background-color: #dddddd;
+
+        }
+        .pg-content .content{
+            position: absolute;
+            top:48px;
+            bottom: 0;
+            left:200px;
+            right:0;
+            min-width: 980px;
+            /*background-color:purple;*/
+            /*overflow: auto;*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pg-header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pg-content&quot;&gt;
+        &lt;div class=&quot;menu left&quot;&gt;a&lt;/div&gt;
+        &lt;div class=&quot;content left&quot;&gt;
+            &lt;div style=&quot;background-color: purple&quot;&gt;
+                &lt;p style=&quot;margin: 0;&quot;&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pg-footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>那和第一类的区别就在于，我们用的是position:absolute进行定位：</p>
+<p>postion:absolute这个属性，可以在页面一开始生成的时候进行初始定位，但是随着你滚动滚动条的时候，定位就会改变，随着滚动条一起滚动，所以我们就可以利用这特点进行操作。</p>
+<p>如果想要背景也跟着一起的话，可以在用一个div把内容包住，然后在这个div里面设置一个background-color，这样背景颜色就可以跟着内容一起增加。</p>
+<p>如果我们要用absolute来实现第一类情况的话，我们也只要在第二类的基础上加上overflow:auto，就可以变回第一种情况了，非常的方便。</p>
+<p>当然我们考虑一种情况，如果我们的浏览器不断的缩小，那个我们也要保证我们的内容要正常显示，这个时候就需要左右滚动条，我们就可以设置一下内容div的最小宽度min-width:980px，当小于这个宽度的时候就出现滚动条，就ok了</p>
+<p>我们再看看头部的变化：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.min.css&quot;&gt;
+    &lt;style&gt;
+        body{
+            margin:0 auto;
+        }
+        .left{
+            float:left;
+
+        }
+        .right{
+            float:right;
+        }
+        .pg-header{
+            height:48px;
+            background-color: #2459a2;
+            color:white;
+            line-height: 48px;
+        }
+        .pg-header .logo{
+            width:200px;
+            background-color: cadetblue;
+            text-align: center;
+        }
+        .pg-header .user{
+            height:48px;
+            position: relative;
+            margin-right:60px;
+            padding:0 20px;
+
+        }
+        .pg-header .user:hover{
+            background-color: #204982;
+        }
+        .pg-header .user .a img{
+            height:40px;
+            width:40px;
+            margin-top: 4px;
+            border-radius:50%;
+        }
+        .pg-header .user .menu2{
+            position:absolute;
+            top:48px;
+            right:-10px;
+            background-color: white;
+            width:100px;
+            z-index:10;
+            display: none;
+            color:black;
+            text-align:center;
+        }
+        .pg-header .user .menu2 a{
+            display: block;
+            border-bottom: 1px solid black;
+            text-decoration:none;/*去掉超链接的下划线*/
+
+        }
+        .pg-header .user:hover .menu2{
+            display:block;
+        }
+         /* 未访问的链接 */
+        .pg-header .user .menu2 a:link{
+            color:black;
+        }
+        .pg-header .user .menu2 a:hover{
+            background-color: #dddddd;
+        }
+        .pg-header .icons{
+            padding:0 20px;
+        }
+        .pg-header .icons:hover{
+            background-color: #204982;
+        }
+        .pg-content .menu{
+            position: absolute;
+            top:48px;
+            left:0;
+            bottom:0;
+            width:200px;
+            background-color: #dddddd;
+
+        }
+        .pg-content .content{
+            position: absolute;
+            top:48px;
+            bottom: 0;
+            left:200px;
+            right:0;
+            min-width: 980px;
+            /*background-color:purple;*/
+            overflow: auto;
+            z-index:9;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;pg-header&quot;&gt;
+        &lt;div class=&quot;logo left&quot;&gt;logo图标&lt;/div&gt;
+
+        &lt;div class=&quot;user right&quot;&gt;
+            &lt;a class=&quot;a&quot; href=&quot;#&quot;&gt;
+                &lt;img src=&quot;1.jpg&quot;&gt;
+            &lt;/a&gt;
+            &lt;div class=&quot;menu2&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;我的资料&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;注销&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;icons right&quot;&gt;
+            &lt;i class=&quot;far fa-envelope&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;5&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;icons right&quot;&gt;
+            &lt;i class=&quot;far fa-bell&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;3&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pg-content&quot;&gt;
+        &lt;div class=&quot;menu left&quot;&gt;a&lt;/div&gt;
+        &lt;div class=&quot;content left&quot;&gt;
+            &lt;div style=&quot;background-color: purple&quot;&gt;
+                &lt;p style=&quot;margin: 0;&quot;&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+                &lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;&lt;p&gt;afasdf&lt;/p&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pg-footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p> 显示的效果图就是如下效果：</p>
+<img src="https://images2018.cnblogs.com/blog/1307091/201803/1307091-20180316003805580-347537174.png" class="[class names]">
+<p>需要知道的知识：</p>
+<p>关于超链接的：</p>
+<pre><code>a:link {color: #FF0000} /* 未访问的链接 */
+a:visited {color: #00FF00} /* 已访问的链接 */
+a:hover {color: #FF00FF} /* 鼠标移动到链接上 */
+a:active {color: #0000FF} /* 选定的链接 */
+text-decoration:none;/*去掉超链接的下划线*/
+</code></pre><p>关于边框的：</p>
+<pre><code>border-radius:50%;/*把边框变成椭圆*/
+</code></pre><p>关于菜单栏的出现消失，不用js的做法：</p>
+<pre><code>.pg-header .user .menu2{
+    display: none;
+}
+.pg-header .user:hover .menu2{
+    display:block;
+}/*这样做就能够实现，当鼠标放在头像上菜单栏自动出现，当鼠标移开的时候菜单栏自动隐藏*/
+ 关于菜单栏的图标的：
+</code></pre><p>到<a href="https://fontawesome.com/icons" target="_blank" rel="noopener">https://fontawesome.com/icons</a>下载图标包，然后导入css文件，并在网站上寻找相关的图片的html，就可以显示了：</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.min.css&quot;&gt;/*导入css文件*/
+&lt;i class=&quot;far fa-envelope&quot;&gt;&lt;/i&gt;/*应用图标的html*/
+&lt;i class=&quot;far fa-bell&quot;&gt;&lt;/i&gt;
+</code></pre>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/21/css-ji-chu-zhi-shi-zong-jie/" class="b-link-green">css基础知识总结</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'bb4c14c47159f54683cd',
+        clientSecret: 'e90cfc3fd582c8014121a269bea84484520a2f12',
+        repo: 'hexo-Gitalk',
+        owner: 'zhaowensheng',
+        admin: "zhaowensheng",
+        id: '2018-11-21T16-46-28',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/11/22/javascript-ji-chu-zhi-shi-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript基础知识总结">
+                        
+                        <span class="card-title">JavaScript基础知识总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">JavaScript基本知识JavaScript是一门独立的语言，像我们学习php,python等需要安装apache,python3.6，那我们学习JavaScript只需要我们电脑有一个浏览器即可，浏览器具有js解释器
+一、如何编写首先</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/21/qian-ru-shi-xue-xi-zhun-bei-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习 准备篇">
+                        
+                        <span class="card-title">嵌入式学习 准备篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">前言这是个开始，工欲善其事，必先利其器。
+对于刚工作了一个月的我来说，我将来要走的路还很长。
+三年前的自己选择的学校和专业，决定了今天的我。今天的选择决定了将来的我。
+现在的工作和我自己之前的期望值还有有很大的差距，未来的路该怎么去走?
+想</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/嵌入式/" class="post-category" target="_blank">
+                                    嵌入式
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/嵌入式/" target="_blank">
+                        <span class="chip bg-color">嵌入式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://zhaowensheng.github.io/" target="_blank">zhaowensheng</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/zhaowensheng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:zhaowensheng96@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 820695479" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<a href="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNTA0NTk1MA==&mid=2649489906&idx=1&sn=7dcdcc062965c442f43aeb41bbe1e1b3&send_time=" class="tooltipped" data-tooltip="访问我的微信公众号：盛哥修行录" data-position="top" data-delay="50">
+    <i class="fa fa-wechat"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

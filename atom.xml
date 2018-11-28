@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-27T09:11:41.143Z</updated>
+  <updated>2018-11-28T08:57:02.899Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS入门详解(二)</title>
+    <link href="https://www.sggxxl.club/2018/11/28/css-ru-men-xiang-jie-er/"/>
+    <id>https://www.sggxxl.club/2018/11/28/css-ru-men-xiang-jie-er/</id>
+    <published>2018-11-28T08:39:04.000Z</published>
+    <updated>2018-11-28T08:57:02.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CSS详解-二&quot;&gt;&lt;a href=&quot;#CSS详解-二&quot; class=&quot;headerlink&quot; title=&quot;CSS详解(二)&quot;&gt;&lt;/a&gt;CSS详解(二)&lt;/h1&gt;&lt;h2 id=&quot;11-动画&quot;&gt;&lt;a href=&quot;#11-动画&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML5入门详解</title>
+    <link href="https://www.sggxxl.club/2018/11/28/html5-ru-men-xiang-jie/"/>
+    <id>https://www.sggxxl.club/2018/11/28/html5-ru-men-xiang-jie/</id>
+    <published>2018-11-28T07:30:53.000Z</published>
+    <updated>2018-11-28T08:43:21.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-认识HTML5&quot;&gt;&lt;a href=&quot;#1-认识HTML5&quot; class=&quot;headerlink&quot; title=&quot;1. 认识HTML5&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/categories/HTML/"/>
+    
+    
+      <category term="HTML" scheme="https://www.sggxxl.club/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS入门详解(一)</title>
+    <link href="https://www.sggxxl.club/2018/11/28/css-ru-men-xiang-jie-yi/"/>
+    <id>https://www.sggxxl.club/2018/11/28/css-ru-men-xiang-jie-yi/</id>
+    <published>2018-11-28T07:02:14.000Z</published>
+    <updated>2018-11-28T08:37:50.921Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CSS入门详解-一&quot;&gt;&lt;a href=&quot;#CSS入门详解-一&quot; class=&quot;headerlink&quot; title=&quot;CSS入门详解(一)&quot;&gt;&lt;/a&gt;CSS入门详解(一)&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://www.sggxxl.club/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>做Typora入门（中文版）</title>
@@ -76,7 +154,7 @@
     <link href="https://www.sggxxl.club/2018/11/26/chun-css-da-zao-yin-se-macbook-air-wan-zheng-ban/"/>
     <id>https://www.sggxxl.club/2018/11/26/chun-css-da-zao-yin-se-macbook-air-wan-zheng-ban/</id>
     <published>2018-11-26T01:15:29.000Z</published>
-    <updated>2018-11-26T01:38:09.696Z</updated>
+    <updated>2018-11-28T08:45:20.288Z</updated>
     
     <summary type="html">
     
@@ -125,11 +203,11 @@
   </entry>
   
   <entry>
-    <title>JavaScript知识简单介绍</title>
-    <link href="https://www.sggxxl.club/2018/11/22/javascript-zhi-shi-jian-dan-jie-shao/"/>
-    <id>https://www.sggxxl.club/2018/11/22/javascript-zhi-shi-jian-dan-jie-shao/</id>
+    <title>JavaScript基础知识总结</title>
+    <link href="https://www.sggxxl.club/2018/11/22/javascript-ji-chu-zhi-shi-zong-jie/"/>
+    <id>https://www.sggxxl.club/2018/11/22/javascript-ji-chu-zhi-shi-zong-jie/</id>
     <published>2018-11-22T03:01:42.000Z</published>
-    <updated>2018-11-22T09:14:06.570Z</updated>
+    <updated>2018-11-28T08:42:53.855Z</updated>
     
     <summary type="html">
     
@@ -151,11 +229,11 @@
   </entry>
   
   <entry>
-    <title>css基本知识</title>
-    <link href="https://www.sggxxl.club/2018/11/21/css-ji-ben-zhi-shi/"/>
-    <id>https://www.sggxxl.club/2018/11/21/css-ji-ben-zhi-shi/</id>
+    <title>css基础知识总结</title>
+    <link href="https://www.sggxxl.club/2018/11/21/css-ji-chu-zhi-shi-zong-jie/"/>
+    <id>https://www.sggxxl.club/2018/11/21/css-ji-chu-zhi-shi-zong-jie/</id>
     <published>2018-11-21T08:46:28.000Z</published>
-    <updated>2018-11-21T09:11:23.659Z</updated>
+    <updated>2018-11-28T08:43:04.358Z</updated>
     
     <summary type="html">
     
