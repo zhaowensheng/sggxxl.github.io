@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-11-28T08:57:02.899Z</updated>
+  <updated>2018-12-17T08:05:11.502Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32基础知识</title>
+    <link href="https://www.sggxxl.club/2018/12/17/stm32-ji-chu-zhi-shi/"/>
+    <id>https://www.sggxxl.club/2018/12/17/stm32-ji-chu-zhi-shi/</id>
+    <published>2018-12-17T07:46:55.000Z</published>
+    <updated>2018-12-17T08:05:11.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-GPIO口&quot;&gt;&lt;a href=&quot;#1-GPIO口&quot; class=&quot;headerlink&quot; title=&quot;1)  GPIO口&quot;&gt;&lt;/a&gt;1)  GPIO口&lt;/h2&gt;&lt;h3 id=&quot;a-工程的建立：&quot;&gt;&lt;a href=&quot;#a-工程的建立：&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="STM32" scheme="https://www.sggxxl.club/tags/STM32/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS入门详解(二)</title>
