@@ -5,10 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32基础知识, 盛哥修行录">
-    <meta name="description" content="1)  GPIO口a)      工程的建立：1）  stdPeiph_Driver,下面存放的是ST官方提供的固件库函数，里面内容不需要用户修改。
-2）  Startup下面存放的是固件库必须的启动文件。不需用户修改。
-3）  Cmsis">
+    <meta name="keywords" content="STM32输入输出理解, 盛哥修行录">
+    <meta name="description" content="STM32输入输出理解最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：（1）GPIO_Mode_AIN 模拟输入（2）GPIO_Mode_IN_FLOATING 浮空输入（3）GPIO_Mode_IPD">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>STM32基础知识 | 盛哥修行录</title>
+    <title>STM32输入输出理解 | 盛哥修行录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -254,13 +252,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        STM32基础知识
+                        STM32输入输出理解
                     </div>
                 </div>
             </div>
@@ -394,83 +392,42 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-17
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-18
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-GPIO口"><a href="#1-GPIO口" class="headerlink" title="1)  GPIO口"></a>1)  GPIO口</h2><h3 id="a-工程的建立："><a href="#a-工程的建立：" class="headerlink" title="a)      工程的建立："></a>a)      工程的建立：</h3><p>1）  stdPeiph_Driver,下面存放的是ST官方提供的固件库函数，里面内容不需要用户修改。</p>
-<p>2）  Startup下面存放的是固件库必须的启动文件。不需用户修改。</p>
-<p>3）  Cmsis下面存放的是固件库必须的启动文件。不需用户修改。</p>
-<p>4）  APP下面存放的是外设的驱动代码。比如说LED.c里面需要调用stm32f10x_gpio.c里面的函数对其进行初始化。</p>
-<p>5）  User下面存放的主要是用户代码。</p>
-<h3 id="b-IO口模式配置"><a href="#b-IO口模式配置" class="headerlink" title="b)      IO口模式配置"></a>b)      IO口模式配置</h3><p><a href="https://imgchr.com/i/F08vCj" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/12/17/F08vCj.png" alt="F08vCj.png"></a></p>
-<h3 id="c-应用相关引脚需要开启相应的时钟，为了降低功耗。"><a href="#c-应用相关引脚需要开启相应的时钟，为了降低功耗。" class="headerlink" title="c)  应用相关引脚需要开启相应的时钟，为了降低功耗。"></a>c)  应用相关引脚需要开启相应的时钟，为了降低功耗。</h3><h2 id="2）STM32系统内部时钟——SysTick时钟（滴答时钟）"><a href="#2）STM32系统内部时钟——SysTick时钟（滴答时钟）" class="headerlink" title="2）STM32系统内部时钟——SysTick时钟（滴答时钟）"></a>2）STM32系统内部时钟——SysTick时钟（滴答时钟）</h2><p>a) SysTick定时器包含在M3内核里，捆绑在NVIC 中。</p>
-<p>b) 它是一款24位倒计数定时器，计数到0时可产生中断。</p>
-<p>c) 时钟来源可以直接来源于系统时钟，还可以经过8分频之后付给SysTick</p>
-<h2 id="3-RCC系统时钟"><a href="#3-RCC系统时钟" class="headerlink" title="3)RCC系统时钟"></a>3)RCC系统时钟</h2><p>a)STM32时钟比较复杂，它可以选择多种时钟源，也可以选择不同的时钟频率，。</p>
-<p>b) 从RCC输出的时钟，首先经过AHB总线，分别分配给其他外设时钟，不同的外设挂在不同的桥上。比如ADC,GPIO挂在APB2（最高72MHz）上，而IIC挂在APB1（最高36MHz)上，因此不同的外设所具有不同的时钟频率。</p>
-<p>c)芯片默认上电使用系统内部时钟(8MHz)。经本函数库，默认使用系统外部时钟（72MHz）。</p>
-<p>d)STM32一共可以有4个晶振源。内部自带高速时钟，外部高速时钟，内部低速时钟，外部高速时钟。</p>
-<p>e)系统时钟来源，可来自：内部高速时钟（HIS），外部高速时钟（HSE），HIS或HSE倍频之后的PLL时钟。</p>
-<h2 id="4）外部中断"><a href="#4）外部中断" class="headerlink" title="4）外部中断"></a>4）外部中断</h2><p>a)中断嵌套：中断能够被其他高优先级的中断而中断。</p>
-<p>b)优先级：抢占优先级，响应优先级。抢占优先级高的可中断抢占优先级低的，响应优先级高的不可中断响应优先级低的（如果抢占优先级相同，中断同时到达，优先使用响应优先级高的）。</p>
-<p>C）EXTI外部中断，每个IO口都可用来作外部中断。16个外部中断组，所以同时独立使用的外部中断IO口只有16个。</p>
-<h2 id="5）定时器"><a href="#5）定时器" class="headerlink" title="5）定时器"></a>5）定时器</h2><p>(a) stm32的定时器功能十分强大，它共有11个定时器。其中二个高级定时器，4个通用定时，2个基本定时器，以及2个看门狗定时器，1个系统滴答定时器。</p>
-<p><a href="https://imgchr.com/i/F08X5Q" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/12/17/F08X5Q.png" alt="F08X5Q.png"></a></p>
-<p>(b)通用定时器的功能：16位向上，向下，向上/向下自动装载计数器。</p>
-<p>16位可编程预分频器，计数器的时钟频率的预分频系数为1~65536之间的任意值。</p>
-<p>4个独立通道，输入捕获，输出比较，PWM生成，单脉冲模式输出。</p>
-<p>(c)计数器时钟可以由下列时钟源提供: 内部时钟，外部时钟1，外部时钟2，内壁触发输入。</p>
-<h2 id="6）PWM"><a href="#6）PWM" class="headerlink" title="6）PWM"></a>6）PWM</h2><p>(a)，TIM1.TIM8最多能同时产生7路PWM的输出，TIM2~TIM5等通用定时器能同时产生4路PWM。TIM6和TIM7不能产生PWM。因此STM32最多能同时产生30路的PWM。</p>
-<p>（b），具有重映射功能。</p>
-<h2 id="7）串口通信——USART"><a href="#7）串口通信——USART" class="headerlink" title="7）串口通信——USART"></a>7）串口通信——USART</h2><p>a) stm32f103zet6有五路串口。</p>
-<p>b)232串口通信，出现较早，全双工</p>
-<p>c)485串口通信，出现较晚，半双工。</p>
-<p><a href="https://imgchr.com/i/F08OUg" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/12/17/F08OUg.png" alt="F08OUg.png"></a></p>
-<p>d)通用同步异步收发器（URART）利用分数波特率发生器提供宽泛的波特率选择，它支持单向通信，和全，半双工通信。双向通信至少需要两个引脚（RX，TX）。</p>
-<h2 id="8）IIC和24CO2双向通信"><a href="#8）IIC和24CO2双向通信" class="headerlink" title="8）IIC和24CO2双向通信"></a>8）IIC和24CO2双向通信</h2><p>a)IIC总线是PHILIPS公司推出的一种串行总线，它只需要两根双向的信号线（SDA,SCL）。</p>
-<p>每个器件都有自己相应的I2C地址，所以在通信的时候，首先你需要呼叫所需通信器件的地址，然后等待从器件应答之后才能开始通信，</p>
-<p>b）应用时需注意两点，空闲时，SDA,SCL必需为高电平，SCL为高电平期间，SDA必须保持稳定，也就是说SDA需要改变时，最好将SCL拉低。否则就会被误判（错误的将信号当成起始信号，或者终止信号处理）。</p>
-<h2 id="9-ADC-模拟-数字转换"><a href="#9-ADC-模拟-数字转换" class="headerlink" title="9)ADC(模拟/数字转换)"></a>9)ADC(模拟/数字转换)</h2><p>a)12位ADC是一种逐次逼近型的模拟数字转换器，它有多达18个通道，可同时测量16个外部通道，两个内部通道信号源。各通道可以单次，连续，扫描，间断扫描模式执行。ADC的输入时钟不得超过14MHz.</p>
-<p>b)16个多路通道，分成规则组，注入组。（类似中断）</p>
-<p>c）单次转换（ADC只转换一次），连续转换（ADC转化完成以后，马上进行另一次转换）。</p>
-<p>d)模拟看门狗，如果ADC转换的模拟电压低于或者高于阈值,AWD模拟看门狗将会被置位。</p>
-<p>e)扫描模式，扫描一组模拟通道。</p>
-<p>g)间断模拟。</p>
-<h2 id="10）stm32内部RTC时钟"><a href="#10）stm32内部RTC时钟" class="headerlink" title="10）stm32内部RTC时钟"></a>10）stm32内部RTC时钟</h2><p>a)具有42个16位备份储存器，可以用来储存84个字节的用户应用程序数据。</p>
-<p>b)当电源VDD被截断，他们仍然由VBAT维持供电。</p>
-<p>c)系统复位或电源复位，待机模式下被唤醒。他们也不会被复位。</p>
-<p>d)STM32内部RTC时钟就在备份寄存器中，因此需要操作RTC时钟，就要操作备份寄存器。</p>
-<p>e)RCT用来储存时钟的只是一个32位的寄存器，可以记录4294967296s,合计136年。</p>
-<h2 id="11）待机唤醒实验"><a href="#11）待机唤醒实验" class="headerlink" title="11）待机唤醒实验"></a>11）待机唤醒实验</h2><p>a)STM32低功耗模式一共有三种模式：睡眠模式（Cortex-M3内核停止），停止模式（所有时钟停止），待机模式（1.8v电源关闭）。它们功耗依次降低。</p>
-<h2 id="12）独立看门狗"><a href="#12）独立看门狗" class="headerlink" title="12）独立看门狗"></a>12）独立看门狗</h2><p>a)独立看门狗内部专门的40KHZ,低速时钟驱动，即使主时钟发生故障，它也仍然有效。</p>
-<p>b)单片机在外界的干扰下，会出现程序跑飞的现象导致出现死循环，看门狗电路就是避免这种情况发现的。</p>
-<p>c)看门狗的作用就是在一定时间内没有接收喂狗信号（表示MCU已经跑飞了），便实现处理器自动复位重启（发送复位信号）。</p>
-<h2 id="13窗口看门狗"><a href="#13窗口看门狗" class="headerlink" title="13窗口看门狗"></a>13窗口看门狗</h2><p>a)窗口看门狗（WWDG）通常被用来监测外部干扰或者不可预见的逻辑条件造成的应用程序背离正常运行序列而产生的软件故障。</p>
-<h2 id="14）输入捕获"><a href="#14）输入捕获" class="headerlink" title="14）输入捕获"></a>14）输入捕获</h2><p>a)输入捕获模式可以用来测量脉冲宽度或者频率。</p>
-<p>b)STM32定时器除了TIM6和TIM7，其它定时器都具有输入捕获的功能。</p>
-<p>c)完成一次捕获还能配置捕获是否触发中断/DMA等。</p>
-<h2 id="15）FLASH-模拟EEPROM"><a href="#15）FLASH-模拟EEPROM" class="headerlink" title="15）FLASH 模拟EEPROM"></a>15）FLASH 模拟EEPROM</h2><p>a)STM32内部没有自带EEPROM，但STM32具有IAP(在应用编程)功能，所以我们能把FLASH当作EEPROM使用。</p>
-<p>b)不同型号的FLASH内存大小也有所不同，最小的有16K，最大的有1024K，STM32F103ZET6这款有512K，属于大容量FLASH (另外还有中，小型FLASH)。</p>
-<p>C) STM32的闪存模块由：主储存器，信息块，闪存储存器构成。</p>
-<h2 id="16-SPI——FLASH"><a href="#16-SPI——FLASH" class="headerlink" title="16)SPI——FLASH"></a>16)SPI——FLASH</h2><p>a)      EN25Q64是华邦公司推出的大容量SPIFLASH 产品，容量为64比特，也就是8M。</p>
-<p>b)      EN25Q64支持标准的SPI,还支持双/四输出的SPI。</p>
-<p>c)      SPI(serial peripheralinterface),顾明思义就是串行外围设备接口。主要用四根线进行通信，MISO， MOSI， SCLK， CS。</p>
-<p>d)      SPI传输的过程通过移位寄存器来完成。</p>
-<h2 id="17）外部SRAM"><a href="#17）外部SRAM" class="headerlink" title="17）外部SRAM"></a>17）外部SRAM</h2><p>a) IS62WV51216是ISSI公司生产的一颗位宽512K容量的CMOS静态内存芯片。它具有高速访问（45ns/55ns访问速度），低功耗，兼容TTL电平接口。全静态操作，字节访问功能。</p>
-<h2 id="18-）can-通信"><a href="#18-）can-通信" class="headerlink" title="18 ）can 通信"></a>18 ）can 通信</h2><p>a)      can是一种ISO国际标准化的串行通信协议，是1996年德州电气商博世公司开发出面向汽车开发出来的，现在在欧洲已是汽车网络标准协议。广泛用于工业自动化，船舶，医疗设备，工业设备等方面。</p>
-<p>b)      CAN传输数据只需两根线就可以了。CAN控制器根据两根线上的电位差来判断总线电平。总线电平分为显性电平和隐形电平，二者必居其一。发送方通过使总线电平发生变化，将消息发送给接收方。</p>
-<p>c)      CAN通行特点：多主控制（在总线空闲时，所有的单元都可以发送消息），系统的柔软性（与总线相连的单元没有类似于“地址”的信息，不像I2C总线上面每个单元都有自己的地址），通信速度（最高1Mnps,最远可达10KM）,远程数据请求，错误监测功能，错误通知功能，错误恢复功能，故障封闭，连接（CAN总线是可同时连接多个单元的总线）。</p>
-<p>d)      CAN的传输主要通过5种类型的帧来进行的。</p>
-<h2 id="19）ADXL345加速度传感器"><a href="#19）ADXL345加速度传感器" class="headerlink" title="19）ADXL345加速度传感器"></a>19）ADXL345加速度传感器</h2><p>a) ADX345是一款完整的3轴加速度测量系统，可选择测量范围有±2g, ±4g, ±8g,或±16g。</p>
-<p>既能测量运动或冲击导致的动态加速度，也能测量静止加速度。例如重力加速度，使得器件可以作为倾斜传感器使用。</p>
-<p>c)      它的分辨率为13位，测量范围达±16g。可以通过SPI或者I2C数字接口访问。</p>
-<h2 id="20-SD卡"><a href="#20-SD卡" class="headerlink" title="20)SD卡"></a>20)SD卡</h2><p>a)SD卡是由MMC卡的基础上发展而来的，它是一种基于半导体快闪记忆器的新一代记忆设备，被广泛用于各种便携设备，如手机，数码相机多媒体播放器。</p>
-<p>b)SD卡有两种操作方式，一种是SDIO,还有一种是SPI。</p>
-<p>作者：陌上烟雨遥407<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/DMC111qwf/article/details/79434647" target="_blank" rel="noopener">https://blog.csdn.net/DMC111qwf/article/details/79434647</a> </p>
+                <h1 id="STM32输入输出理解"><a href="#STM32输入输出理解" class="headerlink" title="STM32输入输出理解"></a>STM32输入输出理解</h1><p>最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：<br>（1）GPIO_Mode_AIN 模拟输入<br>（2）GPIO_Mode_IN_FLOATING 浮空输入<br>（3）GPIO_Mode_IPD 下拉输入<br>（4）GPIO_Mode_IPU 上拉输入<br>（5）GPIO_Mode_Out_OD 开漏输出<br>（6）GPIO_Mode_Out_PP 推挽输出<br>（7）GPIO_Mode_AF_OD 复用开漏输出<br>（8）GPIO_Mode_AF_PP 复用推挽输出</p>
+<p>对于刚入门的新手，我想这几个概念是必须得搞清楚的，平时接触的最多的也就是推挽输出、开漏输出、上拉输入这三种，但一直未曾对这些做过归纳。因此，在这里做一个总结：<br>推挽输出:可以输出高,低电平,连接数字器件; 推挽结构一般是指两个三极管分别受两互补信号的控制,总是在一个三极管导通的时候另一个截止。高低电平由IC的电源低定。<br>推挽电路是两个参数相同的三极管或MOSFET,以推挽方式存在于电路中,各负责正负半周的波形放大任务,电路工作时，两只对称的功率开关管每次只有一个导通，所以导通损耗小、效率高。输出既可以向负载灌电流，也可以从负载抽取电流。推拉式输出级既提高电路的负载能力，又提高开关速度。<br>详细理解：</p>
+<p>推挽放大器的输出级有两个“臂”（两组放大元件），一个“臂”的电流增加时，另一个“臂”的电流则减小，二者的状态轮流转换。对负载而言，好像是一个“臂”在推，一个“臂”在拉，共同完成电流输出任务。当输出高电平时，也就是下级负载门输入高电平时，输出端的电流将是下级门从本级电源经VT3拉出。这样一来，输出高低电平时，VT3 一路和 VT5 一路将交替工作，从而减低了功耗，提高了每个管的承受能力。又由于不论走哪一路，管子导通电阻都很小，使RC常数很小，转变速度很快。因此，推拉式输出级既提高电路的负载能力，又提高开关速度。<br>开漏输出:输出端相当于三极管的集电极. 要得到高电平状态需要上拉电阻才行. 适合于做电流型的驱动,其吸收电流的能力相对强(一般20ma以内).<br>开漏形式的电路有以下几个特点：</p>
+<p>1.利用外部电路的驱动能力，减少IC内部的驱动。当IC内部MOSFET导通时，驱动电流是从外部的VCC流经R pull-up ，MOSFET到GND。IC内部仅需很下的栅极驱动电流。</p>
+<p>2.一般来说，开漏是用来连接不同电平的器件，匹配电平用的，因为开漏引脚不连接外部的上拉电阻时，只能输出低电平，如果需要同时具备输出高电平的功能，则需要接上拉电阻，很好的一个优点是通过改变上拉电源的电压，便可以改变传输电平。比如加上上拉电阻就可以提供TTL/CMOS电平输出等。（上拉电阻的阻值决定了逻辑电平转换的沿的速度。阻值越大，速度越低功耗越小，所以负载电阻的选择要兼顾功耗和速度。）</p>
+<p>3.OPEN-DRAIN提供了灵活的输出方式，但是也有其弱点，就是带来上升沿的延时。因为上升沿是通过外接上拉无源电阻对负载充电，所以当电阻选择小时延时就小，但功耗大；反之延时大功耗小。所以如果对延时有要求，则建议用下降沿输出。</p>
+<p>4.可以将多个开漏输出的Pin，连接到一条线上。通过一只上拉电阻，在不增加任何器件的情况下，形成“与逻辑”关系。这也是I2C，SMBus等总线判断总线占用状态的原理。补充：什么是“线与”？：<br>在一个结点(线)上,连接一个上拉电阻到电源VCC或VDD和n个NPN或NMOS晶体管的集电极C或漏极D,这些晶体管的发射极E或源极S都接到地线上,只要有一个晶体管饱和,这个结点(线)就被拉到地线电平上.因为这些晶体管的基极注入电流(NPN)或栅极加上高电平(NMOS),晶体管就会饱和,所以这些基极或栅极对这个结点(线)的关系是或非NOR逻辑.如果这个结点后面加一个反相器,就是或OR逻辑.<br>其实可以简单的理解为：在所有引脚连在一起时，外接一上拉电阻，如果有一个引脚输出为逻辑0，相当于接地，与之并联的回路“相当于被一根导线短路”，所以外电路逻辑电平便为0，只有都为高电平时，与的结果才为逻辑1。<br>关于推挽输出和开漏输出，最后用一幅最简单的图形来概括：</p>
+<p>该图中左边的便是推挽输出模式，其中比较器输出高电平时下面的PNP三极管截止，而上面NPN三极管导通，输出电平VS+；当比较器输出低电平时则恰恰相反，PNP三极管导通，输出和地相连，为低电平。右边的则可以理解为开漏输出形式，需要接上拉。</p>
+<p>浮空输入：对于浮空输入，一直没找到很权威的解释，只好从以下图中去理解了</p>
+<p>由于浮空输入一般多用于外部按键输入，结合图上的输入部分电路，我理解为浮空输入状态下，IO的电平状态是不确定的，完全由外部输入决定，如果在该引脚悬空的情况下，读取该端口的电平是不确定的。<br>上拉输入/下拉输入/模拟输入：这几个概念很好理解，从字面便能轻易读懂。<br>复用开漏输出、复用推挽输出：可以理解为GPIO口被用作第二功能时的配置情况（即并非作为通用IO口使用）<br>最后总结下使用情况：<br>在STM32中选用IO模式<br>（1） 浮空输入_IN_FLOATING ——浮空输入，可以做KEY识别，RX1<br>（2）带上拉输入_IPU——IO内部上拉电阻输入<br>（3）带下拉输入_IPD—— IO内部下拉电阻输入<br>（4） 模拟输入_AIN ——应用ADC模拟输入，或者低功耗下省电<br>（5）开漏输出_OUT_OD ——IO输出0接GND，IO输出1，悬空，需要外接上拉电阻，才能实现输出高电平。当输出为1时，IO口的状态由上拉电阻拉高电平，但由于是开漏输出模式，这样IO口也就可以由外部电路改变为低电平或不变。可以读IO输入电平变化，实现C51的IO双向功能<br>（6）推挽输出_OUT_PP ——IO输出0-接GND， IO输出1 -接VCC，读输入值是未知的<br>（7）复用功能的推挽输出_AF_PP ——片内外设功能（I2C的SCL,SDA）<br>（8）复用功能的开漏输出_AF_OD——片内外设功能（TX1,MOSI,MISO.SCK.SS）</p>
+<p>STM32设置实例：</p>
+<p>（1）模拟I2C使用开漏输出_OUT_OD，接上拉电阻，能够正确输出0和1；读值时先GPIO_SetBits(GPIOB, GPIO_Pin_0)；拉高，然后可以读IO的值；使用GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0)；</p>
+<p>（2）如果是无上拉电阻，IO默认是高电平；需要读取IO的值，可以使用带上拉输入_IPU和浮空输入_IN_FLOATING和开漏输出_OUT_OD；<br>通常有5种方式使用某个引脚功能，它们的配置方式如下：<br>1）作为普通GPIO输入：根据需要配置该引脚为浮空输入、带弱上拉输入或带弱下拉输入，同时不要使能该引脚对应的所有复用功能模块。<br>2）作为普通GPIO输出：根据需要配置该引脚为推挽输出或开漏输出，同时不要使能该引脚对应的所有复用功能模块。<br>3）作为普通模拟输入：配置该引脚为模拟输入模式，同时不要使能该引脚对应的所有复用功能模块。<br>4）作为内置外设的输入：根据需要配置该引脚为浮空输入、带弱上拉输入或带弱下拉输入，同时使能该引脚对应的某个复用功能模块。<br>5）作为内置外设的输出：根据需要配置该引脚为复用推挽输出或复用开漏输出，同时使能该引脚对应的所有复用功能模块。</p>
+<p>注意如果有多个复用功能模块对应同一个引脚，只能使能其中之一，其它模块保持非使能状态。</p>
+<p>比如要使用STM32F103VBT6的47、48脚的USART3功能，则需要配置47脚为复用推挽输出或复用开漏输出，配置48脚为某种输入模式，同时使能USART3并保持I2C2的非使能状态。<br>如果要使用STM32F103VBT6的47脚作为TIM2_CH3，则需要对TIM2进行重映射，然后再按复用功能的方式配置对应引脚。</p>
+<hr>
+<h2 id="一、GPIO模式配置"><a href="#一、GPIO模式配置" class="headerlink" title="一、GPIO模式配置"></a>一、GPIO模式配置</h2><p>1、输入/输出模式（参考stm32手册）<br>2、GPIO输出模式下，几种速度的区别：<br>(1). GPIO 引脚速度： GPIO_Speed_2MHz (10MHz, 50MHz) ;<br>又称输出驱动电路的响应速度：（芯片内部在I/O口的输出部分安排了多个响应速度不同的输出驱动电路，用户可以根据自己的需要选择合适的驱动电路，通过选择速度来选择不同的输出驱动模块，达到最佳的噪声控制和降低功耗的目的。）<br>可理解为: 输出驱动电路的带宽：即一个驱动电路可以不失真地通过信号的最大频率。<br>(如果一个信号的频率超过了驱动电路的响应速度，就有可能信号失真。失真因素？)<br>如果信号频率为10MHz，而你配置了2MHz的带宽，则10MHz的方波很可能就变成了正弦波。就好比是公路的设计时速，汽车速度低于设计时速时，可以平稳地运行，如果超过设计时速就会颠簸，甚至翻车。<br>关键是： GPIO的引脚速度跟应用相匹配，速度配置越高，噪声越大，功耗越大。<br>带宽速度高的驱动器耗电大、噪声也大，带宽低的驱动器耗电小、噪声也小。使用合适的驱动器可以降低功耗和噪声<br>比如：高频的驱动电路，噪声也高，当不需要高的输出频率时，请选用低频驱动电路，这样非常有利于提高系统的EMI性能。当然如果要输出较高频率的信号，但却选用了较低频率的驱动模块，很可能会得到失真的输出信号。关键是GPIO的引脚速度跟应用匹配（推荐10倍以上？）。<br>比如：<br>①　USART串口，若最大波特率只需115.2k，那用2M的速度就够了，既省电也噪声小。<br>②　I2C接口，若使用400k波特率，若想把余量留大些，可以选用10M的GPIO引脚速度。<br>③　SPI接口，若使用18M或9M波特率，需要选用50M的GPIO的引脚速度。<br>(2). GPIO的翻转速度指：输入/输出寄存器的0 ，1 值反映到外部引脚(APB2上)高低电平的速度.手册上指出GPIO最大翻转速度可达18MHz。<br>@通过简单的程序测试，用示波器观察到的翻转时间: 是综合的时间，包括取指令的时间、指令执行的时间、指令执行后信号传递到寄存器的时间(这其中可能经过很多环节，比如AHB、APB、总线仲裁等)，最后才是信号从寄存器传输到引脚所经历的时间。<br>如：有上拉电阻，其阻值越大，RC延时越大，即逻辑电平转换的速度越慢，功耗越大。<br>(3).GPIO 输出速度：与程序有关，(程序中写的多久输出一个信号)。<br>2、GPIO口设为输入时，输出驱动电路与端口是断开，所以输出速度配置无意义。<br>3、在复位期间和刚复位后，复用功能未开启，I/O端口被配置成浮空输入模式。<br>4、所有端口都有外部中断能力。为了使用外部中断线，端口必须配置成输入模式。<br>5、GPIO口的配置具有上锁功能，当配置好GPIO口后，可以通过程序锁住配置组合，直到下次芯片复位才能解锁。<br>一般应用：<br>模拟输入_AIN ——应用ADC模拟输入，或者低功耗下省电。<br>浮空输入_IN_FLOATING ——可以做KEY识别，RX1<br>开漏输出_Out_OD——应用于I2C总线； （STM32开漏输出若外部不接上拉电阻只能输出0）</p>
+<h2 id="二-管脚的复用功能-重映射"><a href="#二-管脚的复用功能-重映射" class="headerlink" title="二. 管脚的复用功能 重映射"></a>二. 管脚的复用功能 重映射</h2><p>1、复用功能：内置外设是与I/O口共用引出管脚（不同的功能对应同一管脚）<br>STM32 所有内置外设的外部引脚都是与标准GPIO引脚复用的，如果有多个复用功能模块对应同一个引脚，只能使能其中之一，其它模块保持非使能状态。<br>2、重映射功能：复用功能的引出脚可以通过重映射，从不同的I/O管脚引出，即复用功 能的引出脚位是可通过程序改变到其他的引脚上！<br>直接好处：PCB电路板的设计人员可以在需要的情况下，不必把某些信号在板上绕一大圈完成联接，方便了PCB的设计同时潜在地减少了信号的交叉干扰。<br>如：USART1： 0: 没有重映像(TX/PA9，RX/PA10)； 1: 重映像(TX/PB6，RX/PB7)。<br>（参考AFIO_MAPR寄存器介绍）[0,1为一寄存器的bit值]<br>【注】 下述复用功能的引出脚具有重映射功能：</p>
+<ul>
+<li><p>晶体振荡器的引脚在不接晶体时，可以作为普通I/O口</p>
+</li>
+<li><p>CAN模块； - JTAG调试接口；- 大部分定时器的引出接口； - 大部分USART引出接口</p>
+</li>
+<li><p>I2C1的引出接口； - SPI1的引出接口；<br>举例：对于STM32F103VBT6，47引脚为PB10，它的复用功能是I2C2_SCL和 USART3_TX，表示在上电之后它的默认功能为PB10，而I2C2的SCL和USART3的TX为它的复用功能；另外在TIM2的引脚重映射后，TIM2_CH3也成为这个引脚的复用功能。<br>(1)要使用STM32F103VBT6的47、48脚的USART3功能，则需要配置47脚为复用推挽输出或复用开漏输出，配置48脚为某种输入模式，同时使能USART3并保持I2C2的非使能状态。<br>(2)使用STM32F103VBT6的47脚作为TIM2_CH3，则需要对TIM2进行重映射，然后再按复用功能的方式配置对应引脚. </p>
+</li>
+</ul>
+<p>  输入输出快速切换</p>
+<p>  #define HD7279_DAT_OUT GPIOB-&gt;CRH=(GPIOB-&gt;CRH&amp;(~(0x0000000F&lt;&lt;20)))|0x00000003&lt;&lt;20 //推挽输出</p>
+<p>  #define HD7279_DAT_IN GPIOB-&gt;CRH=(GPIOB-&gt;CRH&amp;(~(0x0000000F&lt;&lt;20)))|0x00000004&lt;&lt;20 //浮空输入</p>
 
             </div>
             <hr>
@@ -609,7 +566,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/17/stm32-ji-chu-zhi-shi/" class="b-link-green">STM32基础知识</a>
+                    <a href="/2018/12/18/stm32-shu-ru-shu-chu-li-jie/" class="b-link-green">STM32输入输出理解</a>
                 </p>
             </div>
         </div>
@@ -631,7 +588,7 @@
         repo: 'hexo-Gitalk',
         owner: 'zhaowensheng',
         admin: "zhaowensheng",
-        id: '2018-12-17T15-46-55',
+        id: '2018-12-18T16-51-08',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -651,7 +608,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/12/18/stm32-shu-ru-shu-chu-li-jie/">
                     <div class="card-image">
@@ -665,9 +622,59 @@
                 <div class="card-content article-content">
                     <div class="summary">STM32输入输出理解最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：（1）GPIO_Mode_AIN 模拟输入（2）GPIO_Mode_IN_FLOATING 浮空输入（3）GPIO_Mode_IPD</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-18
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/嵌入式/" class="post-category" target="_blank">
+                                    嵌入式
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/嵌入式/" target="_blank">
+                        <span class="chip bg-color">嵌入式</span>
+                    </a>
+                    
+                    <a href="/tags/STM32/" target="_blank">
+                        <span class="chip bg-color">STM32</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/17/stm32-ji-chu-zhi-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="STM32基础知识">
+                        
+                        <span class="card-title">STM32基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1)  GPIO口a)      工程的建立：1）  stdPeiph_Driver,下面存放的是ST官方提供的固件库函数，里面内容不需要用户修改。
+2）  Startup下面存放的是固件库必须的启动文件。不需用户修改。
+3）  Cmsis</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -689,55 +696,6 @@
                     
                     <a href="/tags/STM32/" target="_blank">
                         <span class="chip bg-color">STM32</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/11/28/css-ru-men-xiang-jie-er/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="CSS入门详解(二)">
-                        
-                        <span class="card-title">CSS入门详解(二)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">CSS详解(二)11. 动画
-动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。
-
-11.1 如何实现动画必要元素：
-
-a、通过@keyframes指定动画序列；
-b、通过百分比将动</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/CSS/" class="post-category" target="_blank">
-                                    CSS
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
