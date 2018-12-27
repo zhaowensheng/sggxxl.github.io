@@ -5,8 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32输入输出理解, 盛哥修行录">
-    <meta name="description" content="STM32输入输出理解最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：（1）GPIO_Mode_AIN 模拟输入（2）GPIO_Mode_IN_FLOATING 浮空输入（3）GPIO_Mode_IPD">
+    <meta name="keywords" content="μC/OS-Ⅲ系统中的任务种类及基本状态, 盛哥修行录">
+    <meta name="description" content="μC/OS-Ⅲ系统中的任务种类及基本状态在μC/OS-Ⅲ系统中，任务自身一共有五种状态。1、休眠态​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>STM32输入输出理解 | 盛哥修行录</title>
+    <title>μC/OS-Ⅲ系统中的任务种类及基本状态 | 盛哥修行录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +252,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        STM32输入输出理解
+                        μC/OS-Ⅲ系统中的任务种类及基本状态
                     </div>
                 </div>
             </div>
@@ -377,6 +377,10 @@
                     <span class="chip bg-color">STM32</span>
                 </a>
                 
+                <a href="/tags/μC-OS-Ⅲ/" target="_blank">
+                    <span class="chip bg-color">μC/OS-Ⅲ</span>
+                </a>
+                
             </div>
             
             <div class="post-info">
@@ -392,42 +396,29 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-18
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-27
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="STM32输入输出理解"><a href="#STM32输入输出理解" class="headerlink" title="STM32输入输出理解"></a>STM32输入输出理解</h1><p>最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：<br>（1）GPIO_Mode_AIN 模拟输入<br>（2）GPIO_Mode_IN_FLOATING 浮空输入<br>（3）GPIO_Mode_IPD 下拉输入<br>（4）GPIO_Mode_IPU 上拉输入<br>（5）GPIO_Mode_Out_OD 开漏输出<br>（6）GPIO_Mode_Out_PP 推挽输出<br>（7）GPIO_Mode_AF_OD 复用开漏输出<br>（8）GPIO_Mode_AF_PP 复用推挽输出</p>
-<p>对于刚入门的新手，我想这几个概念是必须得搞清楚的，平时接触的最多的也就是推挽输出、开漏输出、上拉输入这三种，但一直未曾对这些做过归纳。因此，在这里做一个总结：<br>推挽输出:可以输出高,低电平,连接数字器件; 推挽结构一般是指两个三极管分别受两互补信号的控制,总是在一个三极管导通的时候另一个截止。高低电平由IC的电源低定。<br>推挽电路是两个参数相同的三极管或MOSFET,以推挽方式存在于电路中,各负责正负半周的波形放大任务,电路工作时，两只对称的功率开关管每次只有一个导通，所以导通损耗小、效率高。输出既可以向负载灌电流，也可以从负载抽取电流。推拉式输出级既提高电路的负载能力，又提高开关速度。<br>详细理解：</p>
-<p>推挽放大器的输出级有两个“臂”（两组放大元件），一个“臂”的电流增加时，另一个“臂”的电流则减小，二者的状态轮流转换。对负载而言，好像是一个“臂”在推，一个“臂”在拉，共同完成电流输出任务。当输出高电平时，也就是下级负载门输入高电平时，输出端的电流将是下级门从本级电源经VT3拉出。这样一来，输出高低电平时，VT3 一路和 VT5 一路将交替工作，从而减低了功耗，提高了每个管的承受能力。又由于不论走哪一路，管子导通电阻都很小，使RC常数很小，转变速度很快。因此，推拉式输出级既提高电路的负载能力，又提高开关速度。<br>开漏输出:输出端相当于三极管的集电极. 要得到高电平状态需要上拉电阻才行. 适合于做电流型的驱动,其吸收电流的能力相对强(一般20ma以内).<br>开漏形式的电路有以下几个特点：</p>
-<p>1.利用外部电路的驱动能力，减少IC内部的驱动。当IC内部MOSFET导通时，驱动电流是从外部的VCC流经R pull-up ，MOSFET到GND。IC内部仅需很下的栅极驱动电流。</p>
-<p>2.一般来说，开漏是用来连接不同电平的器件，匹配电平用的，因为开漏引脚不连接外部的上拉电阻时，只能输出低电平，如果需要同时具备输出高电平的功能，则需要接上拉电阻，很好的一个优点是通过改变上拉电源的电压，便可以改变传输电平。比如加上上拉电阻就可以提供TTL/CMOS电平输出等。（上拉电阻的阻值决定了逻辑电平转换的沿的速度。阻值越大，速度越低功耗越小，所以负载电阻的选择要兼顾功耗和速度。）</p>
-<p>3.OPEN-DRAIN提供了灵活的输出方式，但是也有其弱点，就是带来上升沿的延时。因为上升沿是通过外接上拉无源电阻对负载充电，所以当电阻选择小时延时就小，但功耗大；反之延时大功耗小。所以如果对延时有要求，则建议用下降沿输出。</p>
-<p>4.可以将多个开漏输出的Pin，连接到一条线上。通过一只上拉电阻，在不增加任何器件的情况下，形成“与逻辑”关系。这也是I2C，SMBus等总线判断总线占用状态的原理。补充：什么是“线与”？：<br>在一个结点(线)上,连接一个上拉电阻到电源VCC或VDD和n个NPN或NMOS晶体管的集电极C或漏极D,这些晶体管的发射极E或源极S都接到地线上,只要有一个晶体管饱和,这个结点(线)就被拉到地线电平上.因为这些晶体管的基极注入电流(NPN)或栅极加上高电平(NMOS),晶体管就会饱和,所以这些基极或栅极对这个结点(线)的关系是或非NOR逻辑.如果这个结点后面加一个反相器,就是或OR逻辑.<br>其实可以简单的理解为：在所有引脚连在一起时，外接一上拉电阻，如果有一个引脚输出为逻辑0，相当于接地，与之并联的回路“相当于被一根导线短路”，所以外电路逻辑电平便为0，只有都为高电平时，与的结果才为逻辑1。<br>关于推挽输出和开漏输出，最后用一幅最简单的图形来概括：</p>
-<p>该图中左边的便是推挽输出模式，其中比较器输出高电平时下面的PNP三极管截止，而上面NPN三极管导通，输出电平VS+；当比较器输出低电平时则恰恰相反，PNP三极管导通，输出和地相连，为低电平。右边的则可以理解为开漏输出形式，需要接上拉。</p>
-<p>浮空输入：对于浮空输入，一直没找到很权威的解释，只好从以下图中去理解了</p>
-<p>由于浮空输入一般多用于外部按键输入，结合图上的输入部分电路，我理解为浮空输入状态下，IO的电平状态是不确定的，完全由外部输入决定，如果在该引脚悬空的情况下，读取该端口的电平是不确定的。<br>上拉输入/下拉输入/模拟输入：这几个概念很好理解，从字面便能轻易读懂。<br>复用开漏输出、复用推挽输出：可以理解为GPIO口被用作第二功能时的配置情况（即并非作为通用IO口使用）<br>最后总结下使用情况：<br>在STM32中选用IO模式<br>（1） 浮空输入_IN_FLOATING ——浮空输入，可以做KEY识别，RX1<br>（2）带上拉输入_IPU——IO内部上拉电阻输入<br>（3）带下拉输入_IPD—— IO内部下拉电阻输入<br>（4） 模拟输入_AIN ——应用ADC模拟输入，或者低功耗下省电<br>（5）开漏输出_OUT_OD ——IO输出0接GND，IO输出1，悬空，需要外接上拉电阻，才能实现输出高电平。当输出为1时，IO口的状态由上拉电阻拉高电平，但由于是开漏输出模式，这样IO口也就可以由外部电路改变为低电平或不变。可以读IO输入电平变化，实现C51的IO双向功能<br>（6）推挽输出_OUT_PP ——IO输出0-接GND， IO输出1 -接VCC，读输入值是未知的<br>（7）复用功能的推挽输出_AF_PP ——片内外设功能（I2C的SCL,SDA）<br>（8）复用功能的开漏输出_AF_OD——片内外设功能（TX1,MOSI,MISO.SCK.SS）</p>
-<p>STM32设置实例：</p>
-<p>（1）模拟I2C使用开漏输出_OUT_OD，接上拉电阻，能够正确输出0和1；读值时先GPIO_SetBits(GPIOB, GPIO_Pin_0)；拉高，然后可以读IO的值；使用GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0)；</p>
-<p>（2）如果是无上拉电阻，IO默认是高电平；需要读取IO的值，可以使用带上拉输入_IPU和浮空输入_IN_FLOATING和开漏输出_OUT_OD；<br>通常有5种方式使用某个引脚功能，它们的配置方式如下：<br>1）作为普通GPIO输入：根据需要配置该引脚为浮空输入、带弱上拉输入或带弱下拉输入，同时不要使能该引脚对应的所有复用功能模块。<br>2）作为普通GPIO输出：根据需要配置该引脚为推挽输出或开漏输出，同时不要使能该引脚对应的所有复用功能模块。<br>3）作为普通模拟输入：配置该引脚为模拟输入模式，同时不要使能该引脚对应的所有复用功能模块。<br>4）作为内置外设的输入：根据需要配置该引脚为浮空输入、带弱上拉输入或带弱下拉输入，同时使能该引脚对应的某个复用功能模块。<br>5）作为内置外设的输出：根据需要配置该引脚为复用推挽输出或复用开漏输出，同时使能该引脚对应的所有复用功能模块。</p>
-<p>注意如果有多个复用功能模块对应同一个引脚，只能使能其中之一，其它模块保持非使能状态。</p>
-<p>比如要使用STM32F103VBT6的47、48脚的USART3功能，则需要配置47脚为复用推挽输出或复用开漏输出，配置48脚为某种输入模式，同时使能USART3并保持I2C2的非使能状态。<br>如果要使用STM32F103VBT6的47脚作为TIM2_CH3，则需要对TIM2进行重映射，然后再按复用功能的方式配置对应引脚。</p>
+                <h1 id="μC-OS-Ⅲ系统中的任务种类及基本状态"><a href="#μC-OS-Ⅲ系统中的任务种类及基本状态" class="headerlink" title="μC/OS-Ⅲ系统中的任务种类及基本状态"></a>μC/OS-Ⅲ系统中的任务种类及基本状态</h1><h2 id="在μC-OS-Ⅲ系统中，任务自身一共有五种状态。"><a href="#在μC-OS-Ⅲ系统中，任务自身一共有五种状态。" class="headerlink" title="在μC/OS-Ⅲ系统中，任务自身一共有五种状态。"></a>在μC/OS-Ⅲ系统中，任务自身一共有五种状态。</h2><h3 id="1、休眠态"><a href="#1、休眠态" class="headerlink" title="1、休眠态"></a>1、休眠态</h3><p>​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间中了，但是μC/OS-Ⅲ还不知道它的存在。当不在需要μC/OS-Ⅲ管理某个任务时，用户可以调用任务删除函数OSTaskDel()来删除它。OSTaskDel()实际上并不会删除一个任务的代码，只是使该任务无法再获得CPU的使用权。</p>
+<h3 id="2、就绪态"><a href="#2、就绪态" class="headerlink" title="2、就绪态"></a>2、就绪态</h3><p>​       当一个任务准备运行时，它就进入就绪态。在μC/OS-Ⅲ中可以有任意多个任务处于就绪态。</p>
+<h3 id="3、运行态"><a href="#3、运行态" class="headerlink" title="3、运行态"></a>3、运行态</h3><p>​        最重要的就绪任务会进入运行态。对于单核CPU，在任意时刻只能有一个任务运行。</p>
+<h3 id="4、等待态"><a href="#4、等待态" class="headerlink" title="4、等待态"></a>4、等待态</h3><p>​       当任务等待一个事件发生才能继续运行时，任务进入等待态。处于等待态的任务会被放入一个与该任务所等待的事件相对应的等代表。当任务等待的事件发生时，任务被重新放回就续表中，成为就绪态。</p>
+<h3 id="5、中断服务态："><a href="#5、中断服务态：" class="headerlink" title="5、中断服务态："></a>5、中断服务态：</h3><p>​    如果允许CPU被中断，那么中断发生时，正在运行的任务会被挂起，CPU开始执行中断服务子程序ISR。此时处于中断服务态。注意，ISR程序应该尽可能的短，中断处理的大部分工作应该在μC/OS-Ⅲ系统中可管理的任务级完成。</p>
 <hr>
-<h2 id="一、GPIO模式配置"><a href="#一、GPIO模式配置" class="headerlink" title="一、GPIO模式配置"></a>一、GPIO模式配置</h2><p>1、输入/输出模式（参考stm32手册）<br>2、GPIO输出模式下，几种速度的区别：<br>(1). GPIO 引脚速度： GPIO_Speed_2MHz (10MHz, 50MHz) ;<br>又称输出驱动电路的响应速度：（芯片内部在I/O口的输出部分安排了多个响应速度不同的输出驱动电路，用户可以根据自己的需要选择合适的驱动电路，通过选择速度来选择不同的输出驱动模块，达到最佳的噪声控制和降低功耗的目的。）<br>可理解为: 输出驱动电路的带宽：即一个驱动电路可以不失真地通过信号的最大频率。<br>(如果一个信号的频率超过了驱动电路的响应速度，就有可能信号失真。失真因素？)<br>如果信号频率为10MHz，而你配置了2MHz的带宽，则10MHz的方波很可能就变成了正弦波。就好比是公路的设计时速，汽车速度低于设计时速时，可以平稳地运行，如果超过设计时速就会颠簸，甚至翻车。<br>关键是： GPIO的引脚速度跟应用相匹配，速度配置越高，噪声越大，功耗越大。<br>带宽速度高的驱动器耗电大、噪声也大，带宽低的驱动器耗电小、噪声也小。使用合适的驱动器可以降低功耗和噪声<br>比如：高频的驱动电路，噪声也高，当不需要高的输出频率时，请选用低频驱动电路，这样非常有利于提高系统的EMI性能。当然如果要输出较高频率的信号，但却选用了较低频率的驱动模块，很可能会得到失真的输出信号。关键是GPIO的引脚速度跟应用匹配（推荐10倍以上？）。<br>比如：<br>①　USART串口，若最大波特率只需115.2k，那用2M的速度就够了，既省电也噪声小。<br>②　I2C接口，若使用400k波特率，若想把余量留大些，可以选用10M的GPIO引脚速度。<br>③　SPI接口，若使用18M或9M波特率，需要选用50M的GPIO的引脚速度。<br>(2). GPIO的翻转速度指：输入/输出寄存器的0 ，1 值反映到外部引脚(APB2上)高低电平的速度.手册上指出GPIO最大翻转速度可达18MHz。<br>@通过简单的程序测试，用示波器观察到的翻转时间: 是综合的时间，包括取指令的时间、指令执行的时间、指令执行后信号传递到寄存器的时间(这其中可能经过很多环节，比如AHB、APB、总线仲裁等)，最后才是信号从寄存器传输到引脚所经历的时间。<br>如：有上拉电阻，其阻值越大，RC延时越大，即逻辑电平转换的速度越慢，功耗越大。<br>(3).GPIO 输出速度：与程序有关，(程序中写的多久输出一个信号)。<br>2、GPIO口设为输入时，输出驱动电路与端口是断开，所以输出速度配置无意义。<br>3、在复位期间和刚复位后，复用功能未开启，I/O端口被配置成浮空输入模式。<br>4、所有端口都有外部中断能力。为了使用外部中断线，端口必须配置成输入模式。<br>5、GPIO口的配置具有上锁功能，当配置好GPIO口后，可以通过程序锁住配置组合，直到下次芯片复位才能解锁。<br>一般应用：<br>模拟输入_AIN ——应用ADC模拟输入，或者低功耗下省电。<br>浮空输入_IN_FLOATING ——可以做KEY识别，RX1<br>开漏输出_Out_OD——应用于I2C总线； （STM32开漏输出若外部不接上拉电阻只能输出0）</p>
-<h2 id="二-管脚的复用功能-重映射"><a href="#二-管脚的复用功能-重映射" class="headerlink" title="二. 管脚的复用功能 重映射"></a>二. 管脚的复用功能 重映射</h2><p>1、复用功能：内置外设是与I/O口共用引出管脚（不同的功能对应同一管脚）<br>STM32 所有内置外设的外部引脚都是与标准GPIO引脚复用的，如果有多个复用功能模块对应同一个引脚，只能使能其中之一，其它模块保持非使能状态。<br>2、重映射功能：复用功能的引出脚可以通过重映射，从不同的I/O管脚引出，即复用功 能的引出脚位是可通过程序改变到其他的引脚上！<br>直接好处：PCB电路板的设计人员可以在需要的情况下，不必把某些信号在板上绕一大圈完成联接，方便了PCB的设计同时潜在地减少了信号的交叉干扰。<br>如：USART1： 0: 没有重映像(TX/PA9，RX/PA10)； 1: 重映像(TX/PB6，RX/PB7)。<br>（参考AFIO_MAPR寄存器介绍）[0,1为一寄存器的bit值]<br>【注】 下述复用功能的引出脚具有重映射功能：</p>
-<ul>
-<li><p>晶体振荡器的引脚在不接晶体时，可以作为普通I/O口</p>
-</li>
-<li><p>CAN模块； - JTAG调试接口；- 大部分定时器的引出接口； - 大部分USART引出接口</p>
-</li>
-<li><p>I2C1的引出接口； - SPI1的引出接口；<br>举例：对于STM32F103VBT6，47引脚为PB10，它的复用功能是I2C2_SCL和 USART3_TX，表示在上电之后它的默认功能为PB10，而I2C2的SCL和USART3的TX为它的复用功能；另外在TIM2的引脚重映射后，TIM2_CH3也成为这个引脚的复用功能。<br>(1)要使用STM32F103VBT6的47、48脚的USART3功能，则需要配置47脚为复用推挽输出或复用开漏输出，配置48脚为某种输入模式，同时使能USART3并保持I2C2的非使能状态。<br>(2)使用STM32F103VBT6的47脚作为TIM2_CH3，则需要对TIM2进行重映射，然后再按复用功能的方式配置对应引脚. </p>
-</li>
-</ul>
-<p>  输入输出快速切换</p>
-<p>  #define HD7279_DAT_OUT GPIOB-&gt;CRH=(GPIOB-&gt;CRH&amp;(~(0x0000000F&lt;&lt;20)))|0x00000003&lt;&lt;20 //推挽输出</p>
-<p>  #define HD7279_DAT_IN GPIOB-&gt;CRH=(GPIOB-&gt;CRH&amp;(~(0x0000000F&lt;&lt;20)))|0x00000004&lt;&lt;20 //浮空输入</p>
+<p>​         在μC/OS-Ⅲ系统的任务中，均含有一个任务控制块TCB(Task Control Block)。这是内核使用的一种数据结构，用来维护任务相关的信息。在μC/OS-Ⅲ中，每个任务都要有自己的TCB。任务的TCB由用户在用户的存储空间中分配。当调用任务相关的函数时，要把任务TCB的地址传递给所调用的函数。需要特别注意的是，即便用户了解OS_TCB中各个成员的功能，在应用程序的代码中也不能直接访问这些成员，更不允许对其做任何改动。</p>
+<h2 id="μC-OS-Ⅲ共有5个系统内部任务"><a href="#μC-OS-Ⅲ共有5个系统内部任务" class="headerlink" title="μC/OS-Ⅲ共有5个系统内部任务"></a>μC/OS-Ⅲ共有5个系统内部任务</h2><p>​       在5个系统任务中，空闲任务和时钟节拍任务是必须的，其他任务是可选的。</p>
+<h3 id="1、空闲任务：OS-IdleTask-—-os-core-c"><a href="#1、空闲任务：OS-IdleTask-—-os-core-c" class="headerlink" title="1、空闲任务：OS_IdleTask()—-os_core.c"></a>1、空闲任务：OS_IdleTask()—-os_core.c</h3><p>​       OS_IdleTask()是μC/OS-Ⅲ创建的第一个任务，也是μC/OS-Ⅲ必须创建的一个任务。空闲任务的优先级总是设置为OS_CFG_PRIO_MAX-1。实际上空闲任务是唯一一个可以使用该优先级的任务（该优先级为最低优先级）。在该任务中，可以调用一些特殊的处理器控制函数，比如设置处理器处于低功耗状态等等。</p>
+<h3 id="2、时钟节拍任务：OS-TickTask-—os-tick-c"><a href="#2、时钟节拍任务：OS-TickTask-—os-tick-c" class="headerlink" title="2、时钟节拍任务：OS_TickTask()—os_tick.c"></a>2、时钟节拍任务：OS_TickTask()—os_tick.c</h3><p>​       几乎每个实时操作系统都需要一个周期性的时钟源，称为时钟节拍(Clock Tick)或系统节拍(System Tick),用来跟踪任务延时和任务等待超时。μC/OS-Ⅲ的时钟节拍处理函数封装在os_tick.c文件中。</p>
+<p>​       OS_TickTask()是μC/OS-Ⅲ必须创建的一个系统任务。用户可以设置该任务优先级，通常该任务设置为一个相对较高的优先级。该任务的功能是跟踪正在演示的任务，以及在指定的时间内等待某个内核对象任务。OS_TickTask()是一个周期执行的任务，它等待时钟节拍ISR发送的信号。</p>
+<h3 id="3、统计任务：OS-StatTask-—os-stat-c"><a href="#3、统计任务：OS-StatTask-—os-stat-c" class="headerlink" title="3、统计任务：OS_StatTask()—os_stat.c"></a>3、统计任务：OS_StatTask()—os_stat.c</h3><p>​       μC/OS-Ⅲ中的统计任务是一个可选系统任务，可以在系统运行时做一些统计工作，例如统计总的CPU利用率、各任务的CPU利用率一级各任务的堆栈使用量。</p>
+<p>​       如果需要使用统计任务，必须在main()函数创建第一个也是唯一一个应用任务中调用OSStatTaskCPUUsageInt()函数(例程见本书第一版5.6.3节，P83)。</p>
+<h3 id="4、定时任务：OS-TmrTask-—os-tmr-c"><a href="#4、定时任务：OS-TmrTask-—os-tmr-c" class="headerlink" title="4、定时任务：OS_TmrTask()—os_tmr.c"></a>4、定时任务：OS_TmrTask()—os_tmr.c</h3><p>​       μC/OS-Ⅲ可以向用户提供定时服务。定时服务可以周期性的执行一些用户自定义的操作。在μC/OS-Ⅲ中定时任务是可选的，用户可以创建任意数据的定时器。</p>
+<h3 id="5、中断服务管理任务：OS-IntQTask-—os-int-c"><a href="#5、中断服务管理任务：OS-IntQTask-—os-int-c" class="headerlink" title="5、中断服务管理任务：OS_IntQTask()—os_int.c"></a>5、中断服务管理任务：OS_IntQTask()—os_int.c</h3><p>​       当把os_cfg.h文件中的配置常量OS_CFG_ISR_POST_DEFERRED_EN设置为1时，μC/OS-Ⅲ会创建一个名为OS_IntQTask()的任务，该任务负责“延迟”(deferring)在ISR中调用的系统post服务函数(OS post service)的行为。</p>
+<p>​       一个任务就是一段可以认为CPU为其独享的程序。对于单CPU系统，任何时刻都只有一个任务在运行。μC/OS-Ⅲ支持多任务管理，允许在一个应用中有任务数目的任务。任务最大数目实际只受限于处理器可用的存储量。</p>
 
             </div>
             <hr>
@@ -566,7 +557,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/18/stm32-shu-ru-shu-chu-li-jie/" class="b-link-green">STM32输入输出理解</a>
+                    <a href="/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/" class="b-link-green">μC/OS-Ⅲ系统中的任务种类及基本状态</a>
                 </p>
             </div>
         </div>
@@ -588,7 +579,7 @@
         repo: 'hexo-Gitalk',
         owner: 'zhaowensheng',
         admin: "zhaowensheng",
-        id: '2018-12-18T16-51-08',
+        id: '2018-12-27T16-01-15',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -608,7 +599,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/">
                     <div class="card-image">
@@ -622,9 +613,9 @@
                 <div class="card-content article-content">
                     <div class="summary">μC/OS-Ⅲ系统中的任务种类及基本状态在μC/OS-Ⅲ系统中，任务自身一共有五种状态。1、休眠态​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -637,6 +628,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -661,22 +653,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/17/stm32-ji-chu-zhi-shi/">
+                <a href="/2018/12/18/stm32-shu-ru-shu-chu-li-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="STM32基础知识">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="STM32输入输出理解">
                         
-                        <span class="card-title">STM32基础知识</span>
+                        <span class="card-title">STM32输入输出理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1)  GPIO口a)      工程的建立：1）  stdPeiph_Driver,下面存放的是ST官方提供的固件库函数，里面内容不需要用户修改。
-2）  Startup下面存放的是固件库必须的启动文件。不需用户修改。
-3）  Cmsis</div>
+                    <div class="summary">STM32输入输出理解最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：（1）GPIO_Mode_AIN 模拟输入（2）GPIO_Mode_IN_FLOATING 浮空输入（3）GPIO_Mode_IPD</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-18
                             </span>
                         <span class="publish-author">
                             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-12-18T09:00:31.997Z</updated>
+  <updated>2018-12-27T08:06:35.849Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>μC/OS-Ⅲ系统中的任务种类及基本状态</title>
+    <link href="https://www.sggxxl.club/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/"/>
+    <id>https://www.sggxxl.club/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/</id>
+    <published>2018-12-27T08:01:15.000Z</published>
+    <updated>2018-12-27T08:06:35.849Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;μC-OS-Ⅲ系统中的任务种类及基本状态&quot;&gt;&lt;a href=&quot;#μC-OS-Ⅲ系统中的任务种类及基本状态&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="嵌入式" scheme="https://www.sggxxl.club/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="STM32" scheme="https://www.sggxxl.club/tags/STM32/"/>
+    
+      <category term="μC/OS-Ⅲ" scheme="https://www.sggxxl.club/tags/%CE%BCC-OS-%E2%85%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32输入输出理解</title>
@@ -49,7 +79,7 @@
     <link href="https://www.sggxxl.club/2018/12/17/stm32-ji-chu-zhi-shi/"/>
     <id>https://www.sggxxl.club/2018/12/17/stm32-ji-chu-zhi-shi/</id>
     <published>2018-12-17T07:46:55.000Z</published>
-    <updated>2018-12-18T08:53:33.992Z</updated>
+    <updated>2018-12-27T08:06:08.038Z</updated>
     
     <summary type="html">
     
