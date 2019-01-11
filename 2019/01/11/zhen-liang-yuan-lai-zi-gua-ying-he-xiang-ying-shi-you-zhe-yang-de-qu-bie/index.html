@@ -5,8 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="μC/OS-Ⅲ系统中的任务种类及基本状态, 盛哥修行录">
-    <meta name="description" content="μC/OS-Ⅲ系统中的任务种类及基本状态在μC/OS-Ⅲ系统中，任务自身一共有五种状态。1、休眠态​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间">
+    <meta name="keywords" content="震惊！原来自适应和响应式有这样的区别, 盛哥修行录">
+    <meta name="description" content="很多人对于响应式网站的定义是：能够适应不同屏幕大小终端设备的网站称之为响应式网站。所以很多人都会把自适应网站当做响应式网站，但是其实响应式网站和自适应网站是有区别的，它们两者从形式上看，都是可以实现自动适应不同屏幕大小的终端设备，但是这两者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>μC/OS-Ⅲ系统中的任务种类及基本状态 | 盛哥修行录</title>
+    <title>震惊！原来自适应和响应式有这样的区别 | 盛哥修行录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +252,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        μC/OS-Ⅲ系统中的任务种类及基本状态
+                        震惊！原来自适应和响应式有这样的区别
                     </div>
                 </div>
             </div>
@@ -369,16 +369,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/嵌入式/" target="_blank">
-                    <span class="chip bg-color">嵌入式</span>
-                </a>
-                
-                <a href="/tags/STM32/" target="_blank">
-                    <span class="chip bg-color">STM32</span>
-                </a>
-                
-                <a href="/tags/μC-OS-Ⅲ/" target="_blank">
-                    <span class="chip bg-color">μC/OS-Ⅲ</span>
+                <a href="/tags/网站/" target="_blank">
+                    <span class="chip bg-color">网站</span>
                 </a>
                 
             </div>
@@ -388,37 +380,47 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/嵌入式/" class="post-category" target="_blank">
-                        嵌入式
+                    <a href="/categories/网站/" class="post-category" target="_blank">
+                        网站
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-27
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-11
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="μC-OS-Ⅲ系统中的任务种类及基本状态"><a href="#μC-OS-Ⅲ系统中的任务种类及基本状态" class="headerlink" title="μC/OS-Ⅲ系统中的任务种类及基本状态"></a>μC/OS-Ⅲ系统中的任务种类及基本状态</h1><h2 id="在μC-OS-Ⅲ系统中，任务自身一共有五种状态。"><a href="#在μC-OS-Ⅲ系统中，任务自身一共有五种状态。" class="headerlink" title="在μC/OS-Ⅲ系统中，任务自身一共有五种状态。"></a>在μC/OS-Ⅲ系统中，任务自身一共有五种状态。</h2><h3 id="1、休眠态"><a href="#1、休眠态" class="headerlink" title="1、休眠态"></a>1、休眠态</h3><p>​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间中了，但是μC/OS-Ⅲ还不知道它的存在。当不在需要μC/OS-Ⅲ管理某个任务时，用户可以调用任务删除函数OSTaskDel()来删除它。OSTaskDel()实际上并不会删除一个任务的代码，只是使该任务无法再获得CPU的使用权。</p>
-<h3 id="2、就绪态"><a href="#2、就绪态" class="headerlink" title="2、就绪态"></a>2、就绪态</h3><p>​       当一个任务准备运行时，它就进入就绪态。在μC/OS-Ⅲ中可以有任意多个任务处于就绪态。</p>
-<h3 id="3、运行态"><a href="#3、运行态" class="headerlink" title="3、运行态"></a>3、运行态</h3><p>​        最重要的就绪任务会进入运行态。对于单核CPU，在任意时刻只能有一个任务运行。</p>
-<h3 id="4、等待态"><a href="#4、等待态" class="headerlink" title="4、等待态"></a>4、等待态</h3><p>​       当任务等待一个事件发生才能继续运行时，任务进入等待态。处于等待态的任务会被放入一个与该任务所等待的事件相对应的等代表。当任务等待的事件发生时，任务被重新放回就续表中，成为就绪态。</p>
-<h3 id="5、中断服务态："><a href="#5、中断服务态：" class="headerlink" title="5、中断服务态："></a>5、中断服务态：</h3><p>​    如果允许CPU被中断，那么中断发生时，正在运行的任务会被挂起，CPU开始执行中断服务子程序ISR。此时处于中断服务态。注意，ISR程序应该尽可能的短，中断处理的大部分工作应该在μC/OS-Ⅲ系统中可管理的任务级完成。</p>
-<hr>
-<p>​         在μC/OS-Ⅲ系统的任务中，均含有一个任务控制块TCB(Task Control Block)。这是内核使用的一种数据结构，用来维护任务相关的信息。在μC/OS-Ⅲ中，每个任务都要有自己的TCB。任务的TCB由用户在用户的存储空间中分配。当调用任务相关的函数时，要把任务TCB的地址传递给所调用的函数。需要特别注意的是，即便用户了解OS_TCB中各个成员的功能，在应用程序的代码中也不能直接访问这些成员，更不允许对其做任何改动。</p>
-<h2 id="μC-OS-Ⅲ共有5个系统内部任务"><a href="#μC-OS-Ⅲ共有5个系统内部任务" class="headerlink" title="μC/OS-Ⅲ共有5个系统内部任务"></a>μC/OS-Ⅲ共有5个系统内部任务</h2><p>​       在5个系统任务中，空闲任务和时钟节拍任务是必须的，其他任务是可选的。</p>
-<h3 id="1、空闲任务：OS-IdleTask-—-os-core-c"><a href="#1、空闲任务：OS-IdleTask-—-os-core-c" class="headerlink" title="1、空闲任务：OS_IdleTask()—-os_core.c"></a>1、空闲任务：OS_IdleTask()—-os_core.c</h3><p>​       OS_IdleTask()是μC/OS-Ⅲ创建的第一个任务，也是μC/OS-Ⅲ必须创建的一个任务。空闲任务的优先级总是设置为OS_CFG_PRIO_MAX-1。实际上空闲任务是唯一一个可以使用该优先级的任务（该优先级为最低优先级）。在该任务中，可以调用一些特殊的处理器控制函数，比如设置处理器处于低功耗状态等等。</p>
-<h3 id="2、时钟节拍任务：OS-TickTask-—os-tick-c"><a href="#2、时钟节拍任务：OS-TickTask-—os-tick-c" class="headerlink" title="2、时钟节拍任务：OS_TickTask()—os_tick.c"></a>2、时钟节拍任务：OS_TickTask()—os_tick.c</h3><p>​       几乎每个实时操作系统都需要一个周期性的时钟源，称为时钟节拍(Clock Tick)或系统节拍(System Tick),用来跟踪任务延时和任务等待超时。μC/OS-Ⅲ的时钟节拍处理函数封装在os_tick.c文件中。</p>
-<p>​       OS_TickTask()是μC/OS-Ⅲ必须创建的一个系统任务。用户可以设置该任务优先级，通常该任务设置为一个相对较高的优先级。该任务的功能是跟踪正在演示的任务，以及在指定的时间内等待某个内核对象任务。OS_TickTask()是一个周期执行的任务，它等待时钟节拍ISR发送的信号。</p>
-<h3 id="3、统计任务：OS-StatTask-—os-stat-c"><a href="#3、统计任务：OS-StatTask-—os-stat-c" class="headerlink" title="3、统计任务：OS_StatTask()—os_stat.c"></a>3、统计任务：OS_StatTask()—os_stat.c</h3><p>​       μC/OS-Ⅲ中的统计任务是一个可选系统任务，可以在系统运行时做一些统计工作，例如统计总的CPU利用率、各任务的CPU利用率一级各任务的堆栈使用量。</p>
-<p>​       如果需要使用统计任务，必须在main()函数创建第一个也是唯一一个应用任务中调用OSStatTaskCPUUsageInt()函数(例程见本书第一版5.6.3节，P83)。</p>
-<h3 id="4、定时任务：OS-TmrTask-—os-tmr-c"><a href="#4、定时任务：OS-TmrTask-—os-tmr-c" class="headerlink" title="4、定时任务：OS_TmrTask()—os_tmr.c"></a>4、定时任务：OS_TmrTask()—os_tmr.c</h3><p>​       μC/OS-Ⅲ可以向用户提供定时服务。定时服务可以周期性的执行一些用户自定义的操作。在μC/OS-Ⅲ中定时任务是可选的，用户可以创建任意数据的定时器。</p>
-<h3 id="5、中断服务管理任务：OS-IntQTask-—os-int-c"><a href="#5、中断服务管理任务：OS-IntQTask-—os-int-c" class="headerlink" title="5、中断服务管理任务：OS_IntQTask()—os_int.c"></a>5、中断服务管理任务：OS_IntQTask()—os_int.c</h3><p>​       当把os_cfg.h文件中的配置常量OS_CFG_ISR_POST_DEFERRED_EN设置为1时，μC/OS-Ⅲ会创建一个名为OS_IntQTask()的任务，该任务负责“延迟”(deferring)在ISR中调用的系统post服务函数(OS post service)的行为。</p>
-<p>​       一个任务就是一段可以认为CPU为其独享的程序。对于单CPU系统，任何时刻都只有一个任务在运行。μC/OS-Ⅲ支持多任务管理，允许在一个应用中有任务数目的任务。任务最大数目实际只受限于处理器可用的存储量。</p>
+                <p>很多人对于响应式网站的定义是：能够适应不同屏幕大小终端设备的网站称之为响应式网站。所以很多人都会把自适应网站当做响应式网站，但是其实响应式网站和自适应网站是有区别的，它们两者从形式上看，都是可以实现自动适应不同屏幕大小的终端设备，但是这两者是有根本的区别的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrWiaia6icyc30HCp6n6LXFDQhV5UldmoqXH07gSeAl8UoJFcdaRs7F9iaAg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>很多人对响应式网站和自适应网站都存在误解，会以为这两者都是同一类型的网站，只是叫法不一样。但是如果通过实际的浏览体验，就能分辨出它们的区别。可以说自适应只是响应式当中的一个子集，也就是说响应式的开始形态是自适应。要完全区别于它们两者，首先你要了解，什么是响应式布局？什么是自适应布局？</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrgOByHCk8mxLjPrS1CqMjNpiaow4bXo1Y5aLiaDTzE0LlJquSPwnibSQLQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>什么是响应式布局？</p>
+<p>响应式网页布局设计就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。打个比方来说：现在社会有很多响应产品，例如折叠沙发，折叠床等等，当我们需要把沙发放到一个角落的时候，此刻沙发就好比div吧，而角落里的某个地方就好比父元素，由于父元素空间的改变，我们不得不调整div,让它能够依然放在角落里。在项目中你会遇到不同的终端，由于终端分辨率不同，所以你要想让用户体验更好，就必要让你的页面能够兼容多个终端。</p>
+<p>什么是自适应布局？</p>
+<p>自适应网页布局设计指网页能够在不同大小的终端设备上自行适应显示。简单来说：就是让一个网站在不同大小的设备上呈现显示同一样的页面，让同一个页面适应不同大小屏幕，根据屏幕的大小，自动缩放。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrZjpjkazrQBwWKlyUiaOcY4G35TyicATKB4qOo7rrVk3ETlStCQ9chIAw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>总的来说响应式与自适应的原理是相似的，都是检测设备，根据不同的设备采用不同的css，而且css都是采用的百分比的，而不是固定的宽度，不同点是响应式网站在不同的设备上看上去是不一样的，会随着设备的改变而改变模板样式、模块排版、展示样式。而自适应不会，所有的设备看起来都是一样的网站，不过是长度或者图片变小了，不会根据设备采用不同的展示样式。可能说的那么多，大家会觉得响应式网站做起来肯定很难，但是其实不然，不管懂不懂技术，懂不懂代码都可以利用建站宝盒响应式建站系统来建设响应式网站。响应式网站不单止变得易于优化，更多的是提高了用户的一个浏览体验度。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrZUiamg6ZZjzDNXQyXXRpHPXcsYzeXvC5CmialibhKVN4mqgiblGJc9ykrQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p><strong>结论：</strong></p>
+<p>所以说看一个网站是不是响应式网站，不能单单看它能不能自动适应不同大小设备，还要看适应以后的展现样式，更为重要的是你自己要多了解，不然就很容易混淆。希望本文能帮到你分清响应式网站和自适应网站的不同之处。</p>
+<p>最后还分享下网页布局的几种类型→</p>
+<p><strong>网站布局的五种方式</strong></p>
+<ol>
+<li>静态布局（static layout）</li>
+<li>流式布局（Liquid Layout）</li>
+<li>自适应布局（Adaptive Layout）</li>
+<li>响应式布局（Responsive Layout）</li>
+<li>弹性布局（rem/em布局）</li>
+</ol>
+<p><strong>稍微总结下</strong></p>
+<p>1.如果只做pc端，那么静态布局（定宽度）是最好的选择；</p>
+<p>2.如果做移动端，且设计对高度和元素间距要求不高，那么弹性布局（rem+js）是最好的选择，一份css+一份js调节font-size搞定；</p>
+<p>3.如果pc，移动要兼容，而且要求很高那么响应式布局还是最好的选择，前提是设计根据不同的高宽做不同的设计，响应式根据媒体查询做不同的布局。</p>
 
             </div>
             <hr>
@@ -557,7 +559,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.sggxxl.club" class="b-link-green">盛哥修行录</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/" class="b-link-green">μC/OS-Ⅲ系统中的任务种类及基本状态</a>
+                    <a href="/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/" class="b-link-green">震惊！原来自适应和响应式有这样的区别</a>
                 </p>
             </div>
         </div>
@@ -579,7 +581,7 @@
         repo: 'hexo-Gitalk',
         owner: 'zhaowensheng',
         admin: "zhaowensheng",
-        id: '2018-12-27T16-01-15',
+        id: '2019-01-11T16-13-45',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -599,7 +601,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/">
                     <div class="card-image">
@@ -613,9 +615,9 @@
                 <div class="card-content article-content">
                     <div class="summary">很多人对于响应式网站的定义是：能够适应不同屏幕大小终端设备的网站称之为响应式网站。所以很多人都会把自适应网站当做响应式网站，但是其实响应式网站和自适应网站是有区别的，它们两者从形式上看，都是可以实现自动适应不同屏幕大小的终端设备，但是这两者</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -628,6 +630,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -644,20 +647,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/18/stm32-shu-ru-shu-chu-li-jie/">
+                <a href="/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="STM32输入输出理解">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="μC/OS-Ⅲ系统中的任务种类及基本状态">
                         
-                        <span class="card-title">STM32输入输出理解</span>
+                        <span class="card-title">μC/OS-Ⅲ系统中的任务种类及基本状态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">STM32输入输出理解最近在看数据手册的时候，发现在Cortex-M3里，对于GPIO的配置种类有8种之多：（1）GPIO_Mode_AIN 模拟输入（2）GPIO_Mode_IN_FLOATING 浮空输入（3）GPIO_Mode_IPD</div>
+                    <div class="summary">μC/OS-Ⅲ系统中的任务种类及基本状态在μC/OS-Ⅲ系统中，任务自身一共有五种状态。1、休眠态​       调用函数OSTaskCreate()创建任务后，任务就可以接受μC/OS-Ⅲ的管理。处于休眠态的任务代码实际上已经写入代码空间</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
                             </span>
                         <span class="publish-author">
                             
@@ -680,6 +683,10 @@
                     
                     <a href="/tags/STM32/" target="_blank">
                         <span class="chip bg-color">STM32</span>
+                    </a>
+                    
+                    <a href="/tags/μC-OS-Ⅲ/" target="_blank">
+                        <span class="chip bg-color">μC/OS-Ⅲ</span>
                     </a>
                     
                 </div>

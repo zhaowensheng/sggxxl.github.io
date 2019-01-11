@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sggxxl.club/"/>
-  <updated>2018-12-27T08:06:35.849Z</updated>
+  <updated>2019-01-11T08:17:50.906Z</updated>
   <id>https://www.sggxxl.club/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>震惊！原来自适应和响应式有这样的区别</title>
+    <link href="https://www.sggxxl.club/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/"/>
+    <id>https://www.sggxxl.club/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/</id>
+    <published>2019-01-11T08:13:45.000Z</published>
+    <updated>2019-01-11T08:17:50.906Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;很多人对于响应式网站的定义是：能够适应不同屏幕大小终端设备的网站称之为响应式网站。所以很多人都会把自适应网站当做响应式网站，但是其实响应式网站和自适应网站是有区别的，它们两者从形式上看，都是可以实现自动适应不同屏幕大小的终端设备，但是这两者是有根本的区别的。&lt;/p&gt;
+&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="网站" scheme="https://www.sggxxl.club/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="网站" scheme="https://www.sggxxl.club/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
   
   <entry>
     <title>μC/OS-Ⅲ系统中的任务种类及基本状态</title>

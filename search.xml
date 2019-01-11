@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>震惊！原来自适应和响应式有这样的区别</title>
+      <link href="/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/"/>
+      <url>/2019/01/11/zhen-liang-yuan-lai-zi-gua-ying-he-xiang-ying-shi-you-zhe-yang-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<p>很多人对于响应式网站的定义是：能够适应不同屏幕大小终端设备的网站称之为响应式网站。所以很多人都会把自适应网站当做响应式网站，但是其实响应式网站和自适应网站是有区别的，它们两者从形式上看，都是可以实现自动适应不同屏幕大小的终端设备，但是这两者是有根本的区别的。</p><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrWiaia6icyc30HCp6n6LXFDQhV5UldmoqXH07gSeAl8UoJFcdaRs7F9iaAg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p><p>很多人对响应式网站和自适应网站都存在误解，会以为这两者都是同一类型的网站，只是叫法不一样。但是如果通过实际的浏览体验，就能分辨出它们的区别。可以说自适应只是响应式当中的一个子集，也就是说响应式的开始形态是自适应。要完全区别于它们两者，首先你要了解，什么是响应式布局？什么是自适应布局？</p><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrgOByHCk8mxLjPrS1CqMjNpiaow4bXo1Y5aLiaDTzE0LlJquSPwnibSQLQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p><p>什么是响应式布局？</p><p>响应式网页布局设计就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。打个比方来说：现在社会有很多响应产品，例如折叠沙发，折叠床等等，当我们需要把沙发放到一个角落的时候，此刻沙发就好比div吧，而角落里的某个地方就好比父元素，由于父元素空间的改变，我们不得不调整div,让它能够依然放在角落里。在项目中你会遇到不同的终端，由于终端分辨率不同，所以你要想让用户体验更好，就必要让你的页面能够兼容多个终端。</p><p>什么是自适应布局？</p><p>自适应网页布局设计指网页能够在不同大小的终端设备上自行适应显示。简单来说：就是让一个网站在不同大小的设备上呈现显示同一样的页面，让同一个页面适应不同大小屏幕，根据屏幕的大小，自动缩放。</p><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrZjpjkazrQBwWKlyUiaOcY4G35TyicATKB4qOo7rrVk3ETlStCQ9chIAw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p><p>总的来说响应式与自适应的原理是相似的，都是检测设备，根据不同的设备采用不同的css，而且css都是采用的百分比的，而不是固定的宽度，不同点是响应式网站在不同的设备上看上去是不一样的，会随着设备的改变而改变模板样式、模块排版、展示样式。而自适应不会，所有的设备看起来都是一样的网站，不过是长度或者图片变小了，不会根据设备采用不同的展示样式。可能说的那么多，大家会觉得响应式网站做起来肯定很难，但是其实不然，不管懂不懂技术，懂不懂代码都可以利用建站宝盒响应式建站系统来建设响应式网站。响应式网站不单止变得易于优化，更多的是提高了用户的一个浏览体验度。</p><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KMM6ibady1rDyg5C88qp1YJrWcyspKqLrZUiamg6ZZjzDNXQyXXRpHPXcsYzeXvC5CmialibhKVN4mqgiblGJc9ykrQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p><p><strong>结论：</strong></p><p>所以说看一个网站是不是响应式网站，不能单单看它能不能自动适应不同大小设备，还要看适应以后的展现样式，更为重要的是你自己要多了解，不然就很容易混淆。希望本文能帮到你分清响应式网站和自适应网站的不同之处。</p><p>最后还分享下网页布局的几种类型→</p><p><strong>网站布局的五种方式</strong></p><ol><li>静态布局（static layout）</li><li>流式布局（Liquid Layout）</li><li>自适应布局（Adaptive Layout）</li><li>响应式布局（Responsive Layout）</li><li>弹性布局（rem/em布局）</li></ol><p><strong>稍微总结下</strong></p><p>1.如果只做pc端，那么静态布局（定宽度）是最好的选择；</p><p>2.如果做移动端，且设计对高度和元素间距要求不高，那么弹性布局（rem+js）是最好的选择，一份css+一份js调节font-size搞定；</p><p>3.如果pc，移动要兼容，而且要求很高那么响应式布局还是最好的选择，前提是设计根据不同的高宽做不同的设计，响应式根据媒体查询做不同的布局。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>μC/OS-Ⅲ系统中的任务种类及基本状态</title>
       <link href="/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/"/>
       <url>/2018/12/27/mc-os-iiixi-tong-zhong-de-ren-wu-chong-lei-ji-ji-ben-zhuang-tai/</url>
